@@ -26,7 +26,7 @@ const PROJECTS = {
         tags: ['Python', 'Random Forest', 'SHAP', 'Scikit-learn', 'Seaborn', 'Pandas'],
         features: ['92% Classification Accuracy', 'SHAP Explainability', 'Feature Importance Analysis', 'Confusion Matrix & ROC-AUC', 'Business Insight Reports', 'End-to-End ML Pipeline'],
         img: 'https://placehold.co/800x450/091525/13d0d0?text=Customer+Churn+Prediction',
-        live: '#', github: 'https://github.com/ankitjhinkwan/house-price-prediction'
+        live: 'https://nbviewer.org/github/ankitjhinkwan/house-price-prediction/blob/main/notebooks/house_price_analysis.ipynb', github: 'https://github.com/ankitjhinkwan/house-price-prediction'
     },
     2: {
         cat: 'Visualisation',
@@ -35,7 +35,7 @@ const PROJECTS = {
         tags: ['Power BI', 'DAX', 'SQL', 'Excel', 'Data Modelling'],
         features: ['KPI Scorecards', 'Regional Breakdown', 'Year-over-Year Trends', 'Product Performance', 'DAX Measures', 'Drill-Through Pages'],
         img: 'https://placehold.co/800x450/091525/13d0d0?text=Sales+Analytics+Dashboard',
-        live: '#', github: 'https://github.com/ankitjhinkwan/covid19-data-analysis'
+        live: 'https://nbviewer.org/github/ankitjhinkwan/covid19-data-analysis/blob/main/notebooks/covid19_analysis.ipynb', github: 'https://github.com/ankitjhinkwan/covid19-data-analysis'
     },
     3: {
         cat: 'ML Model',
@@ -44,7 +44,7 @@ const PROJECTS = {
         tags: ['Python', 'XGBoost', 'Scikit-learn', 'Pandas', 'Matplotlib', 'SHAP'],
         features: ['Top 10% Kaggle RMSE', 'Advanced Feature Engineering', 'Hyperparameter Tuning', 'Cross-Validation', 'SHAP Explainability', 'Full EDA Pipeline'],
         img: 'https://placehold.co/800x450/091525/13d0d0?text=House+Price+Prediction',
-        live: '#', github: 'https://github.com/ankitjhinkwan/sales-analytics-dashboard'
+        live: 'https://nbviewer.org/github/ankitjhinkwan/sales-analytics-dashboard/blob/main/notebooks/sales_analysis.ipynb', github: 'https://github.com/ankitjhinkwan/sales-analytics-dashboard'
     },
     4: {
         cat: 'EDA',
@@ -53,7 +53,7 @@ const PROJECTS = {
         tags: ['Pandas', 'Plotly', 'Matplotlib', 'Python', 'Seaborn'],
         features: ['Genre Trend Analysis', 'Release Pattern Study', 'Content Rating Breakdown', 'Regional Distribution', 'Interactive Plotly Charts', 'Time-Series Analysis'],
         img: 'https://placehold.co/800x450/091525/ff4060?text=Netflix+Content+Analysis',
-        live: '#', github: 'https://github.com/ankitjhinkwan/customer-churn-prediction'
+        live: 'https://nbviewer.org/github/ankitjhinkwan/customer-churn-prediction/blob/main/notebooks/customer_churn_analysis.ipynb', github: 'https://github.com/ankitjhinkwan/customer-churn-prediction'
     },
     5: {
         cat: 'NLP',
@@ -62,7 +62,7 @@ const PROJECTS = {
         tags: ['BERT', 'HuggingFace', 'Streamlit', 'Python', 'NLP', 'PyTorch'],
         features: ['BERT Fine-Tuning', 'Real-Time Classification', 'Streamlit Dashboard', 'Sentiment Trend Charts', 'Word Cloud Visualisation', 'REST API Ready'],
         img: 'https://placehold.co/800x450/091525/c8dae8?text=Twitter+Sentiment+Analysis',
-        live: '#', github: 'https://github.com/ankitjhinkwan/netflix-content-analysis'
+        live: 'https://nbviewer.org/github/ankitjhinkwan/netflix-content-analysis/blob/main/notebooks/netflix_analysis.ipynb', github: 'https://github.com/ankitjhinkwan/netflix-content-analysis'
     },
     6: {
         cat: 'EDA',
@@ -71,7 +71,7 @@ const PROJECTS = {
         tags: ['Pandas', 'Seaborn', 'NumPy', 'Matplotlib', 'Jupyter', 'Python'],
         features: ['Global Trend Analysis', 'Vaccination Rate Tracking', 'Mortality Pattern Study', 'Country Comparisons', 'Automated Data Pipeline', 'Time-Series Visualisations'],
         img: 'https://placehold.co/800x450/091525/ff4060?text=COVID-19+Data+Analysis',
-        live: '#', github: 'https://github.com/ankitjhinkwan/twitter-sentiment-analysis'
+        live: 'https://nbviewer.org/github/ankitjhinkwan/twitter-sentiment-analysis/blob/main/notebooks/twitter_sentiment_analysis.ipynb', github: 'https://github.com/ankitjhinkwan/twitter-sentiment-analysis'
     }
 };
 
@@ -113,7 +113,7 @@ function initCursor() {
     }
     animRing();
 
-    document.querySelectorAll('a, button, .proj-card, .chip, .f-btn').forEach(el => {
+    document.querySelectorAll('a, button, .project-card, .tech-icon, .filter-btn').forEach(el => {
         el.addEventListener('mouseenter', () => ring.classList.add('hov'));
         el.addEventListener('mouseleave', () => ring.classList.remove('hov'));
     });
@@ -249,17 +249,17 @@ function initSkillBars() {
 
 // ── PROJECT FILTER ────────────────────────────────
 function initFilter() {
-    const btns  = document.querySelectorAll('.f-btn');
-    const cards = document.querySelectorAll('.proj-card');
+    const btns  = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.project-card');
 
     btns.forEach(btn => {
         btn.addEventListener('click', () => {
             btns.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
-            const f = btn.dataset.f;
+            const f = btn.dataset.filter;
 
             cards.forEach(card => {
-                const show = f === 'all' || card.dataset.cat === f;
+                const show = f === 'all' || card.dataset.category === f;
                 if (show) {
                     card.style.display = 'flex';
                     setTimeout(() => {
@@ -278,8 +278,8 @@ function initFilter() {
 
 // ── PROJECT MODAL ─────────────────────────────────
 function initModal() {
-    const modal = document.getElementById('modal');
-    const close = document.getElementById('mClose');
+    const modal = document.getElementById('projectModal');
+    const close = document.getElementById('modalClose');
 
     function closeModal() {
         modal.classList.remove('active');
@@ -291,27 +291,37 @@ function initModal() {
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 }
 
+// Handle view-project button clicks
+document.addEventListener('click', function(e) {
+    const btn = e.target.closest('.view-project');
+    if (btn) {
+        e.preventDefault();
+        e.stopPropagation();
+        openModal(parseInt(btn.dataset.id));
+    }
+});
+
 function openModal(id) {
     const d = PROJECTS[id];
     if (!d) return;
 
-    document.getElementById('mCat').textContent   = d.cat;
-    document.getElementById('mTitle').textContent  = d.title;
-    document.getElementById('mDesc').textContent   = d.desc;
-    document.getElementById('mImg').src            = d.img;
-    document.getElementById('mImg').alt            = d.title;
-    document.getElementById('mLive').href          = d.live;
-    document.getElementById('mGit').href           = d.github;
+    document.getElementById('modalCategory').textContent   = d.cat;
+    document.getElementById('modalTitle').textContent  = d.title;
+    document.getElementById('modalDesc').textContent   = d.desc;
+    document.getElementById('modalImg').src            = d.img;
+    document.getElementById('modalImg').alt            = d.title;
+    document.getElementById('modalLiveLink').href          = d.live;
+    document.getElementById('modalGithubLink').href           = d.github;
 
-    document.getElementById('mTags').innerHTML =
+    document.getElementById('modalTags').innerHTML =
         d.tags.map(t => `<span class="tag">${t}</span>`).join('');
 
-    document.getElementById('mFeats').innerHTML = `
+    document.getElementById('modalFeatures').innerHTML = `
         <h4>Key Features</h4>
         <ul>${d.features.map(f => `<li>${f}</li>`).join('')}</ul>
     `;
 
-    document.getElementById('modal').classList.add('active');
+    document.getElementById('projectModal').classList.add('active');
     document.body.style.overflow = 'hidden';
 }
 
