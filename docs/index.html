@@ -1,411 +1,505 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ankit Jinkwan | Data Scientist & ML Engineer</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ankit Jinkwan | Data Scientist & ML Engineer</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<style>
+:root{--teal:#13d0d0;--teal-glow:rgba(19,208,208,.12);--navy:#050d1a;--navy-card:#091525;--navy-border:#0f2040;--slate:#8faabf;--slate-light:#c8dae8;--white:#eef7ff;--accent-red:#ff4060;--gradient:linear-gradient(135deg,#13d0d0 0%,#0ea8a8 100%);--font-display:'Syne',sans-serif;--font-body:'DM Sans',sans-serif;--font-mono:'DM Mono',monospace;--shadow-card:0 8px 40px rgba(0,0,0,.5);--shadow-teal:0 0 40px rgba(19,208,208,.18);--br:14px;--tr:all 0.3s cubic-bezier(.4,0,.2,1)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--navy);color:var(--slate-light);font-family:var(--font-body);line-height:1.7;overflow-x:hidden;cursor:none}
+.cursor-dot{width:7px;height:7px;background:var(--teal);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9999;transform:translate(-50%,-50%)}
+.cursor-ring{width:34px;height:34px;border:1.5px solid rgba(19,208,208,.6);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:all .14s ease}
+.cursor-ring.hov{transform:translate(-50%,-50%) scale(1.7);border-color:var(--teal)}
+::-webkit-scrollbar{width:3px}::-webkit-scrollbar-track{background:var(--navy)}::-webkit-scrollbar-thumb{background:var(--teal);border-radius:2px}
+body::after{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(19,208,208,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(19,208,208,.025) 1px,transparent 1px);background-size:56px 56px;pointer-events:none;z-index:0}
+.container{max-width:1180px;margin:0 auto;padding:0 2rem}
+section{position:relative;z-index:2;padding:96px 0}
+h1,h2,h3,h4{font-family:var(--font-display);color:var(--white)}
+.text-gradient{background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.section-tag{display:inline-flex;align-items:center;gap:.4rem;font-family:var(--font-mono);font-size:.72rem;color:var(--teal);background:var(--teal-glow);border:1px solid rgba(19,208,208,.3);border-radius:4px;padding:.25rem .75rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.9rem}
+.section-title{font-size:clamp(2rem,4vw,2.8rem);font-weight:800;text-align:center;margin-bottom:.6rem}
+.section-sub{text-align:center;color:var(--slate);margin-bottom:3.5rem}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.7rem 1.6rem;border-radius:8px;font-family:var(--font-display);font-weight:600;font-size:.88rem;text-decoration:none;border:none;cursor:pointer;transition:var(--tr)}
+.btn-primary{background:var(--gradient);color:var(--navy);box-shadow:0 4px 20px rgba(19,208,208,.3)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(19,208,208,.45)}
+.btn-outline{background:transparent;color:var(--teal);border:1.5px solid var(--teal)}
+.btn-outline:hover{background:var(--teal-glow);transform:translateY(-2px)}
+.btn-ghost{background:var(--navy-card);color:var(--slate-light);border:1px solid var(--navy-border)}
+.btn-ghost:hover{border-color:var(--teal);color:var(--teal);transform:translateY(-2px)}
+/* HEADER */
+#header{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1.1rem 0;transition:var(--tr)}
+#header.scrolled{background:rgba(5,13,26,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--navy-border);padding:.75rem 0}
+.header-inner{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:var(--font-display);font-weight:800;font-size:1.55rem;color:var(--white);text-decoration:none}
+.logo span{color:var(--teal)}
+.nav-list{display:flex;align-items:center;gap:.2rem;list-style:none}
+.nav-link{font-family:var(--font-mono);font-size:.8rem;color:var(--slate);text-decoration:none;padding:.45rem .85rem;border-radius:6px;transition:var(--tr)}
+.nav-link:hover,.nav-link.active{color:var(--teal);background:var(--teal-glow)}
+.nav-resume{font-family:var(--font-display);font-weight:600;font-size:.82rem;color:var(--navy);background:var(--gradient);padding:.45rem 1rem;border-radius:6px;text-decoration:none;transition:var(--tr)}
+.nav-resume:hover{transform:translateY(-1px);box-shadow:var(--shadow-teal)}
+.menu-btn{display:none;background:none;border:1px solid var(--navy-border);color:var(--teal);width:38px;height:38px;border-radius:8px;cursor:pointer;align-items:center;justify-content:center;font-size:1rem}
+/* HERO */
+#hero{min-height:100vh;display:flex;align-items:center;padding:0;position:relative;overflow:hidden}
+.hero-orb{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none;animation:orb-drift 10s ease-in-out infinite}
+.hero-orb-1{width:640px;height:640px;background:radial-gradient(circle,rgba(19,208,208,.07) 0%,transparent 70%);top:-220px;right:-120px}
+.hero-orb-2{width:440px;height:440px;background:radial-gradient(circle,rgba(19,208,208,.04) 0%,transparent 70%);bottom:-80px;left:-100px;animation-delay:-5s;animation-direction:reverse}
+@keyframes orb-drift{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-28px) scale(1.04)}}
+.particles-wrap{position:absolute;inset:0;pointer-events:none}
+.p-dot{position:absolute;border-radius:50%;background:var(--teal);animation:p-rise linear infinite;bottom:-8px}
+@keyframes p-rise{to{transform:translateY(-105vh);opacity:0}}
+.hero-wrap{position:relative;z-index:2;max-width:800px}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--font-mono);font-size:.76rem;color:var(--teal);background:var(--teal-glow);border:1px solid rgba(19,208,208,.28);border-radius:100px;padding:.3rem 1rem;margin-bottom:1.4rem;animation:fade-up .6s ease both}
+.b-dot{width:6px;height:6px;background:var(--teal);border-radius:50%;animation:pulse-dot 2s infinite}
+@keyframes pulse-dot{0%,100%{opacity:1}50%{opacity:.3}}
+#hero h1{font-size:clamp(3rem,7vw,5.4rem);font-weight:800;line-height:1.06;margin-bottom:1rem;animation:fade-up .6s .08s ease both}
+.typed-wrap{font-family:var(--font-mono);font-size:clamp(.95rem,2.2vw,1.3rem);color:var(--teal);margin-bottom:1.4rem;min-height:2rem;animation:fade-up .6s .16s ease both}
+.typed-wrap::before{content:'> ';opacity:.45}
+.caret{animation:blink 1s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+.hero-desc{font-size:1.02rem;color:var(--slate);max-width:550px;margin-bottom:2.2rem;line-height:1.82;animation:fade-up .6s .24s ease both}
+.hero-btns{display:flex;flex-wrap:wrap;gap:.85rem;margin-bottom:2.6rem;animation:fade-up .6s .32s ease both}
+.hero-stats{display:inline-flex;align-items:center;background:var(--navy-card);border:1px solid var(--navy-border);border-radius:12px;padding:1.1rem 1.3rem;animation:fade-up .6s .4s ease both}
+.stat{text-align:center;padding:0 1.3rem}
+.stat-n{display:block;font-family:var(--font-display);font-size:1.7rem;font-weight:800;color:var(--teal);line-height:1;margin-bottom:.2rem}
+.stat-l{font-size:.7rem;color:var(--slate);font-family:var(--font-mono)}
+.stat-sep{width:1px;height:38px;background:var(--navy-border)}
+.hero-scroll{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.4rem;color:var(--slate);font-size:.72rem;font-family:var(--font-mono)}
+.scroll-bar{width:1px;height:48px;background:linear-gradient(to bottom,var(--teal),transparent);animation:scroll-anim 2s infinite}
+@keyframes scroll-anim{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1.55fr;gap:5rem;align-items:center}
+.about-img-area{position:relative}
+.about-frame{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:3/4}
+.about-frame img{width:100%;height:100%;object-fit:cover}
+.about-frame::before{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(to bottom,transparent 55%,rgba(5,13,26,.85))}
+.about-frame::after{content:'';position:absolute;inset:-2px;z-index:-1;background:var(--gradient);border-radius:20px;opacity:.35}
+.about-nameplate{position:absolute;bottom:1.2rem;left:50%;transform:translateX(-50%);background:rgba(5,13,26,.88);backdrop-filter:blur(12px);border:1px solid var(--navy-border);border-radius:10px;padding:.65rem 1.1rem;z-index:2;text-align:center;width:calc(100% - 2rem)}
+.about-nameplate strong{display:block;font-family:var(--font-display);font-size:1.05rem;color:var(--white)}
+.about-nameplate span{font-size:.75rem;color:var(--teal);font-family:var(--font-mono)}
+.exp-badge{position:absolute;top:-1rem;right:-1rem;background:var(--gradient);color:var(--navy);width:76px;height:76px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:800;box-shadow:0 4px 20px rgba(19,208,208,.4);z-index:3}
+.exp-badge .n{font-size:1.35rem;line-height:1}.exp-badge .l{font-size:.5rem;text-align:center;line-height:1.3}
+.about-content h2{font-size:clamp(1.7rem,2.8vw,2.4rem);margin-bottom:1.1rem}
+.about-content p{color:var(--slate);margin-bottom:.9rem;line-height:1.85}
+.highlights{display:grid;grid-template-columns:1fr 1fr;gap:.55rem;margin:1.4rem 0 1.8rem}
+.hl-item{display:flex;align-items:center;gap:.55rem;font-size:.87rem;color:var(--slate-light)}
+.hl-item i{color:var(--teal);font-size:.78rem;flex-shrink:0}
+.about-btns{display:flex;gap:.85rem;flex-wrap:wrap}
+/* SKILLS */
+#skills{background:linear-gradient(180deg,var(--navy) 0%,var(--navy-card) 40%,var(--navy) 100%)}
+.skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:3.5rem}
+.skill-card{background:var(--navy-card);border:1px solid var(--navy-border);border-radius:var(--br);padding:1.8rem;transition:var(--tr)}
+.skill-card:hover{border-color:rgba(19,208,208,.3);transform:translateY(-3px)}
+.skill-card h3{font-size:.9rem;color:var(--white);margin-bottom:1.4rem;display:flex;align-items:center;gap:.55rem}
+.skill-card h3 i{color:var(--teal)}
+.s-item{margin-bottom:1rem}
+.s-info{display:flex;justify-content:space-between;font-size:.83rem;margin-bottom:.35rem}
+.s-info span:first-child{color:var(--slate-light)}.s-info span:last-child{color:var(--teal);font-family:var(--font-mono);font-size:.76rem}
+.s-bar{height:4px;background:var(--navy-border);border-radius:2px;overflow:hidden}
+.s-fill{height:100%;background:var(--gradient);border-radius:2px;width:0%;transition:width 1.3s cubic-bezier(.4,0,.2,1);position:relative}
+.s-fill::after{content:'';position:absolute;right:0;top:50%;transform:translateY(-50%);width:7px;height:7px;background:var(--teal);border-radius:50%;box-shadow:0 0 5px var(--teal)}
+.tech-stack-title{text-align:center;font-family:var(--font-mono);font-size:.75rem;color:var(--slate);text-transform:uppercase;letter-spacing:.1em;margin-bottom:1.4rem}
+.tech-chips{display:grid;grid-template-columns:repeat(auto-fill,minmax(86px,1fr));gap:.9rem}
+.chip{background:var(--navy-card);border:1px solid var(--navy-border);border-radius:10px;padding:.8rem .4rem;text-align:center;transition:var(--tr);cursor:default}
+.chip:hover{border-color:var(--teal);background:var(--teal-glow);transform:translateY(-4px);box-shadow:var(--shadow-teal)}
+.chip i{font-size:1.35rem;color:var(--teal);display:block;margin-bottom:.35rem}
+.chip span{font-size:.68rem;color:var(--slate);font-family:var(--font-mono)}
+/* PROJECTS */
+.filter-row{display:flex;justify-content:center;gap:.5rem;flex-wrap:wrap;margin-bottom:2.8rem}
+.f-btn{font-family:var(--font-mono);font-size:.78rem;color:var(--slate);background:var(--navy-card);border:1px solid var(--navy-border);border-radius:6px;padding:.45rem 1rem;cursor:pointer;transition:var(--tr)}
+.f-btn:hover,.f-btn.active{color:var(--teal);border-color:var(--teal);background:var(--teal-glow)}
+.proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:1.4rem}
+.proj-card{background:var(--navy-card);border:1px solid var(--navy-border);border-radius:var(--br);overflow:hidden;transition:var(--tr);cursor:pointer;display:flex;flex-direction:column}
+.proj-card:hover{border-color:rgba(19,208,208,.4);transform:translateY(-6px);box-shadow:var(--shadow-card),var(--shadow-teal)}
+.proj-thumb{position:relative;overflow:hidden;aspect-ratio:16/9}
+.proj-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.proj-card:hover .proj-thumb img{transform:scale(1.07)}
+.proj-overlay{position:absolute;inset:0;background:rgba(5,13,26,.82);display:flex;align-items:center;justify-content:center;gap:.7rem;opacity:0;transition:opacity .28s}
+.proj-card:hover .proj-overlay{opacity:1}
+.proj-overlay a{width:42px;height:42px;background:var(--navy-card);border:1px solid var(--teal);border-radius:9px;display:flex;align-items:center;justify-content:center;color:var(--teal);font-size:.95rem;text-decoration:none;transition:var(--tr)}
+.proj-overlay a:hover{background:var(--teal);color:var(--navy)}
+.proj-badge{position:absolute;top:.7rem;left:.7rem;padding:.2rem .65rem;border-radius:4px;font-family:var(--font-mono);font-size:.68rem;letter-spacing:.05em}
+.b-teal{background:rgba(19,208,208,.14);color:var(--teal);border:1px solid rgba(19,208,208,.3)}
+.b-red{background:rgba(255,64,96,.13);color:#ff4060;border:1px solid rgba(255,64,96,.3)}
+.b-grey{background:rgba(148,163,184,.1);color:var(--slate-light);border:1px solid rgba(148,163,184,.2)}
+.proj-body{padding:1.4rem;flex:1;display:flex;flex-direction:column}
+.proj-meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem}
+.proj-cat{font-family:var(--font-mono);font-size:.68rem;color:var(--teal);text-transform:uppercase;letter-spacing:.08em}
+.proj-yr{font-size:.72rem;color:var(--slate);font-family:var(--font-mono)}
+.proj-body h3{font-size:1.08rem;margin-bottom:.5rem;transition:color .2s}
+.proj-card:hover .proj-body h3{color:var(--teal)}
+.proj-body p{font-size:.86rem;color:var(--slate);line-height:1.65;flex:1;margin-bottom:.9rem}
+.tags{display:flex;flex-wrap:wrap;gap:.35rem}
+.tag{font-family:var(--font-mono);font-size:.68rem;background:var(--navy);border:1px solid var(--navy-border);color:var(--slate);padding:.18rem .55rem;border-radius:4px}
+/* MODAL */
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.88);backdrop-filter:blur(12px);z-index:2000;display:flex;align-items:center;justify-content:center;padding:2rem;opacity:0;pointer-events:none;transition:opacity .3s}
+.modal.active{opacity:1;pointer-events:all}
+.modal-box{background:var(--navy-card);border:1px solid var(--navy-border);border-radius:18px;max-width:780px;width:100%;max-height:88vh;overflow-y:auto;position:relative;transform:scale(.95);transition:transform .3s}
+.modal.active .modal-box{transform:scale(1)}
+.m-close{position:absolute;top:.9rem;right:.9rem;width:34px;height:34px;background:var(--navy);border:1px solid var(--navy-border);color:var(--slate);border-radius:7px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:var(--tr);z-index:1}
+.m-close:hover{border-color:var(--teal);color:var(--teal)}
+.m-img{height:240px;overflow:hidden;border-radius:18px 18px 0 0}
+.m-img img{width:100%;height:100%;object-fit:cover}
+.m-content{padding:1.8rem}
+.m-content h2{font-size:1.5rem;margin:.35rem 0 .7rem}
+.m-content > p{color:var(--slate);line-height:1.8;margin-bottom:1.3rem}
+.m-feats h4{font-size:.75rem;color:var(--teal);font-family:var(--font-mono);margin-bottom:.7rem;text-transform:uppercase;letter-spacing:.08em}
+.m-feats ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:.45rem;margin-bottom:1.3rem}
+.m-feats li{font-size:.84rem;color:var(--slate-light);display:flex;align-items:center;gap:.45rem}
+.m-feats li::before{content:'→';color:var(--teal);font-family:var(--font-mono)}
+.m-foot{display:flex;gap:.85rem;flex-wrap:wrap}
+/* CONTACT */
+#contact{background:linear-gradient(180deg,var(--navy) 0%,var(--navy-card) 40%,var(--navy) 100%)}
+.contact-grid{display:grid;grid-template-columns:1fr 1.45fr;gap:4rem}
+.c-info h3{font-size:1.35rem;margin-bottom:.9rem}
+.c-info p{color:var(--slate);line-height:1.85;margin-bottom:1.7rem}
+.c-items{display:flex;flex-direction:column;gap:.85rem;margin-bottom:1.7rem}
+.c-item{display:flex;align-items:center;gap:.9rem;padding:.8rem 1rem;background:var(--navy);border:1px solid var(--navy-border);border-radius:10px;transition:var(--tr)}
+.c-item:hover{border-color:rgba(19,208,208,.3)}
+.c-icon{width:38px;height:38px;background:var(--teal-glow);border:1px solid rgba(19,208,208,.2);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--teal);flex-shrink:0}
+.c-text h4{font-size:.74rem;color:var(--slate);font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.1rem}
+.c-text p,.c-text a{font-size:.88rem;color:var(--slate-light);text-decoration:none;transition:color .2s}
+.c-text a:hover{color:var(--teal)}
+.c-downloads{display:flex;gap:.7rem;flex-wrap:wrap;margin-bottom:1.5rem}
+.socials{display:flex;gap:.65rem}
+.s-btn{width:40px;height:40px;background:var(--navy);border:1px solid var(--navy-border);border-radius:9px;display:flex;align-items:center;justify-content:center;color:var(--slate);font-size:1rem;text-decoration:none;transition:var(--tr)}
+.s-btn:hover{border-color:var(--teal);color:var(--teal);transform:translateY(-3px)}
+.form-card{background:var(--navy);border:1px solid var(--navy-border);border-radius:18px;padding:2.2rem}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.form-grp{margin-bottom:1.1rem}
+.form-grp label{display:block;font-size:.74rem;color:var(--slate);font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.07em;margin-bottom:.45rem}
+.form-grp input,.form-grp textarea{width:100%;background:var(--navy-card);border:1px solid var(--navy-border);border-radius:8px;color:var(--slate-light);font-family:var(--font-body);font-size:.9rem;padding:.7rem .95rem;outline:none;transition:var(--tr)}
+.form-grp input:focus,.form-grp textarea:focus{border-color:var(--teal);box-shadow:0 0 0 3px var(--teal-glow)}
+.form-grp textarea{resize:vertical;min-height:120px}
+.form-err{font-size:.72rem;color:var(--accent-red);margin-top:.25rem;display:block}
+.form-grp input.err,.form-grp textarea.err{border-color:var(--accent-red)}
+.f-status{padding:.8rem 1rem;border-radius:8px;font-size:.86rem;display:none;margin-top:.9rem}
+.f-status.ok{background:rgba(19,208,208,.1);border:1px solid rgba(19,208,208,.3);color:var(--teal);display:block}
+.f-status.fail{background:rgba(255,64,96,.1);border:1px solid rgba(255,64,96,.3);color:var(--accent-red);display:block}
+footer{position:relative;z-index:2;border-top:1px solid var(--navy-border);padding:2.2rem 0 1.4rem}
+.foot-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.foot-logo{font-family:var(--font-display);font-weight:800;font-size:1.35rem;color:var(--white);text-decoration:none}
+.foot-logo span{color:var(--teal)}
+.foot-links{display:flex;gap:1.4rem;list-style:none}
+.foot-links a{font-size:.83rem;color:var(--slate);text-decoration:none;transition:color .2s}
+.foot-links a:hover{color:var(--teal)}
+.foot-copy{font-size:.76rem;color:var(--slate);font-family:var(--font-mono)}
+.btt{position:fixed;bottom:1.8rem;right:1.8rem;width:42px;height:42px;background:var(--navy-card);border:1px solid var(--navy-border);border-radius:9px;display:flex;align-items:center;justify-content:center;color:var(--teal);text-decoration:none;z-index:100;opacity:0;pointer-events:none;transition:var(--tr)}
+.btt.on{opacity:1;pointer-events:all}
+.btt:hover{background:var(--teal);color:var(--navy);border-color:var(--teal)}
+#toasts{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%);z-index:3000;display:flex;flex-direction:column;gap:.5rem;align-items:center}
+.toast{background:var(--navy-card);border:1px solid var(--navy-border);border-radius:9px;padding:.7rem 1.4rem;font-size:.86rem;color:var(--slate-light);animation:t-in .28s ease,t-out .28s ease 2.8s forwards}
+.toast.ok{border-color:rgba(19,208,208,.3)}.toast.fail{border-color:rgba(255,64,96,.3);color:var(--accent-red)}
+@keyframes t-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@keyframes t-out{to{opacity:0;transform:translateY(8px)}}
+.nav-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:998;opacity:0;pointer-events:none;transition:opacity .3s}
+.nav-overlay.on{opacity:1;pointer-events:all}
+@keyframes fade-up{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .75s ease,transform .75s ease}
+.reveal.vis{opacity:1;transform:translateY(0)}
+@media(max-width:920px){.about-grid,.contact-grid{grid-template-columns:1fr;gap:3rem}.about-img-area{max-width:300px;margin:0 auto}.skills-grid{grid-template-columns:1fr}.proj-grid{grid-template-columns:1fr}.m-feats ul{grid-template-columns:1fr}}
+@media(max-width:768px){body{cursor:auto}.cursor-dot,.cursor-ring{display:none}.menu-btn{display:flex}.nav-list{position:fixed;top:0;right:-100%;height:100vh;width:250px;background:var(--navy-card);border-left:1px solid var(--navy-border);flex-direction:column;align-items:flex-start;gap:.2rem;padding:5rem 1.4rem 2rem;z-index:999;transition:right .32s ease}.nav-list.open{right:0}.nav-link{width:100%;padding:.7rem .9rem}.nav-resume{margin-top:.9rem}.form-row{grid-template-columns:1fr}.hero-stats{width:100%;justify-content:center}.foot-inner{justify-content:center;text-align:center}.foot-links{justify-content:center}.highlights{grid-template-columns:1fr}.c-downloads{flex-direction:column}}
+</style>
 </head>
 <body>
+<div class="cursor-dot" id="cDot"></div>
+<div class="cursor-ring" id="cRing"></div>
+<div id="toasts"></div>
 
-    <!-- ===== HEADER ===== -->
-    <header id="header">
-        <div class="container header-container">
-            <a href="#hero" class="logo">Ankit<span>.</span></a>
-            <nav>
-                <ul class="nav-links" id="navLinks">
-                    <li><a href="#hero"     class="nav-link">Home</a></li>
-                    <li><a href="#about"    class="nav-link">About</a></li>
-                    <li><a href="#skills"   class="nav-link">Skills</a></li>
-                    <li><a href="#projects" class="nav-link">Projects</a></li>
-                    <li><a href="#contact"  class="nav-link">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="menu-btn" id="menuBtn"><i class="fas fa-bars"></i></div>
-        </div>
-    </header>
-    <div class="nav-overlay" id="navOverlay"></div>
+<header id="header">
+  <div class="container header-inner">
+    <a href="#hero" class="logo">Ankit<span>.</span></a>
+    <nav><ul class="nav-list" id="navList">
+      <li><a href="#hero" class="nav-link">Home</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+      <li><a href="Ankit_Jinkwan_Resume.pdf.pdf" download class="nav-resume"><i class="fas fa-download"></i> Resume</a></li>
+    </ul></nav>
+    <button class="menu-btn" id="menuBtn"><i class="fas fa-bars"></i></button>
+  </div>
+</header>
 
-    <!-- ===== HERO ===== -->
-    <section id="hero">
-        <div class="hero-particles" id="heroParticles"></div>
-        <div class="container">
-            <div class="hero-content">
-                <p class="hero-greeting">👋 Hello, I'm</p>
-                <h1>Ankit <span class="text-gradient">Jinkwan</span></h1>
-                <div class="typed-wrapper">
-                    <span id="typedText"></span><span class="cursor">|</span>
-                </div>
-                <p class="hero-desc">I turn raw data into meaningful insights and intelligent solutions. Based in Uttarakhand, India — open to remote opportunities worldwide.</p>
-                <div class="hero-btns">
-                    <a href="#projects" class="btn btn-primary"><i class="fas fa-rocket"></i> View My Work</a>
-                    <a href="#contact"  class="btn btn-outline"><i class="fas fa-paper-plane"></i> Hire Me</a>
-                    <a href="Ankit_Jinkwan_Resume.pdf.pdf" download class="btn btn-outline"><i class="fas fa-file-pdf"></i> Resume</a>
-                </div>
-                <div class="hero-stats">
-                    <div class="stat"><span class="stat-num">6+</span><span class="stat-label">Projects</span></div>
-                    <div class="stat-divider"></div>
-                    <div class="stat"><span class="stat-num">2+</span><span class="stat-label">Years Exp.</span></div>
-                    <div class="stat-divider"></div>
-                    <div class="stat"><span class="stat-num">92%</span><span class="stat-label">Best Accuracy</span></div>
-                    <div class="stat-divider"></div>
-                    <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Dedication</span></div>
-                </div>
-            </div>
-        </div>
-        <div class="hero-scroll-hint">
-            <span>Scroll Down</span>
-            <i class="fas fa-chevron-down bounce"></i>
-        </div>
-        <div class="hero-shape"></div>
-    </section>
-
-    <!-- ===== ABOUT ===== -->
-    <section id="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-container">
-                <div class="about-img-wrapper">
-                    <div class="about-img">
-                        <img src="https://placehold.co/600x700/13d0d0/ffffff?text=Ankit+Jinkwan" alt="Ankit Jinkwan">
-                    </div>
-                    <div class="about-badge"><i class="fas fa-chart-line"></i><span>Data Scientist</span></div>
-                    <div class="about-experience">
-                        <span class="exp-num">2+</span>
-                        <span class="exp-text">Years of<br>Experience</span>
-                    </div>
-                </div>
-                <div class="about-content">
-                    <p class="about-tag">A little about me</p>
-                    <h3>Passionate data scientist uncovering <span class="text-gradient">hidden insights</span></h3>
-                    <p>I'm a Data Scientist and AI/ML Engineer based in Uttarakhand, India. Currently pursuing B.Tech in Computer Science (AI/ML specialisation) at Shivalik College, Dehradun.</p>
-                    <p>I love building end-to-end ML pipelines — from raw data wrangling to model deployment. When I'm not analysing data, you'll find me on Kaggle, reading ML research, or hiking in the Himalayas.</p>
-                    <div class="about-highlights">
-                        <div class="highlight-item"><i class="fas fa-check-circle"></i><span>End-to-End ML Pipelines</span></div>
-                        <div class="highlight-item"><i class="fas fa-check-circle"></i><span>6+ Completed Projects</span></div>
-                        <div class="highlight-item"><i class="fas fa-check-circle"></i><span>Deep Learning & NLP</span></div>
-                        <div class="highlight-item"><i class="fas fa-check-circle"></i><span>Data Visualisation</span></div>
-                        <div class="highlight-item"><i class="fas fa-check-circle"></i><span>Statistical Analysis</span></div>
-                        <div class="highlight-item"><i class="fas fa-check-circle"></i><span>Open to Remote Work</span></div>
-                    </div>
-                    <div class="about-actions">
-                        <a href="Ankit_Jinkwan_CV.docx.docx" download class="btn btn-primary"><i class="fas fa-file-word"></i> Download CV</a>
-                        <a href="Ankit_Jinkwan_Resume.pdf.pdf" download class="btn btn-outline"><i class="fas fa-file-pdf"></i> Download Resume</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== SKILLS ===== -->
-    <section id="skills">
-        <div class="container">
-            <h2 class="section-title">My Skills</h2>
-            <p class="section-subtitle">Technologies and tools I work with</p>
-            <div class="skills-container">
-                <div class="skill-column">
-                    <div class="skill-category">
-                        <h3><i class="fas fa-brain"></i> Machine Learning</h3>
-                        <div class="skill-item" data-skill="90"><div class="skill-info"><span>Scikit-learn</span><span>90%</span></div><div class="skill-bar"><div class="skill-progress" style="width:0%"></div></div></div>
-                        <div class="skill-item" data-skill="85"><div class="skill-info"><span>TensorFlow / Keras</span><span>85%</span></div><div class="skill-bar"><div class="skill-progress" style="width:0%"></div></div></div>
-                        <div class="skill-item" data-skill="80"><div class="skill-info"><span>PyTorch</span><span>80%</span></div><div class="skill-bar"><div class="skill-progress" style="width:0%"></div></div></div>
-                        <div class="skill-item" data-skill="88"><div class="skill-info"><span>XGBoost / LightGBM</span><span>88%</span></div><div class="skill-bar"><div class="skill-progress" style="width:0%"></div></div></div>
-                    </div>
-                    <div class="skill-category">
-                        <h3><i class="fas fa-chart-bar"></i> Data Analysis</h3>
-                        <div class="skill-item" data-skill="95"><div class="skill-info"><span>Python (Pandas / NumPy)</span><span>95%</span></div><div class="skill-bar"><div class="skill-progress" style="width:0%"></div></div></div>
-                        <div class="skill-item" data-skill="85"><div class="skill-info"><span>SQL</span><span>85%</span></div><div class="skill-bar"><div class="skill-progress" style="width:0%"></div></div></div>
-                        <div class="skill-item" data-skill="80"><div class="skill-info"><span>R</span><span>80%</span></div><div class="skill-bar"><div class="skill-progress" style="width:0%"></div></div></div>
-                        <div class="skill-item" data-skill="82"><div class="skill-info"><span>Statistics & Probability</span><span>82%</span></div><div class="skill-bar"><div class="skill-progress" style="width:0%"></div></div></div>
-                    </div>
-                </div>
-                <div class="skill-column">
-                    <div class="skill-category">
-                        <h3><i class="fas fa-chart-pie"></i> Data Visualisation</h3>
-                        <div class="skill-item" data-skill="90"><div class="skill-info"><span>Matplotlib / Seaborn</span><span>90%</span></div><div class="skill-bar"><div class="skill-progress" style="width:0%"></div></div></div>
-                        <div class="skill-item" data-skill="85"><div class="skill-info"><span>Power BI / Tableau</span><span>85%</span></div><div class="skill-bar"><div class="skill-progress" style="width:0%"></div></div></div>
-                        <div class="skill-item" data-skill="75"><div class="skill-info"><span>Plotly / Dash</span><span>75%</span></div><div class="skill-bar"><div class="skill-progress" style="width:0%"></div></div></div>
-                        <div class="skill-item" data-skill="78"><div class="skill-info"><span>Streamlit</span><span>78%</span></div><div class="skill-bar"><div class="skill-progress" style="width:0%"></div></div></div>
-                    </div>
-                    <div class="skill-category">
-                        <h3><i class="fas fa-tools"></i> Tools & Cloud</h3>
-                        <div class="skill-item" data-skill="90"><div class="skill-info"><span>Jupyter / Git / GitHub</span><span>90%</span></div><div class="skill-bar"><div class="skill-progress" style="width:0%"></div></div></div>
-                        <div class="skill-item" data-skill="78"><div class="skill-info"><span>AWS / GCP</span><span>78%</span></div><div class="skill-bar"><div class="skill-progress" style="width:0%"></div></div></div>
-                        <div class="skill-item" data-skill="70"><div class="skill-info"><span>Docker</span><span>70%</span></div><div class="skill-bar"><div class="skill-progress" style="width:0%"></div></div></div>
-                        <div class="skill-item" data-skill="80"><div class="skill-info"><span>MySQL / PostgreSQL</span><span>80%</span></div><div class="skill-bar"><div class="skill-progress" style="width:0%"></div></div></div>
-                    </div>
-                </div>
-            </div>
-            <div class="tech-stack">
-                <h3 class="section-title" style="font-size:1.5rem;margin-bottom:2rem">Tech Stack</h3>
-                <div class="tech-icons">
-                    <div class="tech-icon"><i class="fab fa-python"></i><span>Python</span></div>
-                    <div class="tech-icon"><i class="fas fa-brain"></i><span>TensorFlow</span></div>
-                    <div class="tech-icon"><i class="fas fa-fire"></i><span>PyTorch</span></div>
-                    <div class="tech-icon"><i class="fas fa-database"></i><span>SQL</span></div>
-                    <div class="tech-icon"><i class="fas fa-chart-pie"></i><span>Power BI</span></div>
-                    <div class="tech-icon"><i class="fas fa-book-open"></i><span>Jupyter</span></div>
-                    <div class="tech-icon"><i class="fas fa-table"></i><span>Pandas</span></div>
-                    <div class="tech-icon"><i class="fab fa-git-alt"></i><span>Git</span></div>
-                    <div class="tech-icon"><i class="fab fa-aws"></i><span>AWS</span></div>
-                    <div class="tech-icon"><i class="fas fa-robot"></i><span>Scikit-learn</span></div>
-                    <div class="tech-icon"><i class="fas fa-language"></i><span>BERT / NLP</span></div>
-                    <div class="tech-icon"><i class="fab fa-docker"></i><span>Docker</span></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== PROJECTS ===== -->
-    <section id="projects">
-        <div class="container">
-            <h2 class="section-title">My Projects</h2>
-            <p class="section-subtitle">Data science & machine learning work</p>
-            <div class="projects-filter">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="ml">ML Models</button>
-                <button class="filter-btn" data-filter="eda">EDA</button>
-                <button class="filter-btn" data-filter="viz">Visualisation</button>
-                <button class="filter-btn" data-filter="nlp">NLP</button>
-            </div>
-            <div class="projects-grid" id="projectsGrid">
-
-                <div class="project-card" data-category="ml">
-                    <div class="project-img">
-                        <img src="https://placehold.co/800x500/0f172a/13d0d0?text=Customer+Churn+Prediction" alt="Customer Churn Prediction">
-                        <div class="project-overlay">
-                            <a href="#" class="view-project" data-id="1" title="View Details"><i class="fas fa-eye"></i></a>
-                            <a href="https://github.com/ankitjhinkwan/customer-churn-prediction" target="_blank" title="Source Code"><i class="fab fa-github"></i></a>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <span class="project-category">ML Model</span>
-                        <h3>Customer Churn Prediction</h3>
-                        <p>Binary classification predicting telecom churn with 92% accuracy using Random Forest and SHAP explainability.</p>
-                        <div class="project-tags">
-                            <span class="project-tag">Python</span><span class="project-tag">Random Forest</span><span class="project-tag">SHAP</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-category="viz">
-                    <div class="project-img">
-                        <img src="https://placehold.co/800x500/0f172a/13d0d0?text=Sales+Analytics+Dashboard" alt="Sales Analytics Dashboard">
-                        <div class="project-overlay">
-                            <a href="#" class="view-project" data-id="2" title="View Details"><i class="fas fa-eye"></i></a>
-                            <a href="https://github.com/ankitjhinkwan/sales-analytics-dashboard" target="_blank" title="Source Code"><i class="fab fa-github"></i></a>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <span class="project-category">Visualisation</span>
-                        <h3>Sales Analytics Dashboard</h3>
-                        <p>Interactive Power BI dashboard visualising 3 years of retail sales with KPIs and regional breakdowns.</p>
-                        <div class="project-tags">
-                            <span class="project-tag">Power BI</span><span class="project-tag">DAX</span><span class="project-tag">SQL</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-category="ml">
-                    <div class="project-img">
-                        <img src="https://placehold.co/800x500/0f172a/13d0d0?text=House+Price+Prediction" alt="House Price Prediction">
-                        <div class="project-overlay">
-                            <a href="#" class="view-project" data-id="3" title="View Details"><i class="fas fa-eye"></i></a>
-                            <a href="https://github.com/ankitjhinkwan/house-price-prediction" target="_blank" title="Source Code"><i class="fab fa-github"></i></a>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <span class="project-category">ML Model</span>
-                        <h3>House Price Prediction</h3>
-                        <p>XGBoost regression with advanced feature engineering on Ames Housing dataset. Kaggle top 10% RMSE.</p>
-                        <div class="project-tags">
-                            <span class="project-tag">XGBoost</span><span class="project-tag">Scikit-learn</span><span class="project-tag">SHAP</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-category="eda">
-                    <div class="project-img">
-                        <img src="https://placehold.co/800x500/0f172a/13d0d0?text=Netflix+Content+Analysis" alt="Netflix Content Analysis">
-                        <div class="project-overlay">
-                            <a href="#" class="view-project" data-id="4" title="View Details"><i class="fas fa-eye"></i></a>
-                            <a href="https://github.com/ankitjhinkwan/netflix-content-analysis" target="_blank" title="Source Code"><i class="fab fa-github"></i></a>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <span class="project-category">EDA</span>
-                        <h3>Netflix Content Analysis</h3>
-                        <p>Deep-dive EDA into Netflix's catalogue — genre trends, release patterns, content ratings and regional distribution.</p>
-                        <div class="project-tags">
-                            <span class="project-tag">Pandas</span><span class="project-tag">Plotly</span><span class="project-tag">Matplotlib</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-category="nlp">
-                    <div class="project-img">
-                        <img src="https://placehold.co/800x500/0f172a/13d0d0?text=Twitter+Sentiment+Analysis" alt="Twitter Sentiment Analysis">
-                        <div class="project-overlay">
-                            <a href="#" class="view-project" data-id="5" title="View Details"><i class="fas fa-eye"></i></a>
-                            <a href="https://github.com/ankitjhinkwan/twitter-sentiment-analysis" target="_blank" title="Source Code"><i class="fab fa-github"></i></a>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <span class="project-category">NLP</span>
-                        <h3>Twitter Sentiment Analysis</h3>
-                        <p>Fine-tuned BERT model for real-time tweet sentiment classification, deployed as an interactive Streamlit dashboard.</p>
-                        <div class="project-tags">
-                            <span class="project-tag">BERT</span><span class="project-tag">HuggingFace</span><span class="project-tag">Streamlit</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-category="eda">
-                    <div class="project-img">
-                        <img src="https://placehold.co/800x500/0f172a/13d0d0?text=COVID-19+Data+Analysis" alt="COVID-19 Data Analysis">
-                        <div class="project-overlay">
-                            <a href="#" class="view-project" data-id="6" title="View Details"><i class="fas fa-eye"></i></a>
-                            <a href="https://github.com/ankitjhinkwan/covid19-data-analysis" target="_blank" title="Source Code"><i class="fab fa-github"></i></a>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <span class="project-category">EDA</span>
-                        <h3>COVID-19 Data Analysis</h3>
-                        <p>Global pandemic EDA tracking spread timelines, vaccination rates, and mortality patterns with automated data pipelines.</p>
-                        <div class="project-tags">
-                            <span class="project-tag">Pandas</span><span class="project-tag">Seaborn</span><span class="project-tag">Matplotlib</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== CONTACT ===== -->
-    <section id="contact">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <p class="section-subtitle">Have a project in mind? Let's talk!</p>
-            <div class="contact-container">
-                <div class="contact-left">
-                    <h3>Let's work together</h3>
-                    <p>I'm currently available for freelance projects and full-time roles. If you have a project or just want to say hi, feel free to reach out!</p>
-                    <div class="info-items">
-                        <div class="info-item">
-                            <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
-                            <div><h4>Location</h4><p>Uttarakhand, India</p></div>
-                        </div>
-                        <div class="info-item">
-                            <div class="info-icon"><i class="fas fa-envelope"></i></div>
-                            <div><h4>Email</h4><a href="mailto:ankitjhinkwan9@gmail.com">ankitjhinkwan9@gmail.com</a></div>
-                        </div>
-                        <div class="info-item">
-                            <div class="info-icon"><i class="fas fa-phone-alt"></i></div>
-                            <div><h4>Phone</h4><a href="tel:+919528693191">+91 9528693191</a></div>
-                        </div>
-                        <div class="info-item">
-                            <div class="info-icon"><i class="fas fa-download"></i></div>
-                            <div>
-                                <h4>Documents</h4>
-                                <div style="display:flex;gap:0.5rem;margin-top:0.3rem;flex-wrap:wrap">
-                                    <a href="Ankit_Jinkwan_CV.docx.docx" download class="btn btn-outline" style="padding:0.4rem 0.9rem;font-size:0.8rem;border-radius:6px"><i class="fas fa-file-word"></i> CV</a>
-                                    <a href="Ankit_Jinkwan_Resume.pdf.pdf" download class="btn btn-primary" style="padding:0.4rem 0.9rem;font-size:0.8rem;border-radius:6px"><i class="fas fa-file-pdf"></i> Resume</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/in/ankit-jinkwan-a16882288/" target="_blank" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://github.com/ankitjhinkwan" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
-                        <a href="mailto:ankitjhinkwan9@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-kaggle"></i></a>
-                    </div>
-                </div>
-                <div class="contact-right">
-                    <form class="contact-form" id="contactForm" novalidate>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="contactName">Your Name</label>
-                                <input type="text" id="contactName" name="name" placeholder="John Doe" required>
-                                <span class="form-error" id="nameError"></span>
-                            </div>
-                            <div class="form-group">
-                                <label for="contactEmail">Your Email</label>
-                                <input type="email" id="contactEmail" name="email" placeholder="john@example.com" required>
-                                <span class="form-error" id="emailError"></span>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="contactSubject">Subject</label>
-                            <input type="text" id="contactSubject" name="subject" placeholder="Project Inquiry / Collaboration / Just saying hi!">
-                        </div>
-                        <div class="form-group">
-                            <label for="contactMessage">Message</label>
-                            <textarea id="contactMessage" name="message" placeholder="Tell me about your project..." required></textarea>
-                            <span class="form-error" id="messageError"></span>
-                        </div>
-                        <button type="submit" class="btn btn-primary" id="submitBtn">
-                            <span id="btnText"><i class="fas fa-paper-plane"></i> Send Message</span>
-                            <span id="btnLoading" style="display:none"><i class="fas fa-spinner fa-spin"></i> Sending...</span>
-                        </button>
-                        <div id="formStatus" class="form-status"></div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== FOOTER ===== -->
-    <footer>
-        <div class="container">
-            <div class="footer-top">
-                <a href="#hero" class="footer-logo">Ankit<span>.</span></a>
-                <p>Turning data into decisions that matter.</p>
-                <ul class="footer-links">
-                    <li><a href="#hero"     class="footer-link">Home</a></li>
-                    <li><a href="#about"    class="footer-link">About</a></li>
-                    <li><a href="#skills"   class="footer-link">Skills</a></li>
-                    <li><a href="#projects" class="footer-link">Projects</a></li>
-                    <li><a href="#contact"  class="footer-link">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-bottom">
-                <p class="copyright">© <span id="footerYear"></span> Ankit Jinkwan. All rights reserved.</p>
-                <p class="footer-made">Made with <i class="fas fa-heart" style="color:#ef4444"></i> in Uttarakhand, India</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Back to Top -->
-    <a href="#hero" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
-
-    <!-- Toast Container -->
-    <div class="toast-container" id="toastContainer"></div>
-
-    <!-- ===== PROJECT MODAL ===== -->
-    <div class="modal" id="projectModal">
-        <div class="modal-content">
-            <button class="modal-close" id="modalClose"><i class="fas fa-times"></i></button>
-            <div class="modal-body">
-                <div class="modal-img"><img src="" alt="" id="modalImg"></div>
-                <div class="modal-info">
-                    <span class="project-category" id="modalCategory"></span>
-                    <h2 id="modalTitle"></h2>
-                    <p id="modalDesc"></p>
-                    <div id="modalTags" class="project-tags" style="margin-bottom:1rem"></div>
-                    <div class="modal-features" id="modalFeatures"></div>
-                    <div class="modal-footer">
-                        <a href="#" class="btn btn-primary" id="modalLiveLink"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                        <a href="#" class="btn btn-outline" id="modalGithubLink" target="_blank"><i class="fab fa-github"></i> Source Code</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+<section id="hero">
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+  <div class="particles-wrap" id="pWrap"></div>
+  <div class="container">
+    <div class="hero-wrap">
+      <div class="hero-badge"><span class="b-dot"></span> Open to opportunities</div>
+      <h1>Ankit <span class="text-gradient">Jinkwan</span></h1>
+      <div class="typed-wrap"><span id="typedEl"></span><span class="caret">|</span></div>
+      <p class="hero-desc">I turn raw data into meaningful insights and intelligent solutions. Based in Uttarakhand, India — open to remote opportunities worldwide.</p>
+      <div class="hero-btns">
+        <a href="#projects" class="btn btn-primary"><i class="fas fa-rocket"></i> View My Work</a>
+        <a href="#contact" class="btn btn-outline"><i class="fas fa-paper-plane"></i> Hire Me</a>
+        <a href="Ankit_Jinkwan_Resume.pdf.pdf" download class="btn btn-ghost"><i class="fas fa-file-pdf"></i> Resume</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-n">6+</span><span class="stat-l">Projects</span></div>
+        <div class="stat-sep"></div>
+        <div class="stat"><span class="stat-n">2+</span><span class="stat-l">Yrs Exp.</span></div>
+        <div class="stat-sep"></div>
+        <div class="stat"><span class="stat-n">92%</span><span class="stat-l">Best Acc.</span></div>
+        <div class="stat-sep"></div>
+        <div class="stat"><span class="stat-n">100%</span><span class="stat-l">Dedication</span></div>
+      </div>
     </div>
+  </div>
+  <div class="hero-scroll"><span>scroll</span><div class="scroll-bar"></div></div>
+</section>
 
-    <script src="main.js"></script>
+<section id="about">
+  <div class="container">
+    <div class="about-grid reveal">
+      <div class="about-img-area">
+        <div class="about-frame">
+          <img src="https://placehold.co/600x800/091525/13d0d0?text=Ankit+Jinkwan" alt="Ankit Jinkwan">
+          <div class="about-nameplate"><strong>Ankit Jinkwan</strong><span>Data Scientist & ML Engineer</span></div>
+        </div>
+        <div class="exp-badge"><span class="n">2+</span><span class="l">Years Exp.</span></div>
+      </div>
+      <div class="about-content">
+        <span class="section-tag">About Me</span>
+        <h2>Turning <span class="text-gradient">data into decisions</span> that matter</h2>
+        <p>I'm a Data Scientist and AI/ML Engineer based in Uttarakhand, India, with a passion for building end-to-end machine learning pipelines that solve real problems.</p>
+        <p>Currently pursuing B.Tech in Computer Science (AI/ML specialisation) at Shivalik College, Dehradun. When I'm not building models, I'm on Kaggle, reading ML research, or hiking in the Himalayas.</p>
+        <div class="highlights">
+          <div class="hl-item"><i class="fas fa-check-circle"></i> End-to-End ML Pipelines</div>
+          <div class="hl-item"><i class="fas fa-check-circle"></i> 6+ Completed Projects</div>
+          <div class="hl-item"><i class="fas fa-check-circle"></i> Deep Learning & NLP</div>
+          <div class="hl-item"><i class="fas fa-check-circle"></i> Data Visualisation</div>
+          <div class="hl-item"><i class="fas fa-check-circle"></i> Statistical Analysis</div>
+          <div class="hl-item"><i class="fas fa-check-circle"></i> Open to Remote Work</div>
+        </div>
+        <div class="about-btns">
+          <a href="Ankit_Jinkwan_CV.docx.docx" download class="btn btn-primary"><i class="fas fa-file-word"></i> Download CV</a>
+          <a href="Ankit_Jinkwan_Resume.pdf.pdf" download class="btn btn-outline"><i class="fas fa-file-pdf"></i> Download Resume</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="container">
+    <div class="reveal" style="text-align:center"><span class="section-tag">Expertise</span><h2 class="section-title">My Skills</h2><p class="section-sub">Technologies and tools I work with daily</p></div>
+    <div class="skills-grid reveal">
+      <div class="skill-card"><h3><i class="fas fa-brain"></i> Machine Learning</h3>
+        <div class="s-item" data-s="90"><div class="s-info"><span>Scikit-learn</span><span>90%</span></div><div class="s-bar"><div class="s-fill"></div></div></div>
+        <div class="s-item" data-s="85"><div class="s-info"><span>TensorFlow / Keras</span><span>85%</span></div><div class="s-bar"><div class="s-fill"></div></div></div>
+        <div class="s-item" data-s="80"><div class="s-info"><span>PyTorch</span><span>80%</span></div><div class="s-bar"><div class="s-fill"></div></div></div>
+        <div class="s-item" data-s="88"><div class="s-info"><span>XGBoost / LightGBM</span><span>88%</span></div><div class="s-bar"><div class="s-fill"></div></div></div>
+      </div>
+      <div class="skill-card"><h3><i class="fas fa-chart-bar"></i> Data Analysis</h3>
+        <div class="s-item" data-s="95"><div class="s-info"><span>Python (Pandas / NumPy)</span><span>95%</span></div><div class="s-bar"><div class="s-fill"></div></div></div>
+        <div class="s-item" data-s="85"><div class="s-info"><span>SQL</span><span>85%</span></div><div class="s-bar"><div class="s-fill"></div></div></div>
+        <div class="s-item" data-s="80"><div class="s-info"><span>R</span><span>80%</span></div><div class="s-bar"><div class="s-fill"></div></div></div>
+        <div class="s-item" data-s="82"><div class="s-info"><span>Statistics & Probability</span><span>82%</span></div><div class="s-bar"><div class="s-fill"></div></div></div>
+      </div>
+      <div class="skill-card"><h3><i class="fas fa-chart-pie"></i> Visualisation</h3>
+        <div class="s-item" data-s="90"><div class="s-info"><span>Matplotlib / Seaborn</span><span>90%</span></div><div class="s-bar"><div class="s-fill"></div></div></div>
+        <div class="s-item" data-s="85"><div class="s-info"><span>Power BI / Tableau</span><span>85%</span></div><div class="s-bar"><div class="s-fill"></div></div></div>
+        <div class="s-item" data-s="78"><div class="s-info"><span>Plotly / Dash</span><span>78%</span></div><div class="s-bar"><div class="s-fill"></div></div></div>
+        <div class="s-item" data-s="80"><div class="s-info"><span>Streamlit</span><span>80%</span></div><div class="s-bar"><div class="s-fill"></div></div></div>
+      </div>
+      <div class="skill-card"><h3><i class="fas fa-tools"></i> Tools & Cloud</h3>
+        <div class="s-item" data-s="90"><div class="s-info"><span>Git / GitHub</span><span>90%</span></div><div class="s-bar"><div class="s-fill"></div></div></div>
+        <div class="s-item" data-s="78"><div class="s-info"><span>AWS / GCP Basics</span><span>78%</span></div><div class="s-bar"><div class="s-fill"></div></div></div>
+        <div class="s-item" data-s="82"><div class="s-info"><span>Jupyter / VS Code</span><span>82%</span></div><div class="s-bar"><div class="s-fill"></div></div></div>
+        <div class="s-item" data-s="75"><div class="s-info"><span>Docker / Linux</span><span>75%</span></div><div class="s-bar"><div class="s-fill"></div></div></div>
+      </div>
+    </div>
+    <div class="reveal"><p class="tech-stack-title">Tech Stack</p>
+      <div class="tech-chips">
+        <div class="chip"><i class="fab fa-python"></i><span>Python</span></div>
+        <div class="chip"><i class="fas fa-brain"></i><span>TensorFlow</span></div>
+        <div class="chip"><i class="fas fa-database"></i><span>SQL</span></div>
+        <div class="chip"><i class="fas fa-chart-pie"></i><span>Power BI</span></div>
+        <div class="chip"><i class="fas fa-book-open"></i><span>Jupyter</span></div>
+        <div class="chip"><i class="fas fa-table"></i><span>Pandas</span></div>
+        <div class="chip"><i class="fab fa-git-alt"></i><span>Git</span></div>
+        <div class="chip"><i class="fab fa-aws"></i><span>AWS</span></div>
+        <div class="chip"><i class="fas fa-fire"></i><span>PyTorch</span></div>
+        <div class="chip"><i class="fas fa-chart-line"></i><span>Plotly</span></div>
+        <div class="chip"><i class="fas fa-robot"></i><span>BERT</span></div>
+        <div class="chip"><i class="fab fa-docker"></i><span>Docker</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container">
+    <div class="reveal" style="text-align:center"><span class="section-tag">Portfolio</span><h2 class="section-title">My Projects</h2><p class="section-sub">Data science & machine learning work</p></div>
+    <div class="filter-row reveal">
+      <button class="f-btn active" data-f="all">All</button>
+      <button class="f-btn" data-f="ml">ML Models</button>
+      <button class="f-btn" data-f="eda">EDA</button>
+      <button class="f-btn" data-f="viz">Visualisation</button>
+      <button class="f-btn" data-f="nlp">NLP</button>
+    </div>
+    <div class="proj-grid reveal" id="projGrid">
+      <div class="proj-card" data-cat="ml" onclick="openModal(1)">
+        <div class="proj-thumb"><img src="https://placehold.co/800x450/091525/13d0d0?text=Customer+Churn+Prediction" alt=""><span class="proj-badge b-teal">ML Model</span>
+          <div class="proj-overlay">
+            <a href="#" onclick="event.stopPropagation();openModal(1)"><i class="fas fa-eye"></i></a>
+            <a href="https://github.com/ankitjhinkwan/customer-churn-prediction" target="_blank" onclick="event.stopPropagation()"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+        <div class="proj-body"><div class="proj-meta"><span class="proj-cat">ML Model</span><span class="proj-yr">2024</span></div><h3>Customer Churn Prediction</h3><p>Binary classification predicting telecom churn with 92% accuracy using Random Forest and SHAP explainability.</p><div class="tags"><span class="tag">Python</span><span class="tag">Random Forest</span><span class="tag">SHAP</span></div></div>
+      </div>
+      <div class="proj-card" data-cat="viz" onclick="openModal(2)">
+        <div class="proj-thumb"><img src="https://placehold.co/800x450/091525/13d0d0?text=Sales+Analytics+Dashboard" alt=""><span class="proj-badge b-teal">Visualisation</span>
+          <div class="proj-overlay">
+            <a href="#" onclick="event.stopPropagation();openModal(2)"><i class="fas fa-eye"></i></a>
+            <a href="https://github.com/ankitjhinkwan/sales-analytics-dashboard" target="_blank" onclick="event.stopPropagation()"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+        <div class="proj-body"><div class="proj-meta"><span class="proj-cat">Visualisation</span><span class="proj-yr">2024</span></div><h3>Sales Analytics Dashboard</h3><p>Interactive Power BI dashboard visualising 3 years of retail sales with KPIs and regional breakdowns.</p><div class="tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">SQL</span></div></div>
+      </div>
+      <div class="proj-card" data-cat="ml" onclick="openModal(3)">
+        <div class="proj-thumb"><img src="https://placehold.co/800x450/091525/13d0d0?text=House+Price+Prediction" alt=""><span class="proj-badge b-teal">ML Model</span>
+          <div class="proj-overlay">
+            <a href="#" onclick="event.stopPropagation();openModal(3)"><i class="fas fa-eye"></i></a>
+            <a href="https://github.com/ankitjhinkwan/house-price-prediction" target="_blank" onclick="event.stopPropagation()"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+        <div class="proj-body"><div class="proj-meta"><span class="proj-cat">ML Model</span><span class="proj-yr">2024</span></div><h3>House Price Prediction</h3><p>XGBoost regression with advanced feature engineering on Ames Housing dataset. Kaggle top 10% RMSE.</p><div class="tags"><span class="tag">XGBoost</span><span class="tag">Scikit-learn</span><span class="tag">SHAP</span></div></div>
+      </div>
+      <div class="proj-card" data-cat="eda" onclick="openModal(4)">
+        <div class="proj-thumb"><img src="https://placehold.co/800x450/091525/ff4060?text=Netflix+Content+Analysis" alt=""><span class="proj-badge b-red">EDA</span>
+          <div class="proj-overlay">
+            <a href="#" onclick="event.stopPropagation();openModal(4)"><i class="fas fa-eye"></i></a>
+            <a href="https://github.com/ankitjhinkwan/netflix-content-analysis" target="_blank" onclick="event.stopPropagation()"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+        <div class="proj-body"><div class="proj-meta"><span class="proj-cat">EDA</span><span class="proj-yr">2024</span></div><h3>Netflix Content Analysis</h3><p>Deep-dive EDA into Netflix's catalogue — genre trends, release patterns and regional distribution.</p><div class="tags"><span class="tag">Pandas</span><span class="tag">Plotly</span><span class="tag">Matplotlib</span></div></div>
+      </div>
+      <div class="proj-card" data-cat="nlp" onclick="openModal(5)">
+        <div class="proj-thumb"><img src="https://placehold.co/800x450/091525/c8dae8?text=Twitter+Sentiment+Analysis" alt=""><span class="proj-badge b-grey">NLP</span>
+          <div class="proj-overlay">
+            <a href="#" onclick="event.stopPropagation();openModal(5)"><i class="fas fa-eye"></i></a>
+            <a href="https://github.com/ankitjhinkwan/twitter-sentiment-analysis" target="_blank" onclick="event.stopPropagation()"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+        <div class="proj-body"><div class="proj-meta"><span class="proj-cat">NLP</span><span class="proj-yr">2024</span></div><h3>Twitter Sentiment Analysis</h3><p>Fine-tuned BERT model for real-time tweet sentiment classification deployed as Streamlit dashboard.</p><div class="tags"><span class="tag">BERT</span><span class="tag">HuggingFace</span><span class="tag">Streamlit</span></div></div>
+      </div>
+      <div class="proj-card" data-cat="eda" onclick="openModal(6)">
+        <div class="proj-thumb"><img src="https://placehold.co/800x450/091525/ff4060?text=COVID-19+Data+Analysis" alt=""><span class="proj-badge b-red">EDA</span>
+          <div class="proj-overlay">
+            <a href="#" onclick="event.stopPropagation();openModal(6)"><i class="fas fa-eye"></i></a>
+            <a href="https://github.com/ankitjhinkwan/covid19-data-analysis" target="_blank" onclick="event.stopPropagation()"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+        <div class="proj-body"><div class="proj-meta"><span class="proj-cat">EDA</span><span class="proj-yr">2024</span></div><h3>COVID-19 Data Analysis</h3><p>Global pandemic EDA tracking spread timelines, vaccination rates and mortality patterns worldwide.</p><div class="tags"><span class="tag">Pandas</span><span class="tag">Seaborn</span><span class="tag">Matplotlib</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="reveal" style="text-align:center"><span class="section-tag">Get In Touch</span><h2 class="section-title">Let's Work Together</h2><p class="section-sub">Available for freelance projects and full-time roles</p></div>
+    <div class="contact-grid reveal">
+      <div class="c-info">
+        <h3>Say hello 👋</h3>
+        <p>I'm available for data science consulting, ML project work, and full-time roles. If you have an interesting project or just want to chat, I'd love to hear from you!</p>
+        <div class="c-items">
+          <div class="c-item"><div class="c-icon"><i class="fas fa-map-marker-alt"></i></div><div class="c-text"><h4>Location</h4><p>Uttarakhand, India</p></div></div>
+          <div class="c-item"><div class="c-icon"><i class="fas fa-envelope"></i></div><div class="c-text"><h4>Email</h4><a href="mailto:ankitjhinkwan9@gmail.com">ankitjhinkwan9@gmail.com</a></div></div>
+          <div class="c-item"><div class="c-icon"><i class="fas fa-phone-alt"></i></div><div class="c-text"><h4>Phone</h4><a href="tel:+919528693191">+91 9528693191</a></div></div>
+          <div class="c-item"><div class="c-icon"><i class="fas fa-clock"></i></div><div class="c-text"><h4>Availability</h4><p>Mon – Sat, 9 AM – 6 PM IST</p></div></div>
+        </div>
+        <div class="c-downloads">
+          <a href="Ankit_Jinkwan_CV.docx.docx" download class="btn btn-outline" style="font-size:.82rem;padding:.6rem 1.1rem"><i class="fas fa-file-word"></i> Download CV</a>
+          <a href="Ankit_Jinkwan_Resume.pdf.pdf" download class="btn btn-ghost" style="font-size:.82rem;padding:.6rem 1.1rem"><i class="fas fa-file-pdf"></i> Download Resume</a>
+        </div>
+        <div class="socials">
+          <a href="https://www.linkedin.com/in/ankit-jinkwan-a16882288/" target="_blank" class="s-btn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/ankitjhinkwan" target="_blank" class="s-btn"><i class="fab fa-github"></i></a>
+          <a href="mailto:ankitjhinkwan9@gmail.com" class="s-btn"><i class="fas fa-envelope"></i></a>
+          <a href="#" class="s-btn"><i class="fab fa-kaggle"></i></a>
+        </div>
+      </div>
+      <div class="form-card">
+        <form id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-grp"><label>Your Name</label><input type="text" id="cName" placeholder="John Doe" required><span class="form-err" id="nameErr"></span></div>
+            <div class="form-grp"><label>Your Email</label><input type="email" id="cEmail" placeholder="john@example.com" required><span class="form-err" id="emailErr"></span></div>
+          </div>
+          <div class="form-grp"><label>Subject</label><input type="text" id="cSubject" placeholder="Project Inquiry / Collaboration"></div>
+          <div class="form-grp"><label>Message</label><textarea id="cMsg" placeholder="Tell me about your project..." required></textarea><span class="form-err" id="msgErr"></span></div>
+          <button type="submit" class="btn btn-primary" id="submitBtn" style="width:100%;justify-content:center">
+            <span id="btnTxt"><i class="fas fa-paper-plane"></i> Send Message</span>
+            <span id="btnLoad" style="display:none"><i class="fas fa-spinner fa-spin"></i> Sending...</span>
+          </button>
+          <div id="fStatus" class="f-status"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="foot-inner">
+      <a href="#hero" class="foot-logo">Ankit<span>.</span></a>
+      <ul class="foot-links"><li><a href="#about">About</a></li><li><a href="#skills">Skills</a></li><li><a href="#projects">Projects</a></li><li><a href="#contact">Contact</a></li></ul>
+      <p class="foot-copy">© 2025 Ankit Jinkwan · Made with <i class="fas fa-heart" style="color:#ff4060"></i> in Uttarakhand</p>
+    </div>
+  </div>
+</footer>
+
+<a href="#hero" class="btt" id="btt"><i class="fas fa-arrow-up"></i></a>
+<div class="nav-overlay" id="navOverlay"></div>
+
+<div class="modal" id="modal">
+  <div class="modal-box">
+    <button class="m-close" id="mClose"><i class="fas fa-times"></i></button>
+    <div class="m-img"><img id="mImg" src="" alt=""></div>
+    <div class="m-content">
+      <span class="proj-cat" id="mCat"></span>
+      <h2 id="mTitle"></h2>
+      <p id="mDesc"></p>
+      <div id="mTags" class="tags" style="margin-bottom:1.2rem"></div>
+      <div id="mFeats" class="m-feats"></div>
+      <div class="m-foot">
+        <a href="#" class="btn btn-primary" id="mLive" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+        <a href="#" class="btn btn-outline" id="mGit" target="_blank"><i class="fab fa-github"></i> Source Code</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const EJS_SVC='YOUR_SERVICE_ID',EJS_TPL='YOUR_TEMPLATE_ID',EJS_KEY='YOUR_PUBLIC_KEY';
+const PROJECTS={
+  1:{cat:'ML Model',title:'Customer Churn Prediction',desc:'A binary classification model predicting telecom customer churn with 92% accuracy. Uses Random Forest with SHAP values to explain which features drive churn — enabling targeted retention strategies.',tags:['Python','Random Forest','SHAP','Scikit-learn','Seaborn','Pandas'],features:['92% Classification Accuracy','SHAP Explainability','Feature Importance Analysis','Confusion Matrix & ROC-AUC','Business Insight Reports','End-to-End ML Pipeline'],img:'https://placehold.co/800x450/091525/13d0d0?text=Customer+Churn+Prediction',live:'STREAMLIT_CHURN',github:'https://github.com/ankitjhinkwan/customer-churn-prediction'},
+  2:{cat:'Visualisation',title:'Sales Analytics Dashboard',desc:'An interactive Power BI dashboard visualising 3 years of retail sales data. Includes KPI scorecards, revenue trends, regional breakdowns and product performance metrics.',tags:['Power BI','DAX','SQL','Excel','Data Modelling'],features:['KPI Scorecards','Regional Breakdown','Year-over-Year Trends','Product Performance','DAX Measures','Drill-Through Pages'],img:'https://placehold.co/800x450/091525/13d0d0?text=Sales+Analytics+Dashboard',live:'STREAMLIT_SALES',github:'https://github.com/ankitjhinkwan/sales-analytics-dashboard'},
+  3:{cat:'ML Model',title:'House Price Prediction',desc:'Regression model predicting house prices using advanced feature engineering and XGBoost on the Ames Housing dataset. Achieved RMSE in the Kaggle top 10% with full SHAP explainability.',tags:['Python','XGBoost','Scikit-learn','Pandas','Matplotlib','SHAP'],features:['Top 10% Kaggle RMSE','Advanced Feature Engineering','Hyperparameter Tuning','Cross-Validation','SHAP Explainability','Full EDA Pipeline'],img:'https://placehold.co/800x450/091525/13d0d0?text=House+Price+Prediction',live:'STREAMLIT_HOUSE',github:'https://github.com/ankitjhinkwan/house-price-prediction'},
+  4:{cat:'EDA',title:'Netflix Content Analysis',desc:"Deep-dive EDA of Netflix's entire catalogue — uncovering genre trends, release patterns, content ratings and regional distribution across 8000+ titles.",tags:['Pandas','Plotly','Matplotlib','Python','Seaborn'],features:['Genre Trend Analysis','Release Pattern Study','Content Rating Breakdown','Regional Distribution','Interactive Plotly Charts','Time-Series Analysis'],img:'https://placehold.co/800x450/091525/ff4060?text=Netflix+Content+Analysis',live:'STREAMLIT_NETFLIX',github:'https://github.com/ankitjhinkwan/netflix-content-analysis'},
+  5:{cat:'NLP',title:'Twitter Sentiment Analysis',desc:'End-to-end NLP pipeline classifying tweet sentiments using a fine-tuned BERT model. Deployed as an interactive Streamlit dashboard for live sentiment monitoring and trend tracking.',tags:['BERT','HuggingFace','Streamlit','Python','NLP','PyTorch'],features:['BERT Fine-Tuning','Real-Time Classification','Streamlit Dashboard','Sentiment Trend Charts','Word Cloud Visualisation','REST API Ready'],img:'https://placehold.co/800x450/091525/c8dae8?text=Twitter+Sentiment+Analysis',live:'STREAMLIT_TWITTER',github:'https://github.com/ankitjhinkwan/twitter-sentiment-analysis'},
+  6:{cat:'EDA',title:'COVID-19 Data Analysis',desc:'Comprehensive EDA of global COVID-19 trends — vaccination rates, mortality patterns, spread timelines and country-level responses with automated data cleaning pipelines.',tags:['Pandas','Seaborn','NumPy','Matplotlib','Jupyter','Python'],features:['Global Trend Analysis','Vaccination Rate Tracking','Mortality Pattern Study','Country Comparisons','Automated Data Pipeline','Time-Series Visualisations'],img:'https://placehold.co/800x450/091525/ff4060?text=COVID-19+Data+Analysis',live:'STREAMLIT_COVID',github:'https://github.com/ankitjhinkwan/covid19-data-analysis'}
+};
+document.addEventListener('DOMContentLoaded',()=>{initCursor();initParticles();initTyped();initHeader();initMobileMenu();initBackToTop();initReveal();initSkillBars();initFilter();initModal();initContactForm()});
+function initCursor(){const dot=document.getElementById('cDot'),ring=document.getElementById('cRing');if(!dot||!ring)return;let mx=0,my=0,rx=0,ry=0;document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px'});function ar(){rx+=(mx-rx)*.14;ry+=(my-ry)*.14;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(ar)}ar();document.querySelectorAll('a,button,.proj-card,.chip,.f-btn').forEach(el=>{el.addEventListener('mouseenter',()=>ring.classList.add('hov'));el.addEventListener('mouseleave',()=>ring.classList.remove('hov'))})}
+function initParticles(){const w=document.getElementById('pWrap');if(!w)return;for(let i=0;i<28;i++){const p=document.createElement('div');p.classList.add('p-dot');p.style.cssText=`left:${Math.random()*100}%;width:${Math.random()*3+1.5}px;height:${Math.random()*3+1.5}px;animation-duration:${Math.random()*16+12}s;animation-delay:${Math.random()*12}s;opacity:${Math.random()*.4+.08};`;w.appendChild(p)}}
+function initTyped(){const el=document.getElementById('typedEl');if(!el)return;const ph=['Data Scientist','ML Engineer','Data Analyst','Insight Explorer','Problem Solver'];let pi=0,ci=0,dl=false;function t(){const c=ph[pi];el.textContent=dl?c.slice(0,ci--):c.slice(0,ci++);let d=dl?55:105;if(!dl&&ci===c.length+1){d=2000;dl=true}else if(dl&&ci<0){dl=false;ci=0;pi=(pi+1)%ph.length;d=350}setTimeout(t,d)}setTimeout(t,800)}
+function initHeader(){const h=document.getElementById('header'),ls=document.querySelectorAll('.nav-link'),ss=document.querySelectorAll('section[id]');window.addEventListener('scroll',()=>{h.classList.toggle('scrolled',window.scrollY>50);const p=window.scrollY+140;ss.forEach(s=>{if(p>=s.offsetTop&&p<s.offsetTop+s.offsetHeight){ls.forEach(l=>{l.classList.remove('active');if(l.getAttribute('href')==='#'+s.id)l.classList.add('active')})}})},{passive:true})}
+function initMobileMenu(){const b=document.getElementById('menuBtn'),n=document.getElementById('navList'),o=document.getElementById('navOverlay');function c(){n.classList.remove('open');o.classList.remove('on');b.innerHTML='<i class="fas fa-bars"></i>';document.body.style.overflow=''}b.addEventListener('click',()=>{n.classList.contains('open')?c():(n.classList.add('open'),o.classList.add('on'),(b.innerHTML='<i class="fas fa-times"></i>'),(document.body.style.overflow='hidden'))});o.addEventListener('click',c);document.querySelectorAll('.nav-link').forEach(l=>l.addEventListener('click',c))}
+function initBackToTop(){const b=document.getElementById('btt');window.addEventListener('scroll',()=>b.classList.toggle('on',window.scrollY>420),{passive:true})}
+function initReveal(){const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target)}})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=`${(i%4)*.08}s`;obs.observe(el)})}
+function initSkillBars(){const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){const f=e.target.querySelector('.s-fill'),p=e.target.dataset.s;if(f&&p)setTimeout(()=>{f.style.width=p+'%'},120);obs.unobserve(e.target)}})},{threshold:.5});document.querySelectorAll('.s-item').forEach(i=>obs.observe(i))}
+function initFilter(){const bs=document.querySelectorAll('.f-btn'),cs=document.querySelectorAll('.proj-card');bs.forEach(b=>{b.addEventListener('click',()=>{bs.forEach(x=>x.classList.remove('active'));b.classList.add('active');const f=b.dataset.f;cs.forEach(c=>{const s=f==='all'||c.dataset.cat===f;if(s){c.style.display='flex';setTimeout(()=>{c.style.opacity='1';c.style.transform='translateY(0)'},10)}else{c.style.opacity='0';c.style.transform='translateY(20px)';setTimeout(()=>{c.style.display='none'},320)}})})})}
+function initModal(){const m=document.getElementById('modal'),cl=document.getElementById('mClose');function cm(){m.classList.remove('active');document.body.style.overflow=''}cl.addEventListener('click',cm);m.addEventListener('click',e=>{if(e.target===m)cm()});document.addEventListener('keydown',e=>{if(e.key==='Escape')cm()})}
+function openModal(id){const d=PROJECTS[id];if(!d)return;document.getElementById('mCat').textContent=d.cat;document.getElementById('mTitle').textContent=d.title;document.getElementById('mDesc').textContent=d.desc;document.getElementById('mImg').src=d.img;document.getElementById('mImg').alt=d.title;document.getElementById('mLive').href=d.live;document.getElementById('mGit').href=d.github;document.getElementById('mTags').innerHTML=d.tags.map(t=>`<span class="tag">${t}</span>`).join('');document.getElementById('mFeats').innerHTML=`<h4>Key Features</h4><ul>${d.features.map(f=>`<li>${f}</li>`).join('')}</ul>`;document.getElementById('modal').classList.add('active');document.body.style.overflow='hidden'}
+function initContactForm(){const form=document.getElementById('contactForm');if(!form)return;const fs={name:{el:document.getElementById('cName'),err:document.getElementById('nameErr'),v:s=>s.trim().length>=2?'':'Name must be at least 2 chars.'},email:{el:document.getElementById('cEmail'),err:document.getElementById('emailErr'),v:s=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s)?'':'Enter a valid email.'},message:{el:document.getElementById('cMsg'),err:document.getElementById('msgErr'),v:s=>s.trim().length>=10?'':'Message too short.'}};Object.values(fs).forEach(({el,err,v})=>{el.addEventListener('input',()=>{const m=v(el.value);err.textContent=m;el.classList.toggle('err',!!m)})});form.addEventListener('submit',async e=>{e.preventDefault();let he=false;Object.values(fs).forEach(({el,err,v})=>{const m=v(el.value);err.textContent=m;el.classList.toggle('err',!!m);if(m)he=true});if(he)return;const btn=document.getElementById('submitBtn'),tx=document.getElementById('btnTxt'),ld=document.getElementById('btnLoad'),st=document.getElementById('fStatus');tx.style.display='none';ld.style.display='inline-flex';btn.disabled=true;st.className='f-status';const p={from_name:fs.name.el.value.trim(),from_email:fs.email.el.value.trim(),subject:document.getElementById('cSubject').value.trim()||'Portfolio Contact',message:fs.message.el.value.trim()};try{if(EJS_SVC==='YOUR_SERVICE_ID')throw new Error('nc');await emailjs.send(EJS_SVC,EJS_TPL,p,EJS_KEY);st.textContent="✅ Message sent! I'll reply within 24 hours.";st.className='f-status ok';form.reset()}catch(err){window.location.href=`mailto:ankitjhinkwan9@gmail.com?subject=${encodeURIComponent(p.subject)}&body=${encodeURIComponent('From: '+p.from_name+'\n\n'+p.message)}`;st.textContent='Opening your email app...';st.className='f-status ok'}finally{tx.style.display='inline-flex';ld.style.display='none';btn.disabled=false}})}
+</script>
 </body>
 </html>
