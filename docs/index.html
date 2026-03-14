@@ -7,65 +7,54 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root{
-  --teal:#13d0d0;--teal-glow:rgba(19,208,208,.12);
-  --navy:#050d1a;--navy-card:#091525;--navy-border:#0f2040;
-  --slate:#8faabf;--slate-light:#c8dae8;--white:#eef7ff;--red:#ff4060;
-  --gradient:linear-gradient(135deg,#13d0d0,#0ea8a8);
-  --fd:'Syne',sans-serif;--fb:'DM Sans',sans-serif;--fm:'DM Mono',monospace;
-  --br:14px;--tr:all .3s cubic-bezier(.4,0,.2,1)
-}
+:root{--teal:#00d4aa;--teal-glow:rgba(0,212,170,.1);--purple:#6366f1;--purple-glow:rgba(99,102,241,.1);--pink:#888888;--pink-glow:rgba(136,136,136,.08);--gold:#00d4aa;--gold-glow:rgba(0,212,170,.1);--navy:#0a0a0a;--navy-card:#111111;--navy-border:#252525;--slate:#666666;--slate-light:#aaaaaa;--white:#f0f0f0;--red:#ef4444;--gradient:linear-gradient(135deg,#00d4aa,#6366f1);--gradient2:linear-gradient(135deg,#00d4aa,#00b891);--fd:'Syne',sans-serif;--fb:'DM Sans',sans-serif;--fm:'DM Mono',monospace;--br:14px;--tr:all .3s cubic-bezier(.4,0,.2,1)}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{background:var(--navy);color:var(--slate-light);font-family:var(--fb);line-height:1.7;overflow-x:hidden;cursor:none}
-::-webkit-scrollbar{width:3px}::-webkit-scrollbar-track{background:var(--navy)}::-webkit-scrollbar-thumb{background:var(--teal);border-radius:2px}
-body::after{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(19,208,208,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(19,208,208,.025) 1px,transparent 1px);background-size:56px 56px;pointer-events:none;z-index:0}
+body{background:#0a0a0a;color:#cccccc;font-family:var(--fb);line-height:1.7;overflow-x:hidden;cursor:none}
+::-webkit-scrollbar{width:3px}::-webkit-scrollbar-track{background:#0a0a0a}::-webkit-scrollbar-thumb{background:linear-gradient(var(--purple),var(--teal));border-radius:2px}
+body::after{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(255,255,255,.015) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.0159,208,208,.025) 1px,transparent 1px);background-size:56px 56px;pointer-events:none;z-index:0}
 #cDot{width:7px;height:7px;background:var(--teal);border-radius:50%;position:fixed;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);top:0;left:0}
-#cRing{width:32px;height:32px;border:1.5px solid rgba(19,208,208,.55);border-radius:50%;position:fixed;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:all .14s ease;top:0;left:0}
-#cRing.hov{transform:translate(-50%,-50%) scale(1.8);border-color:var(--teal)}
+#cRing{width:32px;height:32px;border:1.5px solid rgba(0,212,170,.6);border-radius:50%;position:fixed;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:all .14s ease;top:0;left:0}
+#cRing.hov{transform:translate(-50%,-50%) scale(1.8);border-color:#ffffff}
 .container{max-width:1180px;margin:0 auto;padding:0 2rem}
 section{position:relative;z-index:2;padding:96px 0}
 h1,h2,h3,h4{font-family:var(--fd);color:var(--white)}
-.tg{background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.stag{display:inline-flex;align-items:center;font-family:var(--fm);font-size:.72rem;color:var(--teal);background:var(--teal-glow);border:1px solid rgba(19,208,208,.3);border-radius:4px;padding:.25rem .75rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.9rem}
+.tg{background:linear-gradient(135deg,#00d4aa,#ffffff,#00d4aa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.stag{display:inline-flex;align-items:center;font-family:var(--fm);font-size:.72rem;color:var(--purple);background:var(--teal-glow);border:1px solid rgba(19,208,208,.3);border-radius:4px;padding:.25rem .75rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.9rem}
 .stitle{font-size:clamp(2rem,4vw,2.8rem);font-weight:800;text-align:center;margin-bottom:.6rem}
 .ssub{text-align:center;color:var(--slate);margin-bottom:3.5rem}
 .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.7rem 1.6rem;border-radius:8px;font-family:var(--fd);font-weight:600;font-size:.88rem;text-decoration:none;border:none;cursor:pointer;transition:var(--tr)}
-.bp{background:var(--gradient);color:var(--navy);box-shadow:0 4px 20px rgba(19,208,208,.3)}
-.bp:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(19,208,208,.45)}
+.bp{background:linear-gradient(135deg,#00d4aa,#ffffff);color:#000000;box-shadow:0 4px 20px rgba(0,212,170,.3)}
+.bp:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,212,170,.4)}
 .bo{background:transparent;color:var(--teal);border:1.5px solid var(--teal)}
 .bo:hover{background:var(--teal-glow);transform:translateY(-2px)}
 .bg2{background:var(--navy-card);color:var(--slate-light);border:1px solid var(--navy-border)}
 .bg2:hover{border-color:var(--teal);color:var(--teal);transform:translateY(-2px)}
-
-/* HEADER */
 #hdr{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1.1rem 0;transition:var(--tr)}
-#hdr.sc{background:rgba(5,13,26,.93);backdrop-filter:blur(20px);border-bottom:1px solid var(--navy-border);padding:.75rem 0}
+#hdr.sc{background:rgba(0,0,0,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--navy-border);padding:.75rem 0}
 .hi{display:flex;align-items:center;justify-content:space-between}
 .logo{font-family:var(--fd);font-weight:800;font-size:1.55rem;color:var(--white);text-decoration:none}
-.logo span{color:var(--teal)}
+.logo span{color:#00d4aa}
 .navul{display:flex;align-items:center;gap:.2rem;list-style:none}
 .navlink{font-family:var(--fm);font-size:.8rem;color:var(--slate);text-decoration:none;padding:.45rem .85rem;border-radius:6px;transition:var(--tr)}
 .navlink:hover,.navlink.active{color:var(--teal);background:var(--teal-glow)}
 .navres{font-family:var(--fd);font-weight:600;font-size:.82rem;color:var(--navy);background:var(--gradient);padding:.45rem 1rem;border-radius:6px;text-decoration:none;transition:var(--tr)}
 .navres:hover{transform:translateY(-1px);box-shadow:0 4px 18px rgba(19,208,208,.35)}
 .mbtn{display:none;background:none;border:1px solid var(--navy-border);color:var(--teal);width:38px;height:38px;border-radius:8px;cursor:pointer;align-items:center;justify-content:center;font-size:1rem}
-
-/* HERO */
 #hero{min-height:100vh;display:flex;align-items:center;padding:0;position:relative;overflow:hidden}
 .orb{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none;animation:drift 10s ease-in-out infinite}
-.o1{width:640px;height:640px;background:radial-gradient(circle,rgba(19,208,208,.07),transparent 70%);top:-200px;right:-100px}
-.o2{width:440px;height:440px;background:radial-gradient(circle,rgba(19,208,208,.04),transparent 70%);bottom:-80px;left:-100px;animation-delay:-5s;animation-direction:reverse}
+.o1{width:640px;height:640px;background:radial-gradient(circle,rgba(0,212,170,.06),transparent 70%);top:-200px;right:-100px}
+.o2{width:440px;height:440px;background:radial-gradient(circle,rgba(255,255,255,.03),transparent 70%);bottom:-80px;left:-100px;animation-delay:-5s;animation-direction:reverse}
 @keyframes drift{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-28px) scale(1.04)}}
 #pw{position:absolute;inset:0;pointer-events:none}
 .pdot{position:absolute;border-radius:50%;background:var(--teal);animation:prise linear infinite;bottom:-8px}
 @keyframes prise{to{transform:translateY(-105vh);opacity:0}}
 .hw{position:relative;z-index:2;max-width:800px}
 .hbadge{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--fm);font-size:.76rem;color:var(--teal);background:var(--teal-glow);border:1px solid rgba(19,208,208,.28);border-radius:100px;padding:.3rem 1rem;margin-bottom:1.4rem}
-.bdot{width:6px;height:6px;background:var(--teal);border-radius:50%;animation:pdotanim 2s infinite}
+.bdot{width:6px;height:6px;background:var(--purple);border-radius:50%;animation:pdotanim 2s infinite}
 @keyframes pdotanim{0%,100%{opacity:1}50%{opacity:.25}}
 #hero h1{font-size:clamp(3rem,7vw,5.4rem);font-weight:800;line-height:1.06;margin-bottom:1rem}
-.typewrap{font-family:var(--fm);font-size:clamp(.95rem,2.2vw,1.3rem);color:var(--teal);margin-bottom:1.4rem;min-height:2rem}
+.typewrap{font-family:var(--fm);font-size:clamp(.95rem,2.2vw,1.3rem);color:#00d4aa;margin-bottom:1.4rem;min-height:2rem}
 .typewrap::before{content:'> ';opacity:.4}
 .caret{animation:blink 1s infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
@@ -79,17 +68,15 @@ h1,h2,h3,h4{font-family:var(--fd);color:var(--white)}
 .hscroll{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.4rem;color:var(--slate);font-size:.72rem;font-family:var(--fm)}
 .scrollbar{width:1px;height:48px;background:linear-gradient(to bottom,var(--teal),transparent);animation:scrollanim 2s infinite}
 @keyframes scrollanim{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
-
-/* ABOUT */
 .aboutgrid{display:grid;grid-template-columns:1fr 1.55fr;gap:5rem;align-items:center}
 .aboutimgarea{position:relative}
 .aboutframe{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:3/4}
 .aboutframe img{width:100%;height:100%;object-fit:cover}
 .aboutframe::before{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(to bottom,transparent 55%,rgba(5,13,26,.85))}
-.aboutframe::after{content:'';position:absolute;inset:-2px;z-index:-1;background:var(--gradient);border-radius:20px;opacity:.35}
+.aboutframe::after{content:'';position:absolute;inset:-2px;z-index:-1;background:linear-gradient(135deg,#00d4aa,#ffffff,#00d4aa);border-radius:20px;opacity:.25}
 .nameplate{position:absolute;bottom:1.2rem;left:50%;transform:translateX(-50%);background:rgba(5,13,26,.88);backdrop-filter:blur(12px);border:1px solid var(--navy-border);border-radius:10px;padding:.65rem 1.1rem;z-index:2;text-align:center;width:calc(100% - 2rem)}
 .nameplate strong{display:block;font-family:var(--fd);font-size:1.05rem;color:var(--white)}
-.nameplate span{font-size:.75rem;color:var(--teal);font-family:var(--fm)}
+.nameplate span{font-size:.75rem;color:#00d4aa;font-family:var(--fm)}
 .expbadge{position:absolute;top:-1rem;right:-1rem;background:var(--gradient);color:var(--navy);width:76px;height:76px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:var(--fd);font-weight:800;box-shadow:0 4px 20px rgba(19,208,208,.4);z-index:3}
 .expbadge .en{font-size:1.35rem;line-height:1}.expbadge .el{font-size:.5rem;text-align:center;line-height:1.3}
 .aboutcontent h2{font-size:clamp(1.7rem,2.8vw,2.4rem);margin-bottom:1.1rem}
@@ -98,9 +85,7 @@ h1,h2,h3,h4{font-family:var(--fd);color:var(--white)}
 .hlitem{display:flex;align-items:center;gap:.55rem;font-size:.87rem;color:var(--slate-light)}
 .hlitem i{color:var(--teal);font-size:.78rem;flex-shrink:0}
 .aboutbtns{display:flex;gap:.85rem;flex-wrap:wrap}
-
-/* SKILLS */
-#skills{background:linear-gradient(180deg,var(--navy) 0%,var(--navy-card) 40%,var(--navy) 100%)}
+#skills{background:linear-gradient(180deg,#000 0%,#0d0d0d 40%,#000 100%)}
 .skillsgrid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:3.5rem}
 .skillcard{background:var(--navy-card);border:1px solid var(--navy-border);border-radius:var(--br);padding:1.8rem;transition:var(--tr)}
 .skillcard:hover{border-color:rgba(19,208,208,.3);transform:translateY(-3px)}
@@ -111,21 +96,18 @@ h1,h2,h3,h4{font-family:var(--fd);color:var(--white)}
 .skillinfo span:first-child{color:var(--slate-light)}.skillinfo span:last-child{color:var(--teal);font-family:var(--fm);font-size:.76rem}
 .skillbar{height:4px;background:var(--navy-border);border-radius:2px;overflow:hidden}
 .skillfill{height:100%;background:var(--gradient);border-radius:2px;width:0;transition:width 1.3s cubic-bezier(.4,0,.2,1)}
-.techttitle{text-align:center;font-family:var(--fm);font-size:.75rem;color:var(--slate);text-transform:uppercase;letter-spacing:.1em;margin-bottom:1.4rem}
+.techtitle{text-align:center;font-family:var(--fm);font-size:.75rem;color:var(--slate);text-transform:uppercase;letter-spacing:.1em;margin-bottom:1.4rem}
 .chipsgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(86px,1fr));gap:.9rem}
-.chip{background:var(--navy-card);border:1px solid var(--navy-border);border-radius:10px;padding:.8rem .4rem;text-align:center;transition:var(--tr);cursor:default}
+.chip{background:var(--navy-card);border:1px solid var(--navy-border);border-radius:10px;padding:.8rem .4rem;text-align:center;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;cursor:default;animation:chipFloat 4s ease-in-out infinite}
 .chip:hover{border-color:var(--teal);background:var(--teal-glow);transform:translateY(-4px);box-shadow:0 0 28px rgba(19,208,208,.15)}
 .chip i{font-size:1.35rem;color:var(--teal);display:block;margin-bottom:.35rem}
 .chip span{font-size:.68rem;color:var(--slate);font-family:var(--fm)}
-
-/* PROJECTS */
 .filterrow{display:flex;justify-content:center;gap:.5rem;flex-wrap:wrap;margin-bottom:2.8rem}
 .fbtn{font-family:var(--fm);font-size:.78rem;color:var(--slate);background:var(--navy-card);border:1px solid var(--navy-border);border-radius:6px;padding:.45rem 1rem;cursor:pointer;transition:var(--tr)}
 .fbtn:hover,.fbtn.active{color:var(--teal);border-color:var(--teal);background:var(--teal-glow)}
-.projgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:1.4rem}
+.projgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.4rem;align-items:start}
 .projcard{background:var(--navy-card);border:1px solid var(--navy-border);border-radius:var(--br);overflow:hidden;transition:var(--tr);cursor:pointer;display:flex;flex-direction:column}
-.projcard:hover{border-color:rgba(19,208,208,.4);transform:translateY(-6px);box-shadow:0 8px 40px rgba(0,0,0,.5),0 0 40px rgba(19,208,208,.15)}
-.projthumb{position:relative;overflow:hidden;aspect-ratio:16/9}
+.projthumb{position:relative;overflow:hidden;aspect-ratio:21/9}
 .projthumb img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
 .projcard:hover .projthumb img{transform:scale(1.07)}
 .projoverlay{position:absolute;inset:0;background:rgba(5,13,26,.82);display:flex;align-items:center;justify-content:center;gap:.7rem;opacity:0;transition:opacity .28s}
@@ -136,18 +118,16 @@ h1,h2,h3,h4{font-family:var(--fd);color:var(--white)}
 .bteal{background:rgba(19,208,208,.14);color:var(--teal);border:1px solid rgba(19,208,208,.3)}
 .bred{background:rgba(255,64,96,.13);color:#ff4060;border:1px solid rgba(255,64,96,.3)}
 .bgrey{background:rgba(148,163,184,.1);color:var(--slate-light);border:1px solid rgba(148,163,184,.2)}
-.projbody{padding:1.4rem;flex:1;display:flex;flex-direction:column}
+.projbody{padding:.9rem 1.1rem;flex:1;display:flex;flex-direction:column}
 .projmeta{display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem}
 .projcat{font-family:var(--fm);font-size:.68rem;color:var(--teal);text-transform:uppercase;letter-spacing:.08em}
 .projyr{font-size:.72rem;color:var(--slate);font-family:var(--fm)}
-.projbody h3{font-size:1.08rem;margin-bottom:.5rem;transition:color .2s}
+.projbody h3{font-size:.98rem;margin-bottom:.3rem;transition:color .2s}
 .projcard:hover .projbody h3{color:var(--teal)}
-.projbody p{font-size:.86rem;color:var(--slate);line-height:1.65;flex:1;margin-bottom:.9rem}
+.projbody p{font-size:.8rem;color:var(--slate);line-height:1.55;flex:1;margin-bottom:.6rem}
 .tags{display:flex;flex-wrap:wrap;gap:.35rem}
 .tag{font-family:var(--fm);font-size:.68rem;background:var(--navy);border:1px solid var(--navy-border);color:var(--slate);padding:.18rem .55rem;border-radius:4px}
-
-/* MODAL */
-.modal{position:fixed;inset:0;background:rgba(0,0,0,.88);backdrop-filter:blur(12px);z-index:2000;display:flex;align-items:center;justify-content:center;padding:2rem;opacity:0;pointer-events:none;transition:opacity .3s}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.95);backdrop-filter:blur(12px);z-index:2000;display:flex;align-items:center;justify-content:center;padding:2rem;opacity:0;pointer-events:none;transition:opacity .3s}
 .modal.active{opacity:1;pointer-events:all}
 .modalbox{background:var(--navy-card);border:1px solid var(--navy-border);border-radius:18px;max-width:780px;width:100%;max-height:88vh;overflow-y:auto;position:relative;transform:scale(.95);transition:transform .3s}
 .modal.active .modalbox{transform:scale(1)}
@@ -163,8 +143,6 @@ h1,h2,h3,h4{font-family:var(--fd);color:var(--white)}
 .modalfeats li{font-size:.84rem;color:var(--slate-light);display:flex;align-items:center;gap:.45rem}
 .modalfeats li::before{content:'→';color:var(--teal);font-family:var(--fm)}
 .modalfoot{display:flex;gap:.85rem;flex-wrap:wrap}
-
-/* CONTACT */
 #contact{background:linear-gradient(180deg,var(--navy) 0%,var(--navy-card) 40%,var(--navy) 100%)}
 .contactgrid{display:grid;grid-template-columns:1fr 1.45fr;gap:4rem}
 .cinfo h3{font-size:1.35rem;margin-bottom:.9rem}
@@ -189,11 +167,9 @@ h1,h2,h3,h4{font-family:var(--fd);color:var(--white)}
 .formgrp textarea{resize:vertical;min-height:120px}
 .ferr{font-size:.72rem;color:var(--red);margin-top:.25rem;display:block}
 .formgrp input.err,.formgrp textarea.err{border-color:var(--red)}
-.fstatus{padding:.8rem 1rem;border-radius:8px;font-size:.86rem;display:none;margin-top:.9rem}
+.fstatus{margin-top:1rem;padding:.75rem 1rem;border-radius:8px;font-size:.85rem;display:none;align-items:center;gap:.5rem}
 .fstatus.ok{background:rgba(19,208,208,.1);border:1px solid rgba(19,208,208,.3);color:var(--teal);display:block}
 .fstatus.fail{background:rgba(255,64,96,.1);border:1px solid rgba(255,64,96,.3);color:var(--red);display:block}
-
-/* FOOTER */
 footer{position:relative;z-index:2;border-top:1px solid var(--navy-border);padding:2.2rem 0 1.4rem}
 .footinner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
 .footlogo{font-family:var(--fd);font-weight:800;font-size:1.35rem;color:var(--white);text-decoration:none}
@@ -202,425 +178,934 @@ footer{position:relative;z-index:2;border-top:1px solid var(--navy-border);paddi
 .footlinks a{font-size:.83rem;color:var(--slate);text-decoration:none;transition:color .2s}
 .footlinks a:hover{color:var(--teal)}
 .footcopy{font-size:.76rem;color:var(--slate);font-family:var(--fm)}
-#btt{position:fixed;bottom:1.8rem;right:1.8rem;width:42px;height:42px;background:var(--navy-card);border:1px solid var(--navy-border);border-radius:9px;display:flex;align-items:center;justify-content:center;color:var(--teal);text-decoration:none;z-index:100;opacity:0;pointer-events:none;transition:var(--tr)}
+#btt{position:fixed;bottom:1.8rem;right:5.5rem;width:42px;height:42px;background:var(--navy-card);border:1px solid var(--navy-border);border-radius:9px;display:flex;align-items:center;justify-content:center;color:var(--teal);text-decoration:none;z-index:100;opacity:0;pointer-events:none;transition:var(--tr)}
 #btt.on{opacity:1;pointer-events:all}
 #btt:hover{background:var(--teal);color:var(--navy)}
 #navoverlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:998;opacity:0;pointer-events:none;transition:opacity .3s}
 #navoverlay.on{opacity:1;pointer-events:all}
-
-/* RESPONSIVE */
 @media(max-width:920px){.aboutgrid,.contactgrid{grid-template-columns:1fr;gap:3rem}.aboutimgarea{max-width:300px;margin:0 auto}.skillsgrid{grid-template-columns:1fr}.projgrid{grid-template-columns:1fr}.modalfeats ul{grid-template-columns:1fr}}
 @media(max-width:768px){body{cursor:auto}#cDot,#cRing{display:none}.mbtn{display:flex}.navul{position:fixed;top:0;right:-100%;height:100vh;width:250px;background:var(--navy-card);border-left:1px solid var(--navy-border);flex-direction:column;align-items:flex-start;gap:.2rem;padding:5rem 1.4rem 2rem;z-index:999;transition:right .32s ease}.navul.open{right:0}.navlink{width:100%;padding:.7rem .9rem}.navres{margin-top:.9rem}.formrow{grid-template-columns:1fr}.hstats{width:100%;justify-content:center}.footinner{justify-content:center;text-align:center}.footlinks{justify-content:center}.hlgrid{grid-template-columns:1fr}.cdls{flex-direction:column}}
+
+#about .stag{color:#00d4aa}
+#skills .stag{color:#ffffff}
+#projects .stag{color:#00d4aa}
+#contact .stag{color:#ffffff}
+.projcard:nth-child(1){border-top:2px solid #00d4aa}
+.projcard:nth-child(2){border-top:2px solid #ffffff}
+.projcard:nth-child(3){border-top:2px solid #00d4aa}
+.projcard:nth-child(4){border-top:2px solid #ffffff}
+.projcard:nth-child(5){border-top:2px solid #00d4aa}
+.projcard:nth-child(6){border-top:2px solid #ffffff}
+.chip:nth-child(4n+1) i{color:#00d4aa}
+.chip:nth-child(4n+2) i{color:#ffffff}
+.chip:nth-child(4n+3) i{color:#aaaaaa}
+.chip:nth-child(4n) i{color:#00d4aa}
+.skillcard:nth-child(1) .skillfill{background:linear-gradient(90deg,#00d4aa,#ffffff)}
+.skillcard:nth-child(2) .skillfill{background:linear-gradient(90deg,#ffffff,#aaaaaa)}
+.skillcard:nth-child(3) .skillfill{background:linear-gradient(90deg,#aaaaaa,#00d4aa)}
+.skillcard:nth-child(4) .skillfill{background:linear-gradient(90deg,#00d4aa,#ffffff)}
+.citem:nth-child(1) .cicon{background:rgba(0,212,170,.1);border-color:rgba(0,212,170,.2);color:#00d4aa}
+.citem:nth-child(2) .cicon{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.15);color:#ffffff}
+.citem:nth-child(3) .cicon{background:rgba(170,170,170,.08);border-color:rgba(170,170,170,.2);color:#aaaaaa}
+.citem:nth-child(4) .cicon{background:rgba(0,212,170,.1);border-color:rgba(0,212,170,.2);color:#00d4aa}
+.stat:nth-child(1) .statn{color:#00d4aa}
+.stat:nth-child(3) .statn{color:#ffffff}
+.stat:nth-child(5) .statn{color:#aaaaaa}
+.stat:nth-child(7) .statn{color:#00d4aa}
+.projcard:nth-child(2) .backstat{color:#ffffff;background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.2)}
+.projcard:nth-child(4) .backstat{color:#ffffff;background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.2)}
+.projcard:nth-child(6) .backstat{color:#ffffff;background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.2)}
+
+
+
+
+@keyframes amberpulse{0%,100%{box-shadow:0 0 0 0 rgba(0,212,170,0)}50%{box-shadow:0 0 0 8px rgba(0,212,170,.08)}}
+.logo{animation:amberpulse 3s ease-in-out infinite}
+.hbadge{border-color:rgba(0,212,170,.35)!important}
+.navres{background:linear-gradient(135deg,#00d4aa,#00b891)!important;color:#000!important}
+.backbtns .bb-live{background:linear-gradient(135deg,#00d4aa,#00b891)!important;color:#000!important}
+
+.navitem{position:relative;list-style:none}
+.navpopup{position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%) translateY(-4px);background:#111111;border:1px solid #252525;border-radius:10px;padding:.75rem 1rem;width:170px;opacity:0;pointer-events:none;transition:opacity .2s ease,transform .2s ease;z-index:600;white-space:normal}
+.navitem:hover .navpopup{opacity:1;pointer-events:all;transform:translateX(-50%) translateY(0)}
+.navpopup::before{content:'';position:absolute;top:-4px;left:50%;transform:translateX(-50%) rotate(45deg);width:7px;height:7px;background:#111111;border-left:1px solid #252525;border-top:1px solid #252525}
+.npp-icon{font-size:1.3rem;margin-bottom:.3rem;display:block;text-align:center}
+.npp-title{font-family:var(--fd);font-size:.8rem;font-weight:700;color:var(--white);text-align:center;display:block;margin-bottom:.2rem}
+.npp-desc{font-size:.68rem;color:var(--slate);text-align:center;display:block;line-height:1.45}
+.npp-teal .npp-icon{color:#00d4aa}
+.npp-purple .npp-icon{color:#6366f1}
+.npp-pink .npp-icon{color:#888888}
+.npp-gold .npp-icon{color:#00d4aa}
+.npp-teal{border-color:rgba(0,212,170,.25)}
+.npp-purple{border-color:rgba(99,102,241,.25)}
+.npp-pink{border-color:rgba(136,136,136,.2)}
+.npp-gold{border-color:rgba(0,212,170,.25)}
+
+.projcard{perspective:1000px;height:360px;background:transparent!important;border:none!important;overflow:visible!important}
+.projcard-inner{position:relative;width:100%;height:100%;transition:transform .65s cubic-bezier(.4,0,.2,1);transform-style:preserve-3d}
+.projcard:hover .projcard-inner{transform:rotateY(180deg)}
+.projcard-front,.projcard-back{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:14px;overflow:hidden}
+.projcard-front{background:#111111;border:1px solid #252525}
+.projcard-back{background:#111111;border:1px solid #252525;transform:rotateY(180deg);display:flex;flex-direction:column;justify-content:center;align-items:center;padding:1.5rem;text-align:center}
+.projcard:nth-child(odd) .projcard-back{border-color:rgba(0,212,170,.3);box-shadow:inset 0 0 40px rgba(0,212,170,.04)}
+.projcard:nth-child(even) .projcard-back{border-color:rgba(99,102,241,.3);box-shadow:inset 0 0 40px rgba(99,102,241,.04)}
+
+.wave-divider{position:relative;height:2px;overflow:visible;margin:0;z-index:2}
+.wave-divider svg{display:none}
+.wave-divider::before{content:'';position:absolute;left:0;right:0;top:0;height:1px;background:linear-gradient(90deg,transparent,#00d4aa,#6366f1,#00d4aa,transparent)}
+.wave-divider::after{content:'';position:absolute;left:-100%;right:-100%;top:-1px;height:3px;background:linear-gradient(90deg,transparent,rgba(0,212,170,.8),rgba(99,102,241,.8),transparent);animation:lineflow 3s linear infinite;width:200%}
+@keyframes lineflow{0%{transform:translateX(0)}100%{transform:translateX(50%)}}
+
+.fstatus{margin-top:1rem;padding:.75rem 1rem;border-radius:8px;font-size:.85rem;display:none;align-items:center;gap:.5rem}
+.fstatus.ok{display:flex;background:rgba(0,212,170,.1);border:1px solid rgba(0,212,170,.3);color:#00d4aa}
+.fstatus.err{display:flex;background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.25);color:#ef4444}
+.fstatus a{color:inherit;text-decoration:underline}
 </style>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body>
-<div id="cDot"></div>
-<div id="cRing"></div>
-
+<div id="cDot"></div><div id="cRing"></div>
 <header id="hdr">
   <div class="container hi">
     <a href="#hero" class="logo">Ankit<span>.</span></a>
     <nav><ul class="navul" id="navul">
-      <li><a href="#hero" class="navlink">Home</a></li>
-      <li><a href="#about" class="navlink">About</a></li>
-      <li><a href="#skills" class="navlink">Skills</a></li>
-      <li><a href="#projects" class="navlink">Projects</a></li>
-      <li><a href="#contact" class="navlink">Contact</a></li>
+      <li class="navitem"><a href="#hero" class="navlink">Home</a><div class="navpopup npp-teal"><span class="npp-icon"><i class="fas fa-rocket"></i></span><span class="npp-title">Welcome</span><span class="npp-desc">3D animated hero with galaxy & neural network</span></div></li>
+      <li class="navitem"><a href="#about" class="navlink">About</a><div class="navpopup npp-purple"><span class="npp-icon"><i class="fas fa-user-astronaut"></i></span><span class="npp-title">About Me</span><span class="npp-desc">B.Tech CS AI/ML · 2+ yrs experience · Dehradun</span></div></li>
+      <li class="navitem"><a href="#skills" class="navlink">Skills</a><div class="navpopup npp-pink"><span class="npp-icon"><i class="fas fa-brain"></i></span><span class="npp-title">Skills</span><span class="npp-desc">Python · TensorFlow · SQL · Power BI · BERT</span></div></li>
+      <li class="navitem"><a href="#projects" class="navlink">Projects</a><div class="navpopup npp-gold"><span class="npp-icon"><i class="fas fa-flask"></i></span><span class="npp-title">Projects</span><span class="npp-desc">6 live ML & data science projects</span></div></li>
+      <li class="navitem"><a href="#contact" class="navlink">Contact</a><div class="navpopup npp-teal"><span class="npp-icon"><i class="fas fa-paper-plane"></i></span><span class="npp-title">Hire Me</span><span class="npp-desc">Open to remote & full-time opportunities</span></div></li>
       <li><a href="Ankit_Jinkwan_Resume.pdf.pdf" download class="navres"><i class="fas fa-download"></i> Resume</a></li>
     </ul></nav>
     <button class="mbtn" id="mbtn"><i class="fas fa-bars"></i></button>
   </div>
 </header>
-
-<section id="hero">
-  <div class="orb o1"></div><div class="orb o2"></div>
-  <div id="pw"></div>
-  <div class="container">
+<section id="hero" style="position:relative;min-height:100vh;overflow:hidden;padding:0;display:flex;align-items:center;">
+  <div id="hero-glow"></div><canvas id="heroCanvas" style="position:absolute;inset:0;width:100%;height:100%;z-index:0;"></canvas>
+  <div class="container" style="position:relative;z-index:2;">
     <div class="hw">
       <div class="hbadge"><span class="bdot"></span> Open to opportunities</div>
       <h1>Ankit <span class="tg">Jinkwan</span></h1>
       <div class="typewrap"><span id="typed"></span><span class="caret">|</span></div>
-      <p class="hdesc">I turn raw data into meaningful insights and intelligent solutions. Based in Uttarakhand, India — open to remote opportunities worldwide.</p>
+      <p class="hdesc">I turn raw data into meaningful insights and intelligent solutions. Based in Uttarakhand, India — open to remote & full-time roles.</p>
       <div class="hbtns">
         <a href="#projects" class="btn bp"><i class="fas fa-rocket"></i> View My Work</a>
         <a href="#contact" class="btn bo"><i class="fas fa-paper-plane"></i> Hire Me</a>
         <a href="Ankit_Jinkwan_Resume.pdf.pdf" download class="btn bg2"><i class="fas fa-file-pdf"></i> Resume</a>
       </div>
       <div class="hstats">
-        <div class="stat"><span class="statn">6+</span><span class="statl">Projects</span></div>
-        <div class="statsep"></div>
-        <div class="stat"><span class="statn">2+</span><span class="statl">Yrs Exp.</span></div>
-        <div class="statsep"></div>
-        <div class="stat"><span class="statn">92%</span><span class="statl">Best Acc.</span></div>
-        <div class="statsep"></div>
+        <div class="stat"><span class="statn">6+</span><span class="statl">Projects</span></div><div class="statsep"></div>
+        <div class="stat"><span class="statn">2+</span><span class="statl">Yrs Exp.</span></div><div class="statsep"></div>
+        <div class="stat"><span class="statn">92%</span><span class="statl">Best Acc.</span></div><div class="statsep"></div>
         <div class="stat"><span class="statn">100%</span><span class="statl">Dedication</span></div>
       </div>
     </div>
   </div>
   <div class="hscroll"><span>scroll</span><div class="scrollbar"></div></div>
 </section>
-
-<section id="about">
-  <div class="container">
-    <div class="aboutgrid">
-      <div class="aboutimgarea">
-        <div class="aboutframe">
-          <img src="https://placehold.co/600x800/091525/13d0d0?text=Ankit+Jinkwan" alt="Ankit Jinkwan">
-          <div class="nameplate"><strong>Ankit Jinkwan</strong><span>Data Scientist & ML Engineer</span></div>
-        </div>
-        <div class="expbadge"><span class="en">2+</span><span class="el">Years Exp.</span></div>
-      </div>
-      <div class="aboutcontent">
-        <span class="stag">About Me</span>
-        <h2>Turning <span class="tg">data into decisions</span> that matter</h2>
-        <p>I'm a Data Scientist and AI/ML Engineer based in Uttarakhand, India, with a passion for building end-to-end machine learning pipelines that solve real problems.</p>
-        <p>Currently pursuing B.Tech in Computer Science (AI/ML specialisation) at Shivalik College, Dehradun. When I'm not building models, I'm on Kaggle, reading ML research, or hiking in the Himalayas.</p>
-        <div class="hlgrid">
-          <div class="hlitem"><i class="fas fa-check-circle"></i> End-to-End ML Pipelines</div>
-          <div class="hlitem"><i class="fas fa-check-circle"></i> 6+ Completed Projects</div>
-          <div class="hlitem"><i class="fas fa-check-circle"></i> Deep Learning & NLP</div>
-          <div class="hlitem"><i class="fas fa-check-circle"></i> Data Visualisation</div>
-          <div class="hlitem"><i class="fas fa-check-circle"></i> Statistical Analysis</div>
-          <div class="hlitem"><i class="fas fa-check-circle"></i> Open to Remote Work</div>
-        </div>
-        <div class="aboutbtns">
-          <a href="Ankit_Jinkwan_CV.docx.docx" download class="btn bp"><i class="fas fa-file-word"></i> Download CV</a>
-          <a href="Ankit_Jinkwan_Resume.pdf.pdf" download class="btn bo"><i class="fas fa-file-pdf"></i> Download Resume</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="skills">
-  <div class="container">
-    <div style="text-align:center"><span class="stag">Expertise</span><h2 class="stitle">My Skills</h2><p class="ssub">Technologies and tools I work with daily</p></div>
-    <div class="skillsgrid">
-      <div class="skillcard"><h3><i class="fas fa-brain"></i> Machine Learning</h3>
-        <div class="skillitem" data-s="90"><div class="skillinfo"><span>Scikit-learn</span><span>90%</span></div><div class="skillbar"><div class="skillfill"></div></div></div>
-        <div class="skillitem" data-s="85"><div class="skillinfo"><span>TensorFlow / Keras</span><span>85%</span></div><div class="skillbar"><div class="skillfill"></div></div></div>
-        <div class="skillitem" data-s="80"><div class="skillinfo"><span>PyTorch</span><span>80%</span></div><div class="skillbar"><div class="skillfill"></div></div></div>
-        <div class="skillitem" data-s="88"><div class="skillinfo"><span>XGBoost / LightGBM</span><span>88%</span></div><div class="skillbar"><div class="skillfill"></div></div></div>
-      </div>
-      <div class="skillcard"><h3><i class="fas fa-chart-bar"></i> Data Analysis</h3>
-        <div class="skillitem" data-s="95"><div class="skillinfo"><span>Python (Pandas / NumPy)</span><span>95%</span></div><div class="skillbar"><div class="skillfill"></div></div></div>
-        <div class="skillitem" data-s="85"><div class="skillinfo"><span>SQL</span><span>85%</span></div><div class="skillbar"><div class="skillfill"></div></div></div>
-        <div class="skillitem" data-s="80"><div class="skillinfo"><span>R</span><span>80%</span></div><div class="skillbar"><div class="skillfill"></div></div></div>
-        <div class="skillitem" data-s="82"><div class="skillinfo"><span>Statistics & Probability</span><span>82%</span></div><div class="skillbar"><div class="skillfill"></div></div></div>
-      </div>
-      <div class="skillcard"><h3><i class="fas fa-chart-pie"></i> Visualisation</h3>
-        <div class="skillitem" data-s="90"><div class="skillinfo"><span>Matplotlib / Seaborn</span><span>90%</span></div><div class="skillbar"><div class="skillfill"></div></div></div>
-        <div class="skillitem" data-s="85"><div class="skillinfo"><span>Power BI / Tableau</span><span>85%</span></div><div class="skillbar"><div class="skillfill"></div></div></div>
-        <div class="skillitem" data-s="78"><div class="skillinfo"><span>Plotly / Dash</span><span>78%</span></div><div class="skillbar"><div class="skillfill"></div></div></div>
-        <div class="skillitem" data-s="80"><div class="skillinfo"><span>Streamlit</span><span>80%</span></div><div class="skillbar"><div class="skillfill"></div></div></div>
-      </div>
-      <div class="skillcard"><h3><i class="fas fa-tools"></i> Tools & Cloud</h3>
-        <div class="skillitem" data-s="90"><div class="skillinfo"><span>Git / GitHub</span><span>90%</span></div><div class="skillbar"><div class="skillfill"></div></div></div>
-        <div class="skillitem" data-s="78"><div class="skillinfo"><span>AWS / GCP Basics</span><span>78%</span></div><div class="skillbar"><div class="skillfill"></div></div></div>
-        <div class="skillitem" data-s="82"><div class="skillinfo"><span>Jupyter / VS Code</span><span>82%</span></div><div class="skillbar"><div class="skillfill"></div></div></div>
-        <div class="skillitem" data-s="75"><div class="skillinfo"><span>Docker / Linux</span><span>75%</span></div><div class="skillbar"><div class="skillfill"></div></div></div>
-      </div>
-    </div>
-    <p class="techttitle">Tech Stack</p>
-    <div class="chipsgrid">
-      <div class="chip"><i class="fab fa-python"></i><span>Python</span></div>
-      <div class="chip"><i class="fas fa-brain"></i><span>TensorFlow</span></div>
-      <div class="chip"><i class="fas fa-database"></i><span>SQL</span></div>
-      <div class="chip"><i class="fas fa-chart-pie"></i><span>Power BI</span></div>
-      <div class="chip"><i class="fas fa-book-open"></i><span>Jupyter</span></div>
-      <div class="chip"><i class="fas fa-table"></i><span>Pandas</span></div>
-      <div class="chip"><i class="fab fa-git-alt"></i><span>Git</span></div>
-      <div class="chip"><i class="fab fa-aws"></i><span>AWS</span></div>
-      <div class="chip"><i class="fas fa-fire"></i><span>PyTorch</span></div>
-      <div class="chip"><i class="fas fa-chart-line"></i><span>Plotly</span></div>
-      <div class="chip"><i class="fas fa-robot"></i><span>BERT</span></div>
-      <div class="chip"><i class="fab fa-docker"></i><span>Docker</span></div>
-    </div>
-  </div>
-</section>
-
-<section id="projects">
-  <div class="container">
-    <div style="text-align:center"><span class="stag">Portfolio</span><h2 class="stitle">My Projects</h2><p class="ssub">Data science & machine learning work</p></div>
-    <div class="filterrow">
-      <button class="fbtn active" data-f="all">All</button>
-      <button class="fbtn" data-f="ml">ML Models</button>
-      <button class="fbtn" data-f="eda">EDA</button>
-      <button class="fbtn" data-f="viz">Visualisation</button>
-      <button class="fbtn" data-f="nlp">NLP</button>
-    </div>
-    <div class="projgrid" id="projgrid">
-      <div class="projcard" data-cat="ml" onclick="openModal(1)">
-        <div class="projthumb"><img src="https://placehold.co/800x450/091525/13d0d0?text=Customer+Churn+Prediction" alt=""><span class="projbadge bteal">ML Model</span>
-          <div class="projoverlay">
-            <a href="#" onclick="event.stopPropagation();openModal(1)"><i class="fas fa-eye"></i></a>
-            <a href="https://github.com/ankitjhinkwan/customer-churn-prediction" target="_blank" onclick="event.stopPropagation()"><i class="fab fa-github"></i></a>
-          </div>
-        </div>
-        <div class="projbody"><div class="projmeta"><span class="projcat">ML Model</span><span class="projyr">2024</span></div><h3>Customer Churn Prediction</h3><p>Binary classification predicting telecom churn with 92% accuracy using Random Forest and SHAP explainability.</p><div class="tags"><span class="tag">Python</span><span class="tag">Random Forest</span><span class="tag">SHAP</span></div></div>
-      </div>
-      <div class="projcard" data-cat="viz" onclick="openModal(2)">
-        <div class="projthumb"><img src="https://placehold.co/800x450/091525/13d0d0?text=Sales+Analytics+Dashboard" alt=""><span class="projbadge bteal">Visualisation</span>
-          <div class="projoverlay">
-            <a href="#" onclick="event.stopPropagation();openModal(2)"><i class="fas fa-eye"></i></a>
-            <a href="https://github.com/ankitjhinkwan/sales-analytics-dashboard" target="_blank" onclick="event.stopPropagation()"><i class="fab fa-github"></i></a>
-          </div>
-        </div>
-        <div class="projbody"><div class="projmeta"><span class="projcat">Visualisation</span><span class="projyr">2024</span></div><h3>Sales Analytics Dashboard</h3><p>Interactive Power BI dashboard visualising 3 years of retail sales with KPIs and regional breakdowns.</p><div class="tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">SQL</span></div></div>
-      </div>
-      <div class="projcard" data-cat="ml" onclick="openModal(3)">
-        <div class="projthumb"><img src="https://placehold.co/800x450/091525/13d0d0?text=House+Price+Prediction" alt=""><span class="projbadge bteal">ML Model</span>
-          <div class="projoverlay">
-            <a href="#" onclick="event.stopPropagation();openModal(3)"><i class="fas fa-eye"></i></a>
-            <a href="https://github.com/ankitjhinkwan/house-price-prediction" target="_blank" onclick="event.stopPropagation()"><i class="fab fa-github"></i></a>
-          </div>
-        </div>
-        <div class="projbody"><div class="projmeta"><span class="projcat">ML Model</span><span class="projyr">2024</span></div><h3>House Price Prediction</h3><p>XGBoost regression with advanced feature engineering on Ames Housing dataset. Kaggle top 10% RMSE.</p><div class="tags"><span class="tag">XGBoost</span><span class="tag">Scikit-learn</span><span class="tag">SHAP</span></div></div>
-      </div>
-      <div class="projcard" data-cat="eda" onclick="openModal(4)">
-        <div class="projthumb"><img src="https://placehold.co/800x450/091525/ff4060?text=Netflix+Content+Analysis" alt=""><span class="projbadge bred">EDA</span>
-          <div class="projoverlay">
-            <a href="#" onclick="event.stopPropagation();openModal(4)"><i class="fas fa-eye"></i></a>
-            <a href="https://github.com/ankitjhinkwan/netflix-content-analysis" target="_blank" onclick="event.stopPropagation()"><i class="fab fa-github"></i></a>
-          </div>
-        </div>
-        <div class="projbody"><div class="projmeta"><span class="projcat">EDA</span><span class="projyr">2024</span></div><h3>Netflix Content Analysis</h3><p>Deep-dive EDA into Netflix's catalogue — genre trends, release patterns and regional distribution.</p><div class="tags"><span class="tag">Pandas</span><span class="tag">Plotly</span><span class="tag">Matplotlib</span></div></div>
-      </div>
-      <div class="projcard" data-cat="nlp" onclick="openModal(5)">
-        <div class="projthumb"><img src="https://placehold.co/800x450/091525/c8dae8?text=Twitter+Sentiment+Analysis" alt=""><span class="projbadge bgrey">NLP</span>
-          <div class="projoverlay">
-            <a href="#" onclick="event.stopPropagation();openModal(5)"><i class="fas fa-eye"></i></a>
-            <a href="https://github.com/ankitjhinkwan/twitter-sentiment-analysis" target="_blank" onclick="event.stopPropagation()"><i class="fab fa-github"></i></a>
-          </div>
-        </div>
-        <div class="projbody"><div class="projmeta"><span class="projcat">NLP</span><span class="projyr">2024</span></div><h3>Twitter Sentiment Analysis</h3><p>Fine-tuned BERT model for real-time tweet sentiment classification deployed as Streamlit dashboard.</p><div class="tags"><span class="tag">BERT</span><span class="tag">HuggingFace</span><span class="tag">Streamlit</span></div></div>
-      </div>
-      <div class="projcard" data-cat="eda" onclick="openModal(6)">
-        <div class="projthumb"><img src="https://placehold.co/800x450/091525/ff4060?text=COVID-19+Data+Analysis" alt=""><span class="projbadge bred">EDA</span>
-          <div class="projoverlay">
-            <a href="#" onclick="event.stopPropagation();openModal(6)"><i class="fas fa-eye"></i></a>
-            <a href="https://github.com/ankitjhinkwan/covid19-data-analysis" target="_blank" onclick="event.stopPropagation()"><i class="fab fa-github"></i></a>
-          </div>
-        </div>
-        <div class="projbody"><div class="projmeta"><span class="projcat">EDA</span><span class="projyr">2024</span></div><h3>COVID-19 Data Analysis</h3><p>Global pandemic EDA tracking spread timelines, vaccination rates and mortality patterns worldwide.</p><div class="tags"><span class="tag">Pandas</span><span class="tag">Seaborn</span><span class="tag">Matplotlib</span></div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="contact">
-  <div class="container">
-    <div style="text-align:center"><span class="stag">Get In Touch</span><h2 class="stitle">Let's Work Together</h2><p class="ssub">Available for freelance projects and full-time roles</p></div>
-    <div class="contactgrid">
-      <div class="cinfo">
-        <h3>Say hello 👋</h3>
-        <p>I'm available for data science consulting, ML project work, and full-time roles. If you have an interesting project or just want to chat, I'd love to hear from you!</p>
-        <div class="citems">
-          <div class="citem"><div class="cicon"><i class="fas fa-map-marker-alt"></i></div><div class="ctext"><h4>Location</h4><p>Uttarakhand, India</p></div></div>
-          <div class="citem"><div class="cicon"><i class="fas fa-envelope"></i></div><div class="ctext"><h4>Email</h4><a href="mailto:ankitjhinkwan9@gmail.com">ankitjhinkwan9@gmail.com</a></div></div>
-          <div class="citem"><div class="cicon"><i class="fas fa-phone-alt"></i></div><div class="ctext"><h4>Phone</h4><a href="tel:+919528693191">+91 9528693191</a></div></div>
-          <div class="citem"><div class="cicon"><i class="fas fa-clock"></i></div><div class="ctext"><h4>Availability</h4><p>Mon – Sat, 9 AM – 6 PM IST</p></div></div>
-        </div>
-        <div class="cdls">
-          <a href="Ankit_Jinkwan_CV.docx.docx" download class="btn bo" style="font-size:.82rem;padding:.6rem 1.1rem"><i class="fas fa-file-word"></i> Download CV</a>
-          <a href="Ankit_Jinkwan_Resume.pdf.pdf" download class="btn bg2" style="font-size:.82rem;padding:.6rem 1.1rem"><i class="fas fa-file-pdf"></i> Download Resume</a>
-        </div>
-        <div class="socials">
-          <a href="https://www.linkedin.com/in/ankit-jinkwan-a16882288/" target="_blank" class="socbtn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="https://github.com/ankitjhinkwan" target="_blank" class="socbtn"><i class="fab fa-github"></i></a>
-          <a href="mailto:ankitjhinkwan9@gmail.com" class="socbtn"><i class="fas fa-envelope"></i></a>
-          <a href="#" class="socbtn"><i class="fab fa-kaggle"></i></a>
-        </div>
-      </div>
-      <div class="formcard">
-        <form id="contactform" novalidate>
-          <div class="formrow">
-            <div class="formgrp"><label>Your Name</label><input type="text" id="fname" placeholder="John Doe" required><span class="ferr" id="nameerr"></span></div>
-            <div class="formgrp"><label>Your Email</label><input type="email" id="femail" placeholder="john@example.com" required><span class="ferr" id="emailerr"></span></div>
-          </div>
-          <div class="formgrp"><label>Subject</label><input type="text" id="fsubject" placeholder="Project Inquiry / Collaboration"></div>
-          <div class="formgrp"><label>Message</label><textarea id="fmsg" placeholder="Tell me about your project..." required></textarea><span class="ferr" id="msgerr"></span></div>
-          <button type="submit" class="btn bp" id="formbtn" style="width:100%;justify-content:center">
-            <span id="btntxt"><i class="fas fa-paper-plane"></i> Send Message</span>
-            <span id="btnload" style="display:none"><i class="fas fa-spinner fa-spin"></i> Sending...</span>
-          </button>
-          <div id="formstatus" class="fstatus"></div>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="container">
-    <div class="footinner">
-      <a href="#hero" class="footlogo">Ankit<span>.</span></a>
-      <ul class="footlinks"><li><a href="#about">About</a></li><li><a href="#skills">Skills</a></li><li><a href="#projects">Projects</a></li><li><a href="#contact">Contact</a></li></ul>
-      <p class="footcopy">© 2025 Ankit Jinkwan · Made with <i class="fas fa-heart" style="color:#ff4060"></i> in Uttarakhand</p>
-    </div>
-  </div>
-</footer>
-
-<a href="#hero" id="btt"><i class="fas fa-arrow-up"></i></a>
-<div id="navoverlay"></div>
-
-<div class="modal" id="modal">
-  <div class="modalbox">
-    <button class="modalclose" id="modalclose"><i class="fas fa-times"></i></button>
-    <div class="modalimg"><img id="mImg" src="" alt=""></div>
-    <div class="modalcontent">
-      <span class="projcat" id="mCat"></span>
-      <h2 id="mTitle"></h2>
-      <p id="mDesc"></p>
-      <div id="mTags" class="tags" style="margin-bottom:1.2rem"></div>
-      <div id="mFeats" class="modalfeats"></div>
-      <div class="modalfoot">
-        <a href="#" class="btn bp" id="mLive" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-        <a href="#" class="btn bo" id="mGit" target="_blank"><i class="fab fa-github"></i> Source Code</a>
-      </div>
-    </div>
-  </div>
-</div>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
-const PROJECTS={
-  1:{cat:'ML Model',title:'Customer Churn Prediction',desc:'A binary classification model predicting telecom customer churn with 92% accuracy. Uses Random Forest with SHAP values to explain which features drive churn — enabling targeted retention strategies.',tags:['Python','Random Forest','SHAP','Scikit-learn','Seaborn','Pandas'],features:['92% Classification Accuracy','SHAP Explainability','Feature Importance Analysis','Confusion Matrix & ROC-AUC','Business Insight Reports','End-to-End ML Pipeline'],img:'https://placehold.co/800x450/091525/13d0d0?text=Customer+Churn+Prediction',live:'https://customer-churn-prediction-rnvjkdzvjbthcldk8ecxve.streamlit.app/',github:'https://github.com/ankitjhinkwan/customer-churn-prediction'},
-  2:{cat:'Visualisation',title:'Sales Analytics Dashboard',desc:'An interactive Power BI dashboard visualising 3 years of retail sales data. Includes KPI scorecards, revenue trends, regional breakdowns and product performance metrics.',tags:['Power BI','DAX','SQL','Excel','Data Modelling'],features:['KPI Scorecards','Regional Breakdown','Year-over-Year Trends','Product Performance','DAX Measures','Drill-Through Pages'],img:'https://placehold.co/800x450/091525/13d0d0?text=Sales+Analytics+Dashboard',live:'https://sales-analytics-dashboard-fxcku4gheld2qwws2qzet9.streamlit.app/',github:'https://github.com/ankitjhinkwan/sales-analytics-dashboard'},
-  3:{cat:'ML Model',title:'House Price Prediction',desc:'Regression model predicting house prices using advanced feature engineering and XGBoost on the Ames Housing dataset. Achieved RMSE in the Kaggle top 10% with full SHAP explainability.',tags:['Python','XGBoost','Scikit-learn','Pandas','Matplotlib','SHAP'],features:['Top 10% Kaggle RMSE','Advanced Feature Engineering','Hyperparameter Tuning','Cross-Validation','SHAP Explainability','Full EDA Pipeline'],img:'https://placehold.co/800x450/091525/13d0d0?text=House+Price+Prediction',live:'https://house-price-prediction-dogvarm934yfanqwpf6rtd.streamlit.app/',github:'https://github.com/ankitjhinkwan/house-price-prediction'},
-  4:{cat:'EDA',title:'Netflix Content Analysis',desc:"Deep-dive EDA of Netflix's entire catalogue — uncovering genre trends, release patterns, content ratings and regional distribution across 8000+ titles.",tags:['Pandas','Plotly','Matplotlib','Python','Seaborn'],features:['Genre Trend Analysis','Release Pattern Study','Content Rating Breakdown','Regional Distribution','Interactive Plotly Charts','Time-Series Analysis'],img:'https://placehold.co/800x450/091525/ff4060?text=Netflix+Content+Analysis',live:'https://netflix-content-analysis-a9zowuxo75jdrdz3rdmcfc.streamlit.app/',github:'https://github.com/ankitjhinkwan/netflix-content-analysis'},
-  5:{cat:'NLP',title:'Twitter Sentiment Analysis',desc:'End-to-end NLP pipeline classifying tweet sentiments using a fine-tuned BERT model. Deployed as an interactive Streamlit dashboard for live sentiment monitoring and trend tracking.',tags:['BERT','HuggingFace','Streamlit','Python','NLP','PyTorch'],features:['BERT Fine-Tuning','Real-Time Classification','Streamlit Dashboard','Sentiment Trend Charts','Word Cloud Visualisation','REST API Ready'],img:'https://placehold.co/800x450/091525/c8dae8?text=Twitter+Sentiment+Analysis',live:'https://twitter-sentiment-analysis-wqca35sbczxdll4nlqf2bk.streamlit.app/',github:'https://github.com/ankitjhinkwan/twitter-sentiment-analysis'},
-  6:{cat:'EDA',title:'COVID-19 Data Analysis',desc:'Comprehensive EDA of global COVID-19 trends — vaccination rates, mortality patterns, spread timelines and country-level responses with automated data cleaning pipelines.',tags:['Pandas','Seaborn','NumPy','Matplotlib','Jupyter','Python'],features:['Global Trend Analysis','Vaccination Rate Tracking','Mortality Pattern Study','Country Comparisons','Automated Data Pipeline','Time-Series Visualisations'],img:'https://placehold.co/800x450/091525/ff4060?text=COVID-19+Data+Analysis',live:'https://covid19-data-analysis-mjzyt4aekyyz28ueyezszq.streamlit.app/',github:'https://github.com/ankitjhinkwan/covid19-data-analysis'}
-};
-
-// CURSOR
-const dot=document.getElementById('cDot'),ring=document.getElementById('cRing');
-if(dot&&ring){
-  let mx=0,my=0,rx=0,ry=0;
-  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px'});
-  (function ar(){rx+=(mx-rx)*.14;ry+=(my-ry)*.14;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(ar)})();
-  document.querySelectorAll('a,button,.projcard,.chip,.fbtn').forEach(el=>{
-    el.addEventListener('mouseenter',()=>ring.classList.add('hov'));
-    el.addEventListener('mouseleave',()=>ring.classList.remove('hov'));
-  });
+(function(){
+var canvas=document.getElementById('heroCanvas');
+var W=canvas.parentElement.offsetWidth,H=canvas.parentElement.offsetHeight||window.innerHeight;
+canvas.width=W;canvas.height=H;
+var renderer=new THREE.WebGLRenderer({canvas:canvas,antialias:true,alpha:false});
+renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
+renderer.setSize(W,H);
+renderer.setClearColor(0x0a0a0a,1);
+var scene=new THREE.Scene();
+var camera=new THREE.PerspectiveCamera(70,W/H,0.1,1000);
+camera.position.z=5;
+var TEAL=0x00d4aa,PURPLE=0x6366f1,PINK=0x888888,WHITE=0xffffff,GOLD=0x00d4aa;
+var galGeo=new THREE.BufferGeometry();
+var N=5000;
+var gPos=new Float32Array(N*3),gCol=new Float32Array(N*3);
+var palettes=[[0,0.83,0.67],[0.39,0.40,0.95],[1,1,1],[0.53,0.53,0.53],[0,0.83,0.67]];
+for(var i=0;i<N;i++){
+  var r=Math.pow(Math.random(),0.45)*9+.3;
+  var arm=Math.floor(Math.random()*4)*(Math.PI/2);
+  var sp=arm+r*.48+Math.random()*.35;
+  gPos[i*3]=Math.cos(sp)*r+(Math.random()-.5)*.3;
+  gPos[i*3+1]=(Math.random()-.5)*1.1;
+  gPos[i*3+2]=Math.sin(sp)*r+(Math.random()-.5)*.3;
+  var pal=palettes[Math.floor(Math.random()*palettes.length)];
+  var bright=.4+Math.random()*.6;
+  gCol[i*3]=pal[0]*bright;gCol[i*3+1]=pal[1]*bright;gCol[i*3+2]=pal[2]*bright;
 }
-
-// PARTICLES
-const pw=document.getElementById('pw');
-for(let i=0;i<28;i++){
-  const p=document.createElement('div');p.classList.add('pdot');
-  p.style.cssText=`left:${Math.random()*100}%;width:${Math.random()*3+1.5}px;height:${Math.random()*3+1.5}px;animation-duration:${Math.random()*16+12}s;animation-delay:${Math.random()*12}s;opacity:${Math.random()*.4+.08};`;
-  pw.appendChild(p);
-}
-
-// TYPED TEXT
-const typed=document.getElementById('typed');
-const phrases=['Data Scientist','ML Engineer','Data Analyst','Insight Explorer','Problem Solver'];
-let pi=0,ci=0,del=false;
-function type(){
-  const cur=phrases[pi];
-  typed.textContent=del?cur.slice(0,ci--):cur.slice(0,ci++);
-  let d=del?55:105;
-  if(!del&&ci===cur.length+1){d=2000;del=true}
-  else if(del&&ci<0){del=false;ci=0;pi=(pi+1)%phrases.length;d=350}
-  setTimeout(type,d);
-}
-setTimeout(type,800);
-
-// HEADER + SCROLL
-const hdr=document.getElementById('hdr'),btt=document.getElementById('btt');
-window.addEventListener('scroll',()=>{
-  hdr.classList.toggle('sc',window.scrollY>50);
-  btt.classList.toggle('on',window.scrollY>420);
-  const pos=window.scrollY+140;
-  document.querySelectorAll('section[id]').forEach(s=>{
-    if(pos>=s.offsetTop&&pos<s.offsetTop+s.offsetHeight){
-      document.querySelectorAll('.navlink').forEach(l=>{l.classList.remove('active');if(l.getAttribute('href')==='#'+s.id)l.classList.add('active')});
-    }
-  });
-},{passive:true});
-
-// MOBILE MENU
-const mbtn=document.getElementById('mbtn'),navul=document.getElementById('navul'),noverlay=document.getElementById('navoverlay');
-function closeNav(){navul.classList.remove('open');noverlay.classList.remove('on');mbtn.innerHTML='<i class="fas fa-bars"></i>';document.body.style.overflow=''}
-mbtn.addEventListener('click',()=>{
-  if(navul.classList.contains('open')){closeNav()}
-  else{navul.classList.add('open');noverlay.classList.add('on');mbtn.innerHTML='<i class="fas fa-times"></i>';document.body.style.overflow='hidden'}
+galGeo.setAttribute('position',new THREE.BufferAttribute(gPos,3));
+galGeo.setAttribute('color',new THREE.BufferAttribute(gCol,3));
+var galaxy=new THREE.Points(galGeo,new THREE.PointsMaterial({size:.025,vertexColors:true,transparent:true,opacity:.9}));
+scene.add(galaxy);
+var dustGeo=new THREE.BufferGeometry();
+var dPos=new Float32Array(600*3);
+for(var i=0;i<600;i++){dPos[i*3]=(Math.random()-.5)*16;dPos[i*3+1]=(Math.random()-.5)*12;dPos[i*3+2]=(Math.random()-.5)*8;}
+dustGeo.setAttribute('position',new THREE.BufferAttribute(dPos,3));
+var dust=new THREE.Points(dustGeo,new THREE.PointsMaterial({color:WHITE,size:.012,transparent:true,opacity:.25}));
+scene.add(dust);
+var shells=[];
+[[1.0,TEAL,.055,1],[1.6,PURPLE,.04,-1],[2.2,PINK,.025,1]].forEach(function(d,i){
+  var g=new THREE.IcosahedronGeometry(d[0],i===0?1:0);
+  var m=new THREE.MeshBasicMaterial({color:d[1],wireframe:true,transparent:true,opacity:d[2]});
+  var mesh=new THREE.Mesh(g,m);
+  scene.add(mesh);shells.push({mesh:mesh,dir:d[3]});
 });
-noverlay.addEventListener('click',closeNav);
-document.querySelectorAll('.navlink').forEach(l=>l.addEventListener('click',closeNav));
-
-// SKILL BARS
-const skobs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){
-      const fill=e.target.querySelector('.skillfill'),pct=e.target.dataset.s;
-      if(fill&&pct)setTimeout(()=>{fill.style.width=pct+'%'},120);
-      skobs.unobserve(e.target);
-    }
+var cubes=[];
+var cubeColors=[TEAL,PURPLE,PINK,WHITE,GOLD];
+for(var i=0;i<55;i++){
+  var g=new THREE.BoxGeometry(.07,.07,.07);
+  var col=cubeColors[i%cubeColors.length];
+  var m=new THREE.MeshBasicMaterial({color:col,transparent:true,opacity:.2+Math.random()*.35,wireframe:Math.random()>.4});
+  var mesh=new THREE.Mesh(g,m);
+  mesh.position.set((Math.random()-.5)*14,(Math.random()-.5)*10,(Math.random()-.5)*5-1);
+  mesh.rotation.set(Math.random()*Math.PI,Math.random()*Math.PI,0);
+  mesh.userData={ry:.006+Math.random()*.01,rx:.004+Math.random()*.008,baseY:mesh.position.y,phase:Math.random()*Math.PI*2};
+  scene.add(mesh);cubes.push(mesh);
+}
+var tetras=[];
+var tColors=[TEAL,PURPLE,PINK,GOLD,WHITE];
+for(var i=0;i<14;i++){
+  var g=new THREE.TetrahedronGeometry(.16+Math.random()*.1,0);
+  var col=tColors[i%tColors.length];
+  var m=new THREE.MeshBasicMaterial({color:col,wireframe:true,transparent:true,opacity:.55+Math.random()*.35});
+  var mesh=new THREE.Mesh(g,m);
+  var angle=i*(Math.PI*2/14);
+  var rad=2.5+Math.random()*1.8;
+  mesh.position.set(Math.cos(angle)*rad,(Math.random()-.5)*2,(Math.random()-.5)*2);
+  mesh.userData={angle:angle,rad:rad,speed:.25+Math.random()*.35,phase:Math.random()*Math.PI*2};
+  scene.add(mesh);tetras.push(mesh);
+}
+var nnLayers=[
+  [[-3,1.2],[-3,0],[-3,-1.2]],
+  [[-1.2,1.8],[-1.2,.6],[-1.2,-.6],[-1.2,-1.8]],
+  [[.8,1.2],[.8,0],[.8,-1.2]],
+  [[2.6,.6],[2.6,-.6]]
+];
+var nnNodes=[];
+nnLayers.forEach(function(layer,li){
+  var nc=[PURPLE,TEAL,PINK,GOLD][li%4];
+  layer.forEach(function(n){
+    var g=new THREE.SphereGeometry(.068,12,12);
+    var m=new THREE.MeshBasicMaterial({color:nc,transparent:true,opacity:.9});
+    var mesh=new THREE.Mesh(g,m);
+    mesh.position.set(n[0],n[1],-1.5);
+    scene.add(mesh);nnNodes.push({mesh:mesh,base:n[1]});
   });
-},{threshold:.5});
-document.querySelectorAll('.skillitem').forEach(i=>skobs.observe(i));
-
-// FILTER
-document.querySelectorAll('.fbtn').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    document.querySelectorAll('.fbtn').forEach(b=>b.classList.remove('active'));
-    btn.classList.add('active');
-    const f=btn.dataset.f;
-    document.querySelectorAll('.projcard').forEach(c=>{
-      const show=f==='all'||c.dataset.cat===f;
-      if(show){c.style.display='flex';setTimeout(()=>{c.style.opacity='1';c.style.transform='translateY(0)'},10)}
-      else{c.style.opacity='0';c.style.transform='translateY(20px)';setTimeout(()=>{c.style.display='none'},300)}
+});
+for(var a=0;a<nnLayers.length-1;a++){
+  nnLayers[a].forEach(function(na){
+    nnLayers[a+1].forEach(function(nb){
+      var lg=new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(na[0],na[1],-1.5),new THREE.Vector3(nb[0],nb[1],-1.5)]);
+      scene.add(new THREE.Line(lg,new THREE.LineBasicMaterial({color:TEAL,transparent:true,opacity:.1})));
     });
   });
+}
+var planets=[];
+var pData=[
+  {r:3.0,speed:.28,size:.1,tilt:.3,col:TEAL},
+  {r:3.7,speed:.16,size:.15,tilt:.7,col:PURPLE},
+  {r:4.3,speed:.11,size:.09,tilt:1.2,col:PINK},
+  {r:2.4,speed:.42,size:.07,tilt:.5,col:GOLD},
+  {r:5.0,speed:.07,size:.18,tilt:.9,col:WHITE}
+];
+pData.forEach(function(pd,i){
+  var g=new THREE.SphereGeometry(pd.size,16,16);
+  var m=new THREE.MeshBasicMaterial({color:pd.col,transparent:true,opacity:.95});
+  var mesh=new THREE.Mesh(g,m);
+  scene.add(mesh);
+  var rg=new THREE.TorusGeometry(pd.r,.005,3,80);
+  var rm=new THREE.MeshBasicMaterial({color:pd.col,transparent:true,opacity:.08});
+  var ring=new THREE.Mesh(rg,rm);
+  ring.rotation.x=pd.tilt;scene.add(ring);
+  planets.push({mesh:mesh,ring:ring,r:pd.r,speed:pd.speed,phase:i*1.26,tilt:pd.tilt});
 });
-
-// MODAL
-const modal=document.getElementById('modal'),mclose=document.getElementById('modalclose');
-function closeModal(){modal.classList.remove('active');document.body.style.overflow=''}
-mclose.addEventListener('click',closeModal);
-modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
-
-function openModal(id){
-  const d=PROJECTS[id];if(!d)return;
-  document.getElementById('mCat').textContent=d.cat;
-  document.getElementById('mTitle').textContent=d.title;
-  document.getElementById('mDesc').textContent=d.desc;
-  document.getElementById('mImg').src=d.img;
-  document.getElementById('mImg').alt=d.title;
-  document.getElementById('mLive').href=d.live;
-  document.getElementById('mGit').href=d.github;
-  document.getElementById('mTags').innerHTML=d.tags.map(t=>`<span class="tag">${t}</span>`).join('');
-  document.getElementById('mFeats').innerHTML=`<h4>Key Features</h4><ul>${d.features.map(f=>`<li>${f}</li>`).join('')}</ul>`;
-  modal.classList.add('active');
-  document.body.style.overflow='hidden';
+var shooters=[];
+var sColors=[TEAL,PURPLE,PINK,WHITE,GOLD];
+for(var i=0;i<10;i++){
+  var g=new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(0,0,0),new THREE.Vector3(.9,0,0)]);
+  var m=new THREE.LineBasicMaterial({color:sColors[i%sColors.length],transparent:true,opacity:0});
+  var line=new THREE.Line(g,m);
+  scene.add(line);shooters.push({line:line,active:false,timer:Math.floor(Math.random()*80)});
 }
+var coreGeo=new THREE.SphereGeometry(.3,32,32);
+var coreMat=new THREE.MeshBasicMaterial({color:WHITE,wireframe:true,transparent:true,opacity:.5});
+var core=new THREE.Mesh(coreGeo,coreMat);
+scene.add(core);
+[[.55,TEAL],[.75,PURPLE],[.95,PINK]].forEach(function(d){
+  var g=new THREE.TorusGeometry(d[0],.006,4,60);
+  var m=new THREE.MeshBasicMaterial({color:d[1],transparent:true,opacity:.35});
+  var mesh=new THREE.Mesh(g,m);
+  scene.add(mesh);shells.push({mesh:mesh,dir:1,isCoreRing:true});
+});
+var gridHelper=new THREE.GridHelper(22,32,0x1a1a1a,0x111111);
+gridHelper.position.y=-4;
+gridHelper.material.transparent=true;gridHelper.material.opacity=.5;
+scene.add(gridHelper);
+var mx=0,my=0,tmx=0,tmy=0;
+document.addEventListener('mousemove',function(e){
+  mx=(e.clientX/window.innerWidth)*2-1;
+  my=-(e.clientY/window.innerHeight)*2+1;
+});
+var t=0;
+function animate(){
+  requestAnimationFrame(animate);t+=.007;
+  tmx+=(mx-tmx)*.04;tmy+=(my-tmy)*.04;
+  camera.position.x=tmx*1.5;camera.position.y=tmy*1.0;
+  camera.lookAt(scene.position);
+  galaxy.rotation.y=t*.032;
+  dust.rotation.y=-t*.015;dust.rotation.x=t*.008;
+  shells.forEach(function(sh,i){
+    if(sh.isCoreRing){sh.mesh.rotation.x=t*(1.2+i*.3);sh.mesh.rotation.z=t*(.8+i*.2);sh.mesh.material.opacity=.2+Math.abs(Math.sin(t*2+i))*.25;}
+    else{sh.mesh.rotation.y+=.006*sh.dir*(i*.3+1);sh.mesh.rotation.x+=.004*sh.dir;sh.mesh.material.opacity=.03+Math.abs(Math.sin(t*.7+i))*.04;}
+  });
+  cubes.forEach(function(c,i){c.rotation.x+=c.userData.rx;c.rotation.y+=c.userData.ry;c.position.y=c.userData.baseY+Math.sin(t*1.4+c.userData.phase)*.12;c.material.opacity=.1+Math.abs(Math.sin(t*.9+c.userData.phase))*.3;});
+  tetras.forEach(function(te,i){
+    var d=te.userData;d.angle+=d.speed*.012;
+    te.position.x=Math.cos(d.angle)*d.rad;te.position.y=Math.sin(d.angle)*d.rad*.45+Math.sin(t*1.8+d.phase)*.25;
+    te.rotation.x+=.018;te.rotation.y+=.013;
+    te.material.opacity=.25+Math.abs(Math.sin(t*1.4+d.phase))*.55;te.scale.setScalar(.75+Math.sin(t*1.8+d.phase)*.28);
+  });
+  nnNodes.forEach(function(n,i){n.mesh.position.y=n.base+Math.sin(t*2.5+i*.9)*.09;n.mesh.material.opacity=.25+Math.abs(Math.sin(t*3+i))*.7;n.mesh.scale.setScalar(.75+Math.sin(t*2+i)*.28);});
+  planets.forEach(function(p){
+    var angle=t*p.speed+p.phase;
+    p.mesh.position.x=Math.cos(angle)*p.r;p.mesh.position.y=Math.sin(angle)*Math.sin(p.tilt)*p.r*.35;p.mesh.position.z=Math.sin(angle)*Math.cos(p.tilt)*p.r*.25;
+    p.ring.rotation.y=t*.04;p.mesh.scale.setScalar(.85+Math.sin(t*2+p.phase)*.18);
+  });
+  shooters.forEach(function(s){
+    s.timer--;
+    if(!s.active&&s.timer<=0){s.active=true;s.timer=40+Math.floor(Math.random()*50);s.line.position.set((Math.random()-.5)*14,(Math.random()-.5)*8,-1);s.line.rotation.z=(Math.random()-.5)*Math.PI*.4;s.line.material.opacity=1;s.vx=(Math.random()-.5)*.22;s.vy=-Math.random()*.14-.04;}
+    if(s.active){s.line.position.x+=s.vx;s.line.position.y+=s.vy;s.line.material.opacity-=.016;if(s.line.material.opacity<=0){s.active=false;s.timer=50+Math.floor(Math.random()*100);}}
+  });
+  var pulse=.88+Math.sin(t*3)*.18;core.scale.setScalar(pulse);coreMat.opacity=.35+Math.sin(t*3)*.25;
+  gridHelper.material.opacity=.25+Math.sin(t*.4)*.15;
+  renderer.render(scene,camera);
+}
+animate();
+window.addEventListener('resize',function(){
+  var nw=canvas.parentElement.offsetWidth,nh=window.innerHeight;
+  renderer.setSize(nw,nh);camera.aspect=nw/nh;camera.updateProjectionMatrix();
+});
+})();
+</script>
+<section id="about"><div class="container"><div class="aboutgrid">
+  <div class="aboutimgarea">
+    <div class="aboutframe">
+      <img src="https://placehold.co/600x800/091525/13d0d0?text=Ankit+Jinkwan" alt="Ankit Jinkwan">
+      <div class="nameplate"><strong>Ankit Jinkwan</strong><span>Data Scientist & ML Engineer</span></div>
+    </div>
+    <div class="expbadge"><span class="en">2+</span><span class="el">Years Exp.</span></div>
+    <div class="about-hovercard">
+      <div class="ahc-row"><div class="ahc-icon ahc-teal"><i class="fas fa-map-marker-alt"></i></div><span class="ahc-label">Dehradun, India</span></div>
+      <div class="ahc-row"><div class="ahc-icon ahc-purple"><i class="fas fa-graduation-cap"></i></div><span class="ahc-label">B.Tech CS (AI/ML)</span></div>
+      <div class="ahc-row"><div class="ahc-icon ahc-pink"><i class="fas fa-briefcase"></i></div><span class="ahc-label">Open to Remote</span></div>
+      <div class="ahc-row"><div class="ahc-icon ahc-gold"><i class="fas fa-star"></i></div><span class="ahc-label">6+ Projects Done</span></div>
+    </div>
+  </div>
+  <div class="aboutcontent">
+    <span class="stag">About Me</span>
+    <h2>Turning <span class="tg">data into decisions</span> that matter</h2>
+    <p>I'm a Data Scientist and AI/ML Engineer based in Uttarakhand, India, with a passion for building end-to-end machine learning pipelines that solve real problems.</p>
+    <p>Currently pursuing B.Tech in Computer Science (AI/ML specialisation) at Shivalik College, Dehradun. When I'm not building models, I'm on Kaggle, reading ML research, or hiking in the Himalayas.</p>
+    <div class="hlgrid">
+      <div class="hlitem"><i class="fas fa-check-circle"></i> End-to-End ML Pipelines</div>
+      <div class="hlitem"><i class="fas fa-check-circle"></i> 6+ Completed Projects</div>
+      <div class="hlitem"><i class="fas fa-check-circle"></i> Deep Learning & NLP</div>
+      <div class="hlitem"><i class="fas fa-check-circle"></i> Data Visualisation</div>
+      <div class="hlitem"><i class="fas fa-check-circle"></i> Statistical Analysis</div>
+      <div class="hlitem"><i class="fas fa-check-circle"></i> Open to Remote Work</div>
+    </div>
+    <div class="aboutbtns">
+      <a href="Ankit_Jinkwan_CV.docx.docx" download class="btn bp"><i class="fas fa-file-word"></i> Download CV</a>
+      <a href="Ankit_Jinkwan_Resume.pdf.pdf" download class="btn bo"><i class="fas fa-file-pdf"></i> Download Resume</a>
+    </div>
+  </div>
+</div></div></section>
+<div class="wave-divider"><svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="wg1" x1="0" x2="1"><stop offset="0%" stop-color="#00d4aa" stop-opacity=".25"/><stop offset="50%" stop-color="#00d4aa" stop-opacity=".25"/><stop offset="100%" stop-color="#6366f1" stop-opacity=".25"/></linearGradient></defs><path d="M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,60 L0,60 Z" fill="url(#wg1)"/><path d="M0,42 C360,12 720,55 1080,28 C1300,10 1400,44 1440,42 L1440,60 L0,60 Z" fill="rgba(0,212,170,.05)"/></svg></div>
+<section id="skills"><div class="container">
+  <div style="text-align:center"><span class="stag">Expertise</span><h2 class="stitle">My Skills</h2><p class="ssub">Technologies and tools I work with daily</p></div>
+  <div class="skillsgrid">
+    <div class="skillcard"><h3><i class="fas fa-brain"></i> Machine Learning</h3>
+      <div class="skillitem" data-s="90"><div class="skillinfo"><span>Scikit-learn</span><span>90%</span></div><div class="skillbar"><div class="skillfill"></div></div></div>
+      <div class="skillitem" data-s="85"><div class="skillinfo"><span>TensorFlow / Keras</span><span>85%</span></div><div class="skillbar"><div class="skillfill"></div></div></div>
+      <div class="skillitem" data-s="80"><div class="skillinfo"><span>PyTorch</span><span>80%</span></div><div class="skillbar"><div class="skillfill"></div></div></div>
+      <div class="skillitem" data-s="88"><div class="skillinfo"><span>XGBoost / LightGBM</span><span>88%</span></div><div class="skillbar"><div class="skillfill"></div></div></div>
+    </div>
+    <div class="skillcard"><h3><i class="fas fa-chart-bar"></i> Data Analysis</h3>
+      <div class="skillitem" data-s="95"><div class="skillinfo"><span>Python (Pandas / NumPy)</span><span>95%</span></div><div class="skillbar"><div class="skillfill"></div></div></div>
+      <div class="skillitem" data-s="85"><div class="skillinfo"><span>SQL</span><span>85%</span></div><div class="skillbar"><div class="skillfill"></div></div></div>
+      <div class="skillitem" data-s="80"><div class="skillinfo"><span>R</span><span>80%</span></div><div class="skillbar"><div class="skillfill"></div></div></div>
+      <div class="skillitem" data-s="82"><div class="skillinfo"><span>Statistics & Probability</span><span>82%</span></div><div class="skillbar"><div class="skillfill"></div></div></div>
+    </div>
+    <div class="skillcard"><h3><i class="fas fa-chart-pie"></i> Visualisation</h3>
+      <div class="skillitem" data-s="90"><div class="skillinfo"><span>Matplotlib / Seaborn</span><span>90%</span></div><div class="skillbar"><div class="skillfill"></div></div></div>
+      <div class="skillitem" data-s="85"><div class="skillinfo"><span>Power BI / Tableau</span><span>85%</span></div><div class="skillbar"><div class="skillfill"></div></div></div>
+      <div class="skillitem" data-s="78"><div class="skillinfo"><span>Plotly / Dash</span><span>78%</span></div><div class="skillbar"><div class="skillfill"></div></div></div>
+      <div class="skillitem" data-s="80"><div class="skillinfo"><span>Streamlit</span><span>80%</span></div><div class="skillbar"><div class="skillfill"></div></div></div>
+    </div>
+    <div class="skillcard"><h3><i class="fas fa-tools"></i> Tools & Cloud</h3>
+      <div class="skillitem" data-s="90"><div class="skillinfo"><span>Git / GitHub</span><span>90%</span></div><div class="skillbar"><div class="skillfill"></div></div></div>
+      <div class="skillitem" data-s="78"><div class="skillinfo"><span>AWS / GCP Basics</span><span>78%</span></div><div class="skillbar"><div class="skillfill"></div></div></div>
+      <div class="skillitem" data-s="82"><div class="skillinfo"><span>Jupyter / VS Code</span><span>82%</span></div><div class="skillbar"><div class="skillfill"></div></div></div>
+      <div class="skillitem" data-s="75"><div class="skillinfo"><span>Docker / Linux</span><span>75%</span></div><div class="skillbar"><div class="skillfill"></div></div></div>
+    </div>
+  </div>
+  <p class="techtitle">Tech Stack</p>
+  <div class="ballfield" id="ballfield">
+    <canvas id="ballCanvas"></canvas>
+  </div>
+</div></section>
+<div class="wave-divider"><svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="wg2" x1="0" x2="1"><stop offset="0%" stop-color="#6366f1" stop-opacity=".25"/><stop offset="50%" stop-color="#00d4aa" stop-opacity=".25"/><stop offset="100%" stop-color="#00d4aa" stop-opacity=".25"/></linearGradient></defs><path d="M0,20 C180,55 360,5 540,35 C720,60 900,10 1080,40 C1260,60 1380,15 1440,20 L1440,60 L0,60 Z" fill="url(#wg2)"/><path d="M0,50 C300,20 600,55 900,30 C1100,15 1300,50 1440,45 L1440,60 L0,60 Z" fill="rgba(0,212,170,.04)"/></svg></div>
+<section id="projects"><div class="container">
+  <div style="text-align:center"><span class="stag">Portfolio</span><h2 class="stitle">My Projects</h2><p class="ssub">Data science & machine learning work</p></div>
+  <div class="filterrow">
+    <button class="fbtn active" data-f="all">All</button>
+    <button class="fbtn" data-f="ml">ML Models</button>
+    <button class="fbtn" data-f="eda">EDA</button>
+    <button class="fbtn" data-f="viz">Visualisation</button>
+    <button class="fbtn" data-f="nlp">NLP</button>
+  </div>
+  <div class="projgrid" id="projgrid">
+<div class="projcard" data-cat="ml" onclick="openModal(1"><div class="projcard-inner"><div class="projcard-front"><div class="projthumb"><img src="https://placehold.co/800x450/091525/13d0d0?text=Customer+Churn+Prediction" alt=""><span class="projbadge bteal">ML Model</span><div class="projoverlay"><a href="#" onclick="event.stopPropagation();openModal(1)" title="View"><i class="fas fa-eye"></i></a><a href="https://github.com/ankitjhinkwan/customer-churn-prediction" target="_blank" onclick="event.stopPropagation()" title="GitHub"><i class="fab fa-github"></i></a></div></div><canvas class="mini3d" id="mini3d-1" width="400" height="100"></canvas><div class="projbody"><div class="projmeta"><span class="projcat">ML Model</span><span class="projyr">2024</span></div><h3>Customer Churn Prediction</h3><p>Predicts telecom customer churn using Random Forest with SHAP explainability.</p><div class="tags"><span class="tag">Python</span><span class="tag">Scikit-learn</span><span class="tag">SHAP</span><span class="tag">Random Forest</span></div></div></div><div class="projcard-back"><div class="backicon">&#129302;</div><div class="backtitle">Customer Churn Prediction</div><div class="backdesc">Random Forest binary classifier with SHAP values for interpretability on telecom data.</div><span class="backstat">92% Accuracy</span><div class="backbtns"><a href="https://customer-churn-prediction-rnvjkdzvjbthcldk8ecxve.streamlit.app/" target="_blank" class="bb-live" onclick="event.stopPropagation()"><i class="fas fa-external-link-alt"></i> Live Demo</a><a href="https://github.com/ankitjhinkwan/customer-churn-prediction" target="_blank" class="bb-gh" onclick="event.stopPropagation()"><i class="fab fa-github"></i> GitHub</a></div></div></div></div>
+<div class="projcard" data-cat="viz" onclick="openModal(2"><div class="projcard-inner"><div class="projcard-front"><div class="projthumb"><img src="https://placehold.co/800x450/091525/a78bfa?text=Sales+Analytics+Dashboard" alt=""><span class="projbadge bgrey">Visualisation</span><div class="projoverlay"><a href="#" onclick="event.stopPropagation();openModal(2)" title="View"><i class="fas fa-eye"></i></a><a href="https://github.com/ankitjhinkwan/sales-analytics-dashboard" target="_blank" onclick="event.stopPropagation()" title="GitHub"><i class="fab fa-github"></i></a></div></div><canvas class="mini3d" id="mini3d-2" width="400" height="100"></canvas><div class="projbody"><div class="projmeta"><span class="projcat">Data Viz</span><span class="projyr">2024</span></div><h3>Sales Analytics Dashboard</h3><p>Interactive dashboard visualising 3 years of retail sales with KPIs and regional breakdowns.</p><div class="tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">SQL</span><span class="tag">Excel</span></div></div></div><div class="projcard-back"><div class="backicon">&#128202;</div><div class="backtitle">Sales Analytics Dashboard</div><div class="backdesc">Interactive Power BI dashboard with KPIs, regional breakdowns, and trend analysis.</div><span class="backstat">3yr Dataset</span><div class="backbtns"><a href="https://sales-analytics-dashboard-fxcku4gheld2qwws2qzet9.streamlit.app/" target="_blank" class="bb-live" onclick="event.stopPropagation()"><i class="fas fa-external-link-alt"></i> Live Demo</a><a href="https://github.com/ankitjhinkwan/sales-analytics-dashboard" target="_blank" class="bb-gh" onclick="event.stopPropagation()"><i class="fab fa-github"></i> GitHub</a></div></div></div></div>
+<div class="projcard" data-cat="ml" onclick="openModal(3"><div class="projcard-inner"><div class="projcard-front"><div class="projthumb"><img src="https://placehold.co/800x450/091525/f472b6?text=House+Price+Prediction" alt=""><span class="projbadge bteal">ML Model</span><div class="projoverlay"><a href="#" onclick="event.stopPropagation();openModal(3)" title="View"><i class="fas fa-eye"></i></a><a href="https://github.com/ankitjhinkwan/house-price-prediction" target="_blank" onclick="event.stopPropagation()" title="GitHub"><i class="fab fa-github"></i></a></div></div><canvas class="mini3d" id="mini3d-3" width="400" height="100"></canvas><div class="projbody"><div class="projmeta"><span class="projcat">ML Model</span><span class="projyr">2024</span></div><h3>House Price Prediction</h3><p>Predicts house prices using advanced feature engineering and XGBoost regression.</p><div class="tags"><span class="tag">Python</span><span class="tag">XGBoost</span><span class="tag">SHAP</span><span class="tag">Pandas</span></div></div></div><div class="projcard-back"><div class="backicon">&#127968;</div><div class="backtitle">House Price Prediction</div><div class="backdesc">XGBoost regressor with advanced feature engineering achieving Kaggle top 10% RMSE.</div><span class="backstat">Top 10% RMSE</span><div class="backbtns"><a href="https://house-price-prediction-dogvarm934yfanqwpf6rtd.streamlit.app/" target="_blank" class="bb-live" onclick="event.stopPropagation()"><i class="fas fa-external-link-alt"></i> Live Demo</a><a href="https://github.com/ankitjhinkwan/house-price-prediction" target="_blank" class="bb-gh" onclick="event.stopPropagation()"><i class="fab fa-github"></i> GitHub</a></div></div></div></div>
+<div class="projcard" data-cat="eda" onclick="openModal(4"><div class="projcard-inner"><div class="projcard-front"><div class="projthumb"><img src="https://placehold.co/800x450/091525/fbbf24?text=Netflix+Content+Analysis" alt=""><span class="projbadge bred">EDA</span><div class="projoverlay"><a href="#" onclick="event.stopPropagation();openModal(4)" title="View"><i class="fas fa-eye"></i></a><a href="https://github.com/ankitjhinkwan/netflix-content-analysis" target="_blank" onclick="event.stopPropagation()" title="GitHub"><i class="fab fa-github"></i></a></div></div><canvas class="mini3d" id="mini3d-4" width="400" height="100"></canvas><div class="projbody"><div class="projmeta"><span class="projcat">EDA</span><span class="projyr">2024</span></div><h3>Netflix Content Analysis</h3><p>Deep-dive EDA of Netflix's catalogue covering 8000+ titles, genre trends, release patterns.</p><div class="tags"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Plotly</span><span class="tag">Seaborn</span></div></div></div><div class="projcard-back"><div class="backicon">&#127909;</div><div class="backtitle">Netflix Content Analysis</div><div class="backdesc">Exploratory analysis of Netflix catalogue covering genres, release trends and content distribution.</div><span class="backstat">8000+ Titles</span><div class="backbtns"><a href="https://netflix-content-analysis-a9zowuxo75jdrdz3rdmcfc.streamlit.app/" target="_blank" class="bb-live" onclick="event.stopPropagation()"><i class="fas fa-external-link-alt"></i> Live Demo</a><a href="https://github.com/ankitjhinkwan/netflix-content-analysis" target="_blank" class="bb-gh" onclick="event.stopPropagation()"><i class="fab fa-github"></i> GitHub</a></div></div></div></div>
+<div class="projcard" data-cat="nlp" onclick="openModal(5"><div class="projcard-inner"><div class="projcard-front"><div class="projthumb"><img src="https://placehold.co/800x450/091525/13d0d0?text=Twitter+Sentiment+Analysis" alt=""><span class="projbadge bgrey">NLP</span><div class="projoverlay"><a href="#" onclick="event.stopPropagation();openModal(5)" title="View"><i class="fas fa-eye"></i></a><a href="https://github.com/ankitjhinkwan/twitter-sentiment-analysis" target="_blank" onclick="event.stopPropagation()" title="GitHub"><i class="fab fa-github"></i></a></div></div><canvas class="mini3d" id="mini3d-5" width="400" height="100"></canvas><div class="projbody"><div class="projmeta"><span class="projcat">NLP</span><span class="projyr">2024</span></div><h3>Twitter Sentiment Analysis</h3><p>Fine-tuned BERT model for real-time tweet sentiment classification.</p><div class="tags"><span class="tag">BERT</span><span class="tag">HuggingFace</span><span class="tag">Python</span><span class="tag">Streamlit</span></div></div></div><div class="projcard-back"><div class="backicon">&#128483;</div><div class="backtitle">Twitter Sentiment Analysis</div><div class="backdesc">Fine-tuned BERT transformer model for multi-class tweet sentiment classification in real-time.</div><span class="backstat">BERT Model</span><div class="backbtns"><a href="https://twitter-sentiment-analysis-wqca35sbczxdll4nlqf2bk.streamlit.app/" target="_blank" class="bb-live" onclick="event.stopPropagation()"><i class="fas fa-external-link-alt"></i> Live Demo</a><a href="https://github.com/ankitjhinkwan/twitter-sentiment-analysis" target="_blank" class="bb-gh" onclick="event.stopPropagation()"><i class="fab fa-github"></i> GitHub</a></div></div></div></div>
+<div class="projcard" data-cat="eda" onclick="openModal(6"><div class="projcard-inner"><div class="projcard-front"><div class="projthumb"><img src="https://placehold.co/800x450/091525/a78bfa?text=COVID-19+Data+Analysis" alt=""><span class="projbadge bred">EDA</span><div class="projoverlay"><a href="#" onclick="event.stopPropagation();openModal(6)" title="View"><i class="fas fa-eye"></i></a><a href="https://github.com/ankitjhinkwan/covid19-data-analysis" target="_blank" onclick="event.stopPropagation()" title="GitHub"><i class="fab fa-github"></i></a></div></div><canvas class="mini3d" id="mini3d-6" width="400" height="100"></canvas><div class="projbody"><div class="projmeta"><span class="projcat">EDA</span><span class="projyr">2024</span></div><h3>COVID-19 Data Analysis</h3><p>Global pandemic EDA tracking infection rates, mortality patterns and spread timelines.</p><div class="tags"><span class="tag">Python</span><span class="tag">Seaborn</span><span class="tag">NumPy</span><span class="tag">Matplotlib</span></div></div></div><div class="projcard-back"><div class="backicon">&#128566;</div><div class="backtitle">COVID-19 Data Analysis</div><div class="backdesc">Comprehensive global pandemic analysis tracking spread, mortality and recovery patterns.</div><span class="backstat">Global EDA</span><div class="backbtns"><a href="https://covid19-data-analysis-mjzyt4aekyyz28ueyezszq.streamlit.app/" target="_blank" class="bb-live" onclick="event.stopPropagation()"><i class="fas fa-external-link-alt"></i> Live Demo</a><a href="https://github.com/ankitjhinkwan/covid19-data-analysis" target="_blank" class="bb-gh" onclick="event.stopPropagation()"><i class="fab fa-github"></i> GitHub</a></div></div></div></div>
+  </div>
+</div></section>
+<div class="wave-divider"><svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="wg3" x1="0" x2="1"><stop offset="0%" stop-color="#00d4aa" stop-opacity=".25"/><stop offset="50%" stop-color="#6366f1" stop-opacity=".25"/><stop offset="100%" stop-color="#00d4aa" stop-opacity=".25"/></linearGradient></defs><path d="M0,35 C200,5 400,55 600,25 C800,0 1000,50 1200,30 C1320,15 1400,45 1440,35 L1440,60 L0,60 Z" fill="url(#wg3)"/><path d="M0,10 C360,45 720,5 1080,40 C1260,55 1380,20 1440,15 L1440,60 L0,60 Z" fill="rgba(99,102,241,.04)"/></svg></div>
+<section id="contact"><div class="container">
+  <div style="text-align:center"><span class="stag">Get In Touch</span><h2 class="stitle">Let's Work Together</h2><p class="ssub">Available for freelance projects and full-time roles</p></div>
+  <div class="contactgrid">
+    <div class="cinfo">
+      <h3>Say hello 👋</h3>
+      <p>I'm available for data science consulting, ML project work, and full-time roles.</p>
+      <div class="citems">
+        <div class="citem"><div class="cicon"><i class="fas fa-map-marker-alt"></i></div><div class="ctext"><h4>Location</h4><p>Uttarakhand, India</p></div></div>
+        <div class="citem"><div class="cicon"><i class="fas fa-envelope"></i></div><div class="ctext"><h4>Email</h4><a href="mailto:ankitjhinkwan9@gmail.com"><span style="display:none" data-cfemail="86e7e8edeff2eceeefe8edf1e7e8bfc6e1ebe7efeaa8e5e9eb">[email&#160;protected]</span></a></div></div>
+        <div class="citem"><div class="cicon"><i class="fas fa-phone-alt"></i></div><div class="ctext"><h4>Phone</h4><a href="tel:+919528693191">+91 9528693191</a></div></div>
+        <div class="citem"><div class="cicon"><i class="fas fa-clock"></i></div><div class="ctext"><h4>Availability</h4><p>Mon – Sat, 9 AM – 6 PM IST</p></div></div>
+      </div>
+      <div class="cdls">
+        <a href="Ankit_Jinkwan_CV.docx.docx" download class="btn bo" style="font-size:.82rem;padding:.6rem 1.1rem"><i class="fas fa-file-word"></i> CV</a>
+        <a href="Ankit_Jinkwan_Resume.pdf.pdf" download class="btn bg2" style="font-size:.82rem;padding:.6rem 1.1rem"><i class="fas fa-file-pdf"></i> Resume</a>
+      </div>
+      <div class="socials">
+        <a href="https://www.linkedin.com/in/ankit-jinkwan-a16882288/" target="_blank" class="socbtn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/ankitjhinkwan" target="_blank" class="socbtn"><i class="fab fa-github"></i></a>
+        <a href="mailto:ankitjhinkwan9@gmail.com">ankitjhinkwan9@gmail.com</a>
+      </div>
+    </div>
+    <div class="formcard">
+      <form id="contactform" novalidate>
+        <div class="formrow">
+          <div class="formgrp"><label>Name</label><input type="text" id="fname" placeholder="John Doe" required><span class="ferr" id="nameerr"></span></div>
+          <div class="formgrp"><label>Email</label><input type="email" id="femail" placeholder="john@example.com" required><span class="ferr" id="emailerr"></span></div>
+        </div>
+        <div class="formgrp"><label>Subject</label><input type="text" id="fsubject" placeholder="Project Inquiry"></div>
+        <div class="formgrp"><label>Message</label><textarea id="fmsg" placeholder="Tell me about your project..." required></textarea><span class="ferr" id="msgerr"></span></div>
+        <button type="submit" class="btn bp" id="formbtn" style="width:100%;justify-content:center">
+          <span id="btntxt"><i class="fas fa-paper-plane"></i> Send Message</span>
+          <span id="btnload" style="display:none"><i class="fas fa-spinner fa-spin"></i> Sending...</span>
+        </button>
+        <div id="formstatus" class="fstatus"></div>
+      </form>
+    </div>
+  </div>
+</div></section>
+<footer><div class="container"><div class="footinner">
+  <a href="#hero" class="footlogo">Ankit<span>.</span></a>
+  <ul class="footlinks"><li><a href="#about">About</a></li><li><a href="#skills">Skills</a></li><li><a href="#projects">Projects</a></li><li><a href="#contact">Contact</a></li></ul>
+  <p class="footcopy">© 2025 Ankit Jinkwan · Made with <i class="fas fa-heart" style="color:#ff4060"></i> in Uttarakhand</p>
+</div></div></footer>
+<a href="#hero" id="btt"><i class="fas fa-arrow-up"></i></a>
+<div id="navoverlay"></div>
+<div class="modal" id="modal"><div class="modalbox">
+  <button class="modalclose" id="modalclose"><i class="fas fa-times"></i></button>
+  <div class="modalimg"><img id="mImg" src="" alt=""></div>
+  <div class="modalcontent">
+    <span class="projcat" id="mCat"></span><h2 id="mTitle"></h2><p id="mDesc"></p>
+    <div id="mTags" class="tags" style="margin-bottom:1.2rem"></div>
+    <div id="mFeats" class="modalfeats"></div>
+    <div class="modalfoot">
+      <a href="#" class="btn bp" id="mLive" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+      <a href="#" class="btn bo" id="mGit" target="_blank"><i class="fab fa-github"></i> Source Code</a>
+    </div>
+  </div>
+</div></div>
+<script>
+const PROJECTS={
+  1:{cat:"ML Model",title:"Customer Churn Prediction",desc:"A binary classification model predicting telecom customer churn with 92% accuracy. Uses Random Forest with SHAP values to explain which features drive churn.",tags:["Python","Random Forest","SHAP","Scikit-learn","Pandas"],features:["92% Classification Accuracy","SHAP Explainability","Feature Importance Analysis","Confusion Matrix & ROC-AUC","Business Insight Reports","End-to-End ML Pipeline"],img:"https://placehold.co/800x450/091525/13d0d0?text=Customer+Churn+Prediction",live:"https://customer-churn-prediction-rnvjkdzvjbthcldk8ecxve.streamlit.app/",github:"https://github.com/ankitjhinkwan/customer-churn-prediction"},
+  2:{cat:"Visualisation",title:"Sales Analytics Dashboard",desc:"An interactive Power BI dashboard visualising 3 years of retail sales data with KPI scorecards, revenue trends, and regional breakdowns.",tags:["Power BI","DAX","SQL","Excel","Data Modelling"],features:["KPI Scorecards","Regional Breakdown","Year-over-Year Trends","Product Performance","DAX Measures","Drill-Through Pages"],img:"https://placehold.co/800x450/091525/13d0d0?text=Sales+Analytics+Dashboard",live:"https://sales-analytics-dashboard-fxcku4gheld2qwws2qzet9.streamlit.app/",github:"https://github.com/ankitjhinkwan/sales-analytics-dashboard"},
+  3:{cat:"ML Model",title:"House Price Prediction",desc:"Regression model predicting house prices using advanced feature engineering and XGBoost on the Ames Housing dataset. Achieved RMSE in the Kaggle top 10%.",tags:["Python","XGBoost","Scikit-learn","Pandas","SHAP"],features:["Top 10% Kaggle RMSE","Advanced Feature Engineering","Hyperparameter Tuning","Cross-Validation","SHAP Explainability","Full EDA Pipeline"],img:"https://placehold.co/800x450/091525/13d0d0?text=House+Price+Prediction",live:"https://house-price-prediction-dogvarm934yfanqwpf6rtd.streamlit.app/",github:"https://github.com/ankitjhinkwan/house-price-prediction"},
+  4:{cat:"EDA",title:"Netflix Content Analysis",desc:"Deep-dive EDA of Netflix's entire catalogue uncovering genre trends, release patterns, content ratings and regional distribution across 8000+ titles.",tags:["Pandas","Plotly","Matplotlib","Python","Seaborn"],features:["Genre Trend Analysis","Release Pattern Study","Content Rating Breakdown","Regional Distribution","Interactive Plotly Charts","Time-Series Analysis"],img:"https://placehold.co/800x450/091525/ff4060?text=Netflix+Content+Analysis",live:"https://netflix-content-analysis-a9zowuxo75jdrdz3rdmcfc.streamlit.app/",github:"https://github.com/ankitjhinkwan/netflix-content-analysis"},
+  5:{cat:"NLP",title:"Twitter Sentiment Analysis",desc:"End-to-end NLP pipeline classifying tweet sentiments using a fine-tuned BERT model, deployed as an interactive Streamlit dashboard.",tags:["BERT","HuggingFace","Streamlit","Python","PyTorch"],features:["BERT Fine-Tuning","Real-Time Classification","Streamlit Dashboard","Sentiment Trend Charts","Word Cloud Visualisation","REST API Ready"],img:"https://placehold.co/800x450/091525/c8dae8?text=Twitter+Sentiment+Analysis",live:"https://twitter-sentiment-analysis-wqca35sbczxdll4nlqf2bk.streamlit.app/",github:"https://github.com/ankitjhinkwan/twitter-sentiment-analysis"},
+  6:{cat:"EDA",title:"COVID-19 Data Analysis",desc:"Comprehensive EDA of global COVID-19 trends covering vaccination rates, mortality patterns, spread timelines and country-level responses.",tags:["Pandas","Seaborn","NumPy","Matplotlib","Jupyter"],features:["Global Trend Analysis","Vaccination Rate Tracking","Mortality Pattern Study","Country Comparisons","Automated Data Pipeline","Time-Series Visualisations"],img:"https://placehold.co/800x450/091525/ff4060?text=COVID-19+Data+Analysis",live:"https://covid19-data-analysis-mjzyt4aekyyz28ueyezszq.streamlit.app/",github:"https://github.com/ankitjhinkwan/covid19-data-analysis"}
+};
+const dot=document.getElementById("cDot"),ring=document.getElementById("cRing");
+if(dot&&ring){let mx=0,my=0,rx=0,ry=0;document.addEventListener("mousemove",e=>{mx=e.clientX;my=e.clientY;dot.style.left=mx+"px";dot.style.top=my+"px"});(function ar(){rx+=(mx-rx)*.14;ry+=(my-ry)*.14;ring.style.left=rx+"px";ring.style.top=ry+"px";requestAnimationFrame(ar)})();document.querySelectorAll("a,button,.projcard,.chip,.fbtn").forEach(el=>{el.addEventListener("mouseenter",()=>ring.classList.add("hov"));el.addEventListener("mouseleave",()=>ring.classList.remove("hov"))})}
+/* particles handled by Three.js hero canvas */
+const typed=document.getElementById("typed");
+const phrases=["Data Scientist","ML Engineer","Data Analyst","Insight Explorer","Problem Solver"];
+let pi=0,ci=0,del=false;
+function type(){const cur=phrases[pi];typed.textContent=del?cur.slice(0,ci--):cur.slice(0,ci++);let d=del?55:105;if(!del&&ci===cur.length+1){d=2000;del=true}else if(del&&ci<0){del=false;ci=0;pi=(pi+1)%phrases.length;d=350}setTimeout(type,d)}
+setTimeout(type,800);
+const hdr=document.getElementById("hdr"),btt=document.getElementById("btt");
+window.addEventListener("scroll",()=>{hdr.classList.toggle("sc",window.scrollY>50);btt.classList.toggle("on",window.scrollY>420);const pos=window.scrollY+140;document.querySelectorAll("section[id]").forEach(s=>{if(pos>=s.offsetTop&&pos<s.offsetTop+s.offsetHeight){document.querySelectorAll(".navlink").forEach(l=>{l.classList.remove("active");if(l.getAttribute("href")==="#"+s.id)l.classList.add("active")})}})},{passive:true});
+const mbtn=document.getElementById("mbtn"),navul=document.getElementById("navul"),noverlay=document.getElementById("navoverlay");
+function closeNav(){navul.classList.remove("open");noverlay.classList.remove("on");mbtn.innerHTML='<i class="fas fa-bars"></i>';document.body.style.overflow=""}
+mbtn.addEventListener("click",()=>{if(navul.classList.contains("open")){closeNav()}else{navul.classList.add("open");noverlay.classList.add("on");mbtn.innerHTML='<i class="fas fa-times"></i>';document.body.style.overflow="hidden"}});
+noverlay.addEventListener("click",closeNav);
+document.querySelectorAll(".navlink").forEach(l=>l.addEventListener("click",closeNav));
+const skobs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){
+    const fill=e.target.querySelector(".skillfill"),pct=parseInt(e.target.dataset.s);
+    const pctEl=e.target.querySelector(".skillinfo span:last-child");
+    if(fill&&pct){
+      setTimeout(()=>{
+        fill.style.width=pct+"%";
+        e.target.classList.add("lit");
+        // counter animation
+        if(pctEl){
+          let start=0,dur=1400,startTime=null;
+          function countUp(ts){
+            if(!startTime)startTime=ts;
+            const prog=Math.min((ts-startTime)/dur,1);
+            const ease=1-Math.pow(1-prog,3);
+            pctEl.textContent=Math.round(ease*pct)+"%";
+            if(prog<1)requestAnimationFrame(countUp);
+          }
+          requestAnimationFrame(countUp);
+        }
+      },120);
+    }
+    skobs.unobserve(e.target);
+  }})},{threshold:.4});
+document.querySelectorAll(".skillitem").forEach(i=>skobs.observe(i));
+document.querySelectorAll(".fbtn").forEach(btn=>{btn.addEventListener("click",()=>{document.querySelectorAll(".fbtn").forEach(b=>b.classList.remove("active"));btn.classList.add("active");const f=btn.dataset.f;document.querySelectorAll(".projcard").forEach(c=>{const show=f==="all"||c.dataset.cat===f;if(show){c.style.display="flex";setTimeout(()=>{c.style.opacity="1";c.style.transform="translateY(0)"},10)}else{c.style.opacity="0";c.style.transform="translateY(20px)";setTimeout(()=>{c.style.display="none"},300)}})})});
+const modal=document.getElementById("modal"),mclose=document.getElementById("modalclose");
+function closeModal(){modal.classList.remove("active");document.body.style.overflow=""}
+mclose.addEventListener("click",closeModal);modal.addEventListener("click",e=>{if(e.target===modal)closeModal()});document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal()});
+function openModal(id){const d=PROJECTS[id];if(!d)return;document.getElementById("mCat").textContent=d.cat;document.getElementById("mTitle").textContent=d.title;document.getElementById("mDesc").textContent=d.desc;document.getElementById("mImg").src=d.img;document.getElementById("mImg").alt=d.title;document.getElementById("mLive").href=d.live;document.getElementById("mGit").href=d.github;document.getElementById("mTags").innerHTML=d.tags.map(function(t){return '<span class="tag">'+t+'</span>';}).join("");document.getElementById("mFeats").innerHTML='<h4>Key Features</h4><ul>'+d.features.map(function(f){return '<li>'+f+'</li>';}).join("")+'</ul>';modal.classList.add("active");document.body.style.overflow="hidden"}
+// EmailJS Contact Form
+(function(){
+  // Init EmailJS with your public key
+  if(typeof emailjs !== 'undefined'){
+    emailjs.init('ryxoue1rev4JlvfCM');
+  }
 
-// CONTACT FORM
-const cf=document.getElementById('contactform');
-if(cf){
-  const fields={
-    name:{el:document.getElementById('fname'),err:document.getElementById('nameerr'),v:s=>s.trim().length>=2?'':'Name must be at least 2 characters.'},
-    email:{el:document.getElementById('femail'),err:document.getElementById('emailerr'),v:s=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s)?'':'Please enter a valid email.'},
-    msg:{el:document.getElementById('fmsg'),err:document.getElementById('msgerr'),v:s=>s.trim().length>=10?'':'Message must be at least 10 characters.'}
+  var cf = document.getElementById('contactform');
+  if(!cf) return;
+
+  // Validation
+  var rules = {
+    fname:   function(v){ return v.trim().length >= 2 ? '' : 'Name must be at least 2 characters.'; },
+    femail:  function(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) ? '' : 'Please enter a valid email.'; },
+    fmsg:    function(v){ return v.trim().length >= 10 ? '' : 'Message must be at least 10 characters.'; }
   };
-  Object.values(fields).forEach(({el,err,v})=>{
-    el.addEventListener('input',()=>{const m=v(el.value);err.textContent=m;el.classList.toggle('err',!!m)});
+  var errIds = { fname:'nameerr', femail:'emailerr', fmsg:'msgerr' };
+
+  Object.keys(rules).forEach(function(id){
+    var el = document.getElementById(id);
+    if(!el) return;
+    el.addEventListener('input', function(){
+      var msg = rules[id](el.value);
+      var err = document.getElementById(errIds[id]);
+      if(err) err.textContent = msg;
+      el.classList.toggle('err', !!msg);
+    });
   });
-  cf.addEventListener('submit',async e=>{
+
+  cf.addEventListener('submit', function(e){
     e.preventDefault();
-    let hasErr=false;
-    Object.values(fields).forEach(({el,err,v})=>{const m=v(el.value);err.textContent=m;el.classList.toggle('err',!!m);if(m)hasErr=true});
-    if(hasErr)return;
-    const btn=document.getElementById('formbtn'),tx=document.getElementById('btntxt'),ld=document.getElementById('btnload'),st=document.getElementById('formstatus');
-    tx.style.display='none';ld.style.display='inline-flex';btn.disabled=true;st.className='fstatus';
-    const name=fields.name.el.value.trim(),email=fields.email.el.value.trim(),subject=document.getElementById('fsubject').value.trim()||'Portfolio Contact',msg=fields.msg.el.value.trim();
-    window.location.href=`mailto:ankitjhinkwan9@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent('From: '+name+' ('+email+')\n\n'+msg)}`;
-    st.textContent='✅ Opening your email app...';st.className='fstatus ok';
-    tx.style.display='inline-flex';ld.style.display='none';btn.disabled=false;
+    var valid = true;
+    Object.keys(rules).forEach(function(id){
+      var el = document.getElementById(id);
+      if(!el) return;
+      var msg = rules[id](el.value);
+      var err = document.getElementById(errIds[id]);
+      if(err) err.textContent = msg;
+      el.classList.toggle('err', !!msg);
+      if(msg) valid = false;
+    });
+    if(!valid) return;
+
+    var btn = document.getElementById('formbtn');
+    var btntxt = document.getElementById('btntxt');
+    var btnload = document.getElementById('btnload');
+    var status = document.getElementById('formstatus');
+
+    btntxt.style.display = 'none';
+    btnload.style.display = 'inline-flex';
+    btn.disabled = true;
+
+    var params = {
+      from_name:  document.getElementById('fname').value.trim(),
+      from_email: document.getElementById('femail').value.trim(),
+      subject:    document.getElementById('fsubject').value.trim() || 'Portfolio Contact',
+      message:    document.getElementById('fmsg').value.trim(),
+      to_name:    'Ankit',
+      reply_to:   document.getElementById('femail').value.trim()
+    };
+
+    if(typeof emailjs === 'undefined'){
+      // Fallback if EmailJS not loaded
+      setTimeout(function(){
+        btntxt.style.display = 'inline-flex';
+        btnload.style.display = 'none';
+        btn.disabled = false;
+        status.innerHTML = '<i class="fas fa-check-circle"></i> Message received! I will get back to you soon.';
+        status.className = 'fstatus ok';
+        cf.reset();
+      }, 800);
+      return;
+    }
+
+    // SERVICE_ID and TEMPLATE_ID from EmailJS dashboard
+    emailjs.send('service_gxcxdpq', 'template_81zn0ch', params)
+      .then(function(){
+        btntxt.style.display = 'inline-flex';
+        btnload.style.display = 'none';
+        btn.disabled = false;
+        status.innerHTML = '<i class="fas fa-check-circle"></i> Message sent! I will get back to you within 24 hours.';
+        status.className = 'fstatus ok';
+        cf.reset();
+      })
+      .catch(function(){
+        btntxt.style.display = 'inline-flex';
+        btnload.style.display = 'none';
+        btn.disabled = false;
+        status.innerHTML = '<i class="fas fa-exclamation-circle"></i> Something went wrong. Email me directly at <a href="mailto:ankitjhinkwan9@gmail.com">ankitjhinkwan9@gmail.com</a>';
+        status.className = 'fstatus err';
+      });
+  });
+})();
+
+
+// Randomize tech stack
+(function(){
+  var grid = document.querySelector('.chipsgrid');
+  if(!grid) return;
+  var chips = Array.from(grid.children);
+  for(var i=chips.length-1;i>0;i--){
+    var j=Math.floor(Math.random()*(i+1));
+    grid.appendChild(chips[j]);
+    chips.splice(j,1);
+  }
+})();
+
+
+// Hero glow follow cursor
+var heroEl = document.getElementById('hero');
+var heroGlow = document.getElementById('hero-glow');
+if(heroEl && heroGlow){
+  heroEl.addEventListener('mousemove', function(e){
+    var rect = heroEl.getBoundingClientRect();
+    heroGlow.style.left = (e.clientX - rect.left) + 'px';
+    heroGlow.style.top = (e.clientY - rect.top) + 'px';
   });
 }
+
+
+
+// Tech stack bouncy balls
+(function(){
+  var canvas = document.getElementById('ballCanvas');
+  if(!canvas) return;
+  var field = document.getElementById('ballfield');
+  canvas.width = field.offsetWidth;
+  canvas.height = 260;
+  var W = canvas.width, H = 260;
+  var ctx = canvas.getContext('2d');
+  var colors = ['#00d4aa','#6366f1','#888888','#00d4aa','#ffffff','#6366f1','#888888','#00d4aa','#ffffff','#6366f1','#00d4aa','#888888'];
+  var labels = ['Python','TensorFlow','SQL','Power BI','Jupyter','Pandas','Git','AWS','PyTorch','Plotly','BERT','Docker'];
+  var icons =  ['fab fa-python','fas fa-brain','fas fa-database','fas fa-chart-pie','fas fa-book-open','fas fa-table','fab fa-git-alt','fab fa-aws','fas fa-fire','fas fa-chart-line','fas fa-robot','fab fa-docker'];
+  var balls = labels.map(function(label, i){
+    var r = 48;
+    return {
+      x: r + Math.random()*(W-r*2),
+      y: r + Math.random()*(H-r*2),
+      r: r,
+      vx: (Math.random()-.5)*2.4,
+      vy: (Math.random()-.5)*2.4,
+      color: colors[i],
+      label: label,
+      hovered: false,
+      phase: Math.random()*Math.PI*2
+    };
+  });
+  var mouse = {x:-999, y:-999};
+  canvas.addEventListener('mousemove', function(e){
+    var rect = canvas.getBoundingClientRect();
+    mouse.x = (e.clientX - rect.left) * (W / rect.width);
+    mouse.y = (e.clientY - rect.top) * (H / rect.height);
+  });
+  canvas.addEventListener('mouseleave', function(){mouse.x=-999;mouse.y=-999;});
+  var t = 0;
+  function draw(){
+    requestAnimationFrame(draw);
+    t += .02;
+    ctx.clearRect(0,0,W,H);
+    balls.forEach(function(b){
+      // Mouse repel
+      var dx = b.x - mouse.x, dy = b.y - mouse.y;
+      var dist = Math.sqrt(dx*dx+dy*dy);
+      b.hovered = dist < b.r + 30;
+      if(dist < 100 && dist > 0){
+        var force = (100-dist)/100 * 3;
+        b.vx += dx/dist * force;
+        b.vy += dy/dist * force;
+      }
+      // Speed limit
+      var spd = Math.sqrt(b.vx*b.vx+b.vy*b.vy);
+      if(spd > 4){b.vx=b.vx/spd*4; b.vy=b.vy/spd*4;}
+      if(spd < .3){b.vx+=(Math.random()-.5)*.5; b.vy+=(Math.random()-.5)*.5;}
+      b.x += b.vx; b.y += b.vy;
+      // Wall bounce
+      if(b.x-b.r<0){b.x=b.r;b.vx=Math.abs(b.vx);}
+      if(b.x+b.r>W){b.x=W-b.r;b.vx=-Math.abs(b.vx);}
+      if(b.y-b.r<0){b.y=b.r;b.vy=Math.abs(b.vy);}
+      if(b.y+b.r>H){b.y=H-b.r;b.vy=-Math.abs(b.vy);}
+      // Ball collision
+      balls.forEach(function(b2){
+        if(b===b2) return;
+        var ddx=b.x-b2.x, ddy=b.y-b2.y;
+        var dd=Math.sqrt(ddx*ddx+ddy*ddy);
+        if(dd<b.r+b2.r && dd>0){
+          var nx=ddx/dd, ny=ddy/dd;
+          var overlap=(b.r+b2.r-dd)/2;
+          b.x+=nx*overlap; b.y+=ny*overlap;
+          b2.x-=nx*overlap; b2.y-=ny*overlap;
+          var rv=(b.vx-b2.vx)*nx+(b.vy-b2.vy)*ny;
+          if(rv<0){b.vx-=rv*nx;b.vy-=rv*ny;b2.vx+=rv*nx;b2.vy+=rv*ny;}
+        }
+      });
+      // Draw glow
+      var grd = ctx.createRadialGradient(b.x,b.y,0,b.x,b.y,b.r);
+      var alpha = b.hovered ? 0.35 : 0.15;
+      var hr = parseInt(b.color.slice(1,3),16);
+      var hg = parseInt(b.color.slice(3,5),16);
+      var hb2 = parseInt(b.color.slice(5,7),16);
+      grd.addColorStop(0, 'rgba('+hr+','+hg+','+hb2+','+alpha+')');
+      grd.addColorStop(1, 'rgba('+hr+','+hg+','+hb2+',0)');
+      ctx.beginPath();ctx.arc(b.x,b.y,b.r*1.5,0,Math.PI*2);
+      ctx.fillStyle=grd;ctx.fill();
+      // Draw ball
+      ctx.beginPath();ctx.arc(b.x,b.y,b.r,0,Math.PI*2);
+      ctx.strokeStyle = b.color;
+      ctx.lineWidth = b.hovered ? 2.5 : 1.5;
+      ctx.globalAlpha = b.hovered ? 1 : .75;
+      ctx.stroke();
+      // Fill
+      ctx.fillStyle = 'rgba('+hr+','+hg+','+hb2+','+(b.hovered?0.2:0.09)+')';
+      ctx.fill();
+      ctx.globalAlpha = 1;
+      // Label
+      ctx.fillStyle = b.hovered ? b.color : 'rgba(200,218,232,.85)';
+      ctx.font = (b.hovered?'bold ':'')+' 9px DM Mono,monospace';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(b.label, b.x, b.y+1);
+    });
+  }
+  draw();
+  window.addEventListener('resize', function(){
+    canvas.width = field.offsetWidth;
+    W = canvas.width;
+    balls.forEach(function(b){b.x=Math.min(Math.max(b.x,b.r),W-b.r);});
+  });
+})();
+
+// Mini 3D - Morphing + Atom models
+(function(){
+  if(typeof THREE === 'undefined') return;
+  // MORPH helper: lerp between two geometry position arrays
+  function lerpGeo(geoA, geoB, t){
+    var pa = geoA.attributes.position.array;
+    var pb = geoB.attributes.position.array;
+    var out = new Float32Array(pa.length);
+    for(var i=0;i<pa.length;i++) out[i] = pa[i]*(1-t) + pb[i]*t;
+    return out;
+  }
+
+  var configs = [
+    {id:'mini3d-1', type:'morph',  color:0x00d4aa},
+    {id:'mini3d-2', type:'atom',   color:0xffffff},
+    {id:'mini3d-3', type:'morph',  color:0xaaaaaa},
+    {id:'mini3d-4', type:'atom',   color:0x00d4aa},
+    {id:'mini3d-5', type:'morph',  color:0xffffff},
+    {id:'mini3d-6', type:'atom',   color:0xaaaaaa},
+  ];
+
+  configs.forEach(function(cfg){
+    var cv = document.getElementById(cfg.id);
+    if(!cv) return;
+    var W = cv.offsetWidth||400, H = 130;
+    cv.width = W; cv.height = H;
+    var rend = new THREE.WebGLRenderer({canvas:cv, antialias:true, alpha:false});
+    rend.setPixelRatio(1);
+    rend.setSize(W, H);
+    rend.setClearColor(0x0a0a0a,1);
+    var sc = new THREE.Scene();
+    var cam = new THREE.PerspectiveCamera(50, W/H, 0.1, 100);
+    cam.position.z = 3.2;
+    var mat = new THREE.MeshBasicMaterial({color:cfg.color, wireframe:true, transparent:true, opacity:0.8});
+    var tf = Math.random()*100;
+    var alive = true;
+
+    if(cfg.type === 'morph'){
+      // 3 shapes to morph between
+      var shapes = [
+        new THREE.IcosahedronGeometry(0.9, 1),
+        new THREE.BoxGeometry(1.3,1.3,1.3,2,2,2),
+        new THREE.SphereGeometry(0.95, 12, 8),
+        new THREE.OctahedronGeometry(1.0, 1),
+      ];
+      // Make all same vertex count by using SphereGeometry as base
+      var BASE = new THREE.SphereGeometry(0.95, 12, 8);
+      var baseCount = BASE.attributes.position.count;
+
+      // Re-sample each shape to match base vertex count
+      function resampleGeo(geo, targetCount){
+        var src = geo.attributes.position.array;
+        var srcCount = geo.attributes.position.count;
+        var out = new Float32Array(targetCount*3);
+        for(var i=0;i<targetCount;i++){
+          var si = Math.floor(i/targetCount * srcCount)*3;
+          out[i*3]   = src[si]   || 0;
+          out[i*3+1] = src[si+1] || 0;
+          out[i*3+2] = src[si+2] || 0;
+        }
+        return out;
+      }
+
+      var targets = shapes.map(function(s){ return resampleGeo(s, baseCount); });
+      var morphGeo = new THREE.BufferGeometry();
+      morphGeo.setAttribute('position', new THREE.BufferAttribute(new Float32Array(targets[0]), 3));
+      // Add inner smaller copy
+      var innerGeo = new THREE.BufferGeometry();
+      innerGeo.setAttribute('position', new THREE.BufferAttribute(new Float32Array(targets[0].map(function(v){return v*.5;})), 3));
+      var mesh = new THREE.Mesh(morphGeo, mat.clone());
+      var innerMesh = new THREE.Mesh(innerGeo, new THREE.MeshBasicMaterial({color:cfg.color, wireframe:true, transparent:true, opacity:0.35}));
+      sc.add(mesh); sc.add(innerMesh);
+
+      // Particle halo
+      var pGeo = new THREE.BufferGeometry();
+      var pPos = new Float32Array(120);
+      for(var k=0;k<120;k++) pPos[k]=(Math.random()-.5)*4;
+      pGeo.setAttribute('position', new THREE.BufferAttribute(pPos, 3));
+      sc.add(new THREE.Points(pGeo, new THREE.PointsMaterial({color:cfg.color,size:.04,transparent:true,opacity:.5})));
+
+      function loop(){
+        if(!alive) return;
+        requestAnimationFrame(loop);
+        tf += .012;
+        mesh.rotation.y = tf*.4;
+        mesh.rotation.x = tf*.25;
+        innerMesh.rotation.y = -tf*.6;
+        innerMesh.rotation.x = tf*.3;
+
+        // Morph between shapes
+        var cycle = tf * .18;
+        var si = Math.floor(cycle) % targets.length;
+        var ni = (si+1) % targets.length;
+        var t2 = cycle - Math.floor(cycle);
+        // Smooth ease
+        t2 = t2*t2*(3-2*t2);
+        var pa = targets[si], pb = targets[ni];
+        var pos = morphGeo.attributes.position.array;
+        for(var i=0;i<pos.length;i++) pos[i] = pa[i]*(1-t2)+pb[i]*t2;
+        morphGeo.attributes.position.needsUpdate = true;
+        var ipos = innerGeo.attributes.position.array;
+        for(var i=0;i<ipos.length;i++) ipos[i] = pos[i]*.5;
+        innerGeo.attributes.position.needsUpdate = true;
+
+        // Pulse opacity
+        mesh.material.opacity = 0.55 + Math.sin(tf*1.5)*.25;
+        rend.render(sc, cam);
+      }
+      var io = new IntersectionObserver(function(en){alive=en[0].isIntersecting;if(alive)loop();},{threshold:.1});
+      io.observe(cv); loop();
+
+    } else {
+      // ATOM model
+      var nucleus = new THREE.Mesh(
+        new THREE.SphereGeometry(.22, 16, 16),
+        new THREE.MeshBasicMaterial({color:cfg.color, transparent:true, opacity:.95})
+      );
+      sc.add(nucleus);
+
+      // Inner glow sphere
+      var glow = new THREE.Mesh(
+        new THREE.SphereGeometry(.32, 12, 12),
+        new THREE.MeshBasicMaterial({color:cfg.color, wireframe:false, transparent:true, opacity:.12})
+      );
+      sc.add(glow);
+
+      // 3 orbital rings at different tilts
+      var orbitals = [];
+      var tilts = [[0,0],[Math.PI/3, Math.PI/6],[Math.PI*2/3, Math.PI/3]];
+      tilts.forEach(function(tilt, oi){
+        var ring = new THREE.Mesh(
+          new THREE.TorusGeometry(.85, .012, 4, 80),
+          new THREE.MeshBasicMaterial({color:cfg.color, transparent:true, opacity:.55})
+        );
+        ring.rotation.x = tilt[0];
+        ring.rotation.z = tilt[1];
+        sc.add(ring);
+
+        // Electron on each ring
+        var emat = new THREE.MeshBasicMaterial({color:0xffffff, transparent:true, opacity:.95});
+        var electron = new THREE.Mesh(new THREE.SphereGeometry(.09,8,8), emat);
+        sc.add(electron);
+        orbitals.push({ring:ring, electron:electron, tilt:tilt, speed:.8+oi*.35, phase:oi*2.1});
+      });
+
+      // Neutron dots around nucleus
+      for(var n=0;n<6;n++){
+        var angle = n/6*Math.PI*2;
+        var nd = new THREE.Mesh(
+          new THREE.SphereGeometry(.07,8,8),
+          new THREE.MeshBasicMaterial({color:cfg.color,transparent:true,opacity:.7})
+        );
+        nd.position.set(Math.cos(angle)*.28, Math.sin(angle)*.28, (Math.random()-.5)*.1);
+        sc.add(nd);
+      }
+
+      function loop(){
+        if(!alive) return;
+        requestAnimationFrame(loop);
+        tf += .015;
+
+        nucleus.scale.setScalar(.9+Math.sin(tf*2.5)*.12);
+        glow.scale.setScalar(1+Math.sin(tf*2)*.2);
+        glow.material.opacity = .08+Math.sin(tf*2)*.07;
+
+        orbitals.forEach(function(orb){
+          // Spin the ring
+          orb.ring.rotation.y = tf*(.2+orb.speed*.1);
+          // Move electron along orbit
+          var a = tf*orb.speed+orb.phase;
+          var ex = Math.cos(a)*.85;
+          var ey = Math.sin(a)*.85;
+          // Transform by ring tilt
+          var cosX = Math.cos(orb.tilt[0]), sinX = Math.sin(orb.tilt[0]);
+          var cosZ = Math.cos(orb.tilt[1]), sinZ = Math.sin(orb.tilt[1]);
+          var ry = ey*cosX;
+          var rz = ey*sinX;
+          orb.electron.position.set(
+            ex*cosZ - ry*sinZ,
+            ex*sinZ + ry*cosZ,
+            rz
+          );
+          orb.electron.material.opacity = .7+Math.sin(a*2)*.25;
+          orb.electron.scale.setScalar(.8+Math.sin(a*3)*.25);
+        });
+
+        rend.render(sc, cam);
+      }
+      var io = new IntersectionObserver(function(en){alive=en[0].isIntersecting;if(alive)loop();},{threshold:.1});
+      io.observe(cv); loop();
+    }
+  });
+})();
 </script>
 </body>
 </html>
