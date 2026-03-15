@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -91,9 +91,9 @@ h1,h2,h3,h4{font-family:var(--fd);color:var(--white)}
 .skillcard:hover{border-color:rgba(19,208,208,.3);transform:translateY(-3px)}
 .skillcard h3{font-size:.9rem;color:var(--white);margin-bottom:1.4rem;display:flex;align-items:center;gap:.55rem}
 .skillcard h3 i{color:var(--teal)}
-.skillitem{margin-bottom:1rem}
-.skillinfo{display:flex;justify-content:space-between;font-size:.83rem;margin-bottom:.35rem}
-.skillinfo span:first-child{color:var(--slate-light)}.skillinfo span:last-child{color:var(--teal);font-family:var(--fm);font-size:.76rem}
+
+
+
 .skillbar{height:4px;background:var(--navy-border);border-radius:2px;overflow:hidden}
 .skillfill{height:100%;background:var(--gradient);border-radius:2px;width:0;transition:width 1.3s cubic-bezier(.4,0,.2,1)}
 .techtitle{text-align:center;font-family:var(--fm);font-size:.75rem;color:var(--slate);text-transform:uppercase;letter-spacing:.1em;margin-bottom:1.4rem}
@@ -105,13 +105,10 @@ h1,h2,h3,h4{font-family:var(--fd);color:var(--white)}
 .filterrow{display:flex;justify-content:center;gap:.5rem;flex-wrap:wrap;margin-bottom:2.8rem}
 .fbtn{font-family:var(--fm);font-size:.78rem;color:var(--slate);background:var(--navy-card);border:1px solid var(--navy-border);border-radius:6px;padding:.45rem 1rem;cursor:pointer;transition:var(--tr)}
 .fbtn:hover,.fbtn.active{color:var(--teal);border-color:var(--teal);background:var(--teal-glow)}
-.projgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.4rem;align-items:start}
-.projcard{background:var(--navy-card);border:1px solid var(--navy-border);border-radius:var(--br);overflow:hidden;transition:var(--tr);cursor:pointer;display:flex;flex-direction:column}
+.projgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.6rem;align-items:start;position:relative;z-index:2}
 .projthumb{position:relative;overflow:hidden;aspect-ratio:21/9}
 .projthumb img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
-.projcard:hover .projthumb img{transform:scale(1.07)}
 .projoverlay{position:absolute;inset:0;background:rgba(5,13,26,.82);display:flex;align-items:center;justify-content:center;gap:.7rem;opacity:0;transition:opacity .28s}
-.projcard:hover .projoverlay{opacity:1}
 .projoverlay a{width:42px;height:42px;background:var(--navy-card);border:1px solid var(--teal);border-radius:9px;display:flex;align-items:center;justify-content:center;color:var(--teal);font-size:.95rem;text-decoration:none;transition:var(--tr)}
 .projoverlay a:hover{background:var(--teal);color:var(--navy)}
 .projbadge{position:absolute;top:.7rem;left:.7rem;padding:.2rem .65rem;border-radius:4px;font-family:var(--fm);font-size:.68rem;letter-spacing:.05em}
@@ -123,7 +120,6 @@ h1,h2,h3,h4{font-family:var(--fd);color:var(--white)}
 .projcat{font-family:var(--fm);font-size:.68rem;color:var(--teal);text-transform:uppercase;letter-spacing:.08em}
 .projyr{font-size:.72rem;color:var(--slate);font-family:var(--fm)}
 .projbody h3{font-size:.98rem;margin-bottom:.3rem;transition:color .2s}
-.projcard:hover .projbody h3{color:var(--teal)}
 .projbody p{font-size:.8rem;color:var(--slate);line-height:1.55;flex:1;margin-bottom:.6rem}
 .tags{display:flex;flex-wrap:wrap;gap:.35rem}
 .tag{font-family:var(--fm);font-size:.68rem;background:var(--navy);border:1px solid var(--navy-border);color:var(--slate);padding:.18rem .55rem;border-radius:4px}
@@ -190,12 +186,6 @@ footer{position:relative;z-index:2;border-top:1px solid var(--navy-border);paddi
 #skills .stag{color:#ffffff}
 #projects .stag{color:#00d4aa}
 #contact .stag{color:#ffffff}
-.projcard:nth-child(1){border-top:2px solid #00d4aa}
-.projcard:nth-child(2){border-top:2px solid #ffffff}
-.projcard:nth-child(3){border-top:2px solid #00d4aa}
-.projcard:nth-child(4){border-top:2px solid #ffffff}
-.projcard:nth-child(5){border-top:2px solid #00d4aa}
-.projcard:nth-child(6){border-top:2px solid #ffffff}
 .chip:nth-child(4n+1) i{color:#00d4aa}
 .chip:nth-child(4n+2) i{color:#ffffff}
 .chip:nth-child(4n+3) i{color:#aaaaaa}
@@ -212,9 +202,6 @@ footer{position:relative;z-index:2;border-top:1px solid var(--navy-border);paddi
 .stat:nth-child(3) .statn{color:#ffffff}
 .stat:nth-child(5) .statn{color:#aaaaaa}
 .stat:nth-child(7) .statn{color:#00d4aa}
-.projcard:nth-child(2) .backstat{color:#ffffff;background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.2)}
-.projcard:nth-child(4) .backstat{color:#ffffff;background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.2)}
-.projcard:nth-child(6) .backstat{color:#ffffff;background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.2)}
 
 
 
@@ -241,14 +228,6 @@ footer{position:relative;z-index:2;border-top:1px solid var(--navy-border);paddi
 .npp-pink{border-color:rgba(136,136,136,.2)}
 .npp-gold{border-color:rgba(0,212,170,.25)}
 
-.projcard{perspective:1000px;height:360px;background:transparent!important;border:none!important;overflow:visible!important}
-.projcard-inner{position:relative;width:100%;height:100%;transition:transform .65s cubic-bezier(.4,0,.2,1);transform-style:preserve-3d}
-.projcard:hover .projcard-inner{transform:rotateY(180deg)}
-.projcard-front,.projcard-back{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:14px;overflow:hidden}
-.projcard-front{background:#111111;border:1px solid #252525}
-.projcard-back{background:#111111;border:1px solid #252525;transform:rotateY(180deg);display:flex;flex-direction:column;justify-content:center;align-items:center;padding:1.5rem;text-align:center}
-.projcard:nth-child(odd) .projcard-back{border-color:rgba(0,212,170,.3);box-shadow:inset 0 0 40px rgba(0,212,170,.04)}
-.projcard:nth-child(even) .projcard-back{border-color:rgba(99,102,241,.3);box-shadow:inset 0 0 40px rgba(99,102,241,.04)}
 
 .wave-divider{position:relative;height:2px;overflow:visible;margin:0;z-index:2}
 .wave-divider svg{display:none}
@@ -260,10 +239,268 @@ footer{position:relative;z-index:2;border-top:1px solid var(--navy-border);paddi
 .fstatus.ok{display:flex;background:rgba(0,212,170,.1);border:1px solid rgba(0,212,170,.3);color:#00d4aa}
 .fstatus.err{display:flex;background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.25);color:#ef4444}
 .fstatus a{color:inherit;text-decoration:underline}
+
+.skillsgrid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:3.5rem}
+.ringrow{display:flex;justify-content:space-around;align-items:flex-start;flex-wrap:wrap;gap:.5rem;padding:.5rem 0}
+.ringwrap{display:flex;flex-direction:column;align-items:center;gap:.4rem;width:72px}
+.ringsvg{width:72px;height:72px;transform:rotate(-90deg)}
+.ringbg{fill:none;stroke:var(--navy-border);stroke-width:5}
+.ringfill{fill:none;stroke-width:5;stroke-linecap:round;stroke-dasharray:188.5;stroke-dashoffset:0;transition:stroke-dashoffset 1.4s cubic-bezier(.22,1,.36,1)}
+.skillcard:nth-child(1) .ringfill{stroke:#00d4aa;filter:drop-shadow(0 0 4px rgba(0,212,170,.5))}
+.skillcard:nth-child(2) .ringfill{stroke:#6366f1;filter:drop-shadow(0 0 4px rgba(99,102,241,.5))}
+.skillcard:nth-child(3) .ringfill{stroke:#ffffff;filter:drop-shadow(0 0 4px rgba(255,255,255,.3))}
+.skillcard:nth-child(4) .ringfill{stroke:#00d4aa;filter:drop-shadow(0 0 4px rgba(0,212,170,.5))}
+.ringwrap:hover .ringfill{filter:drop-shadow(0 0 8px currentColor) brightness(1.2)}
+.ringlabel{text-align:center}
+.ringpct{display:block;font-family:var(--fm);font-size:.75rem;font-weight:600;color:var(--white);line-height:1}
+.ringname{display:block;font-size:.6rem;color:var(--slate);font-family:var(--fm);margin-top:.2rem;white-space:nowrap}
+
+
+.reveal{animation:none}
+.reveal-left{animation:none}  
+.reveal-right{animation:none}
+.reveal-scale{animation:none}
+
+
+/* ---- Skillcard glow hover ---- */
+.skillcard{transition:var(--tr);border:1px solid var(--navy-border);position:relative;overflow:hidden}
+.skillcard::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(0,212,170,.06),transparent 60%);opacity:0;transition:opacity .3s}
+.skillcard:hover::before{opacity:1}
+.skillcard:hover{border-color:rgba(0,212,170,.3);transform:translateY(-4px);box-shadow:0 8px 40px rgba(0,0,0,.4),0 0 0 1px rgba(0,212,170,.1)}
+
+/* ---- About section image parallax ---- */
+.aboutframe{transition:transform .1s linear}
+
+/* ---- Project card entrance ---- */
+
+/* ---- Contact card glow ---- */
+.formcard{position:relative;overflow:hidden}
+.formcard::after{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:conic-gradient(transparent 0deg,rgba(0,212,170,.03) 60deg,transparent 120deg);animation:formSpin 8s linear infinite;pointer-events:none}
+@keyframes formSpin{to{transform:rotate(360deg)}}
+
+/* ---- Footer starfield ---- */
+footer{position:relative;overflow:hidden}
+footer::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 100%,rgba(0,212,170,.04),transparent 70%)}
+
+/* ---- Section heading underline draw ---- */
+.stitle{position:relative;display:inline-block}
+.stitle::after{content:'';position:absolute;bottom:-6px;left:50%;transform:translateX(-50%);height:2px;width:60%;background:linear-gradient(90deg,#00d4aa,#6366f1);border-radius:2px}
+
+/* ---- Stat numbers bounce ---- */
+@keyframes statBounce{0%{transform:scale(1)}40%{transform:scale(1.15)}70%{transform:scale(.95)}100%{transform:scale(1)}}
+.stat.vis .statn{animation:statBounce .6s ease forwards}
+
+/* ---- Nav link indicator ---- */
+.navlink.active::after{content:'';position:absolute;bottom:-2px;left:50%;transform:translateX(-50%);width:4px;height:4px;background:var(--teal);border-radius:50%}
+.navlink{position:relative}
+
+/* ---- Floating label on inputs ---- */
+.formgrp{position:relative}
+.formgrp input:focus,.formgrp textarea:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(0,212,170,.08)}
+
+/* ---- Glowing ring around about image on hover ---- */
+.aboutframe::after{animation:ringPulse 3s ease-in-out infinite}
+@keyframes ringPulse{0%,100%{opacity:.25}50%{opacity:.5}}
+
+/* ---- Scrollbar glow on scroll ---- */
+::-webkit-scrollbar-thumb{background:linear-gradient(var(--teal),var(--purple));border-radius:4px}
+
+/* ---- hlitem check icon pop ---- */
+.hlitem i{transition:transform .3s ease,color .3s}
+.hlitem:hover i{transform:scale(1.3) rotate(-10deg);color:#00d4aa}
+.hlitem:hover{color:var(--white)}
+
+/* ---- Tag hover ---- */
+.tag{transition:var(--tr)}
+.tag:hover{background:rgba(0,212,170,.1);border-color:rgba(0,212,170,.3);color:#00d4aa}
+
+/* ---- citem icon spin on hover ---- */
+.cicon{transition:transform .3s ease,box-shadow .3s}
+.citem:hover .cicon{transform:rotate(15deg) scale(1.1);box-shadow:0 0 16px rgba(0,212,170,.2)}
+
+/* ---- Gradient text shimmer on h1 ---- */
+@keyframes shimmer{0%{background-position:0% 50%}100%{background-position:200% 50%}}
+.tg{background-size:200% auto;animation:shimmer 4s linear infinite}
+
+#hero h1{position:relative;z-index:3}
+#hero h1 .tg{
+  background:linear-gradient(135deg,#00d4aa,#6366f1,#00d4aa);
+  background-size:200% auto;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+  animation:shimmer 4s linear infinite;
+  filter:drop-shadow(0 0 20px rgba(0,212,170,.4));
+}
+/* Make the white "Ankit" text slightly transparent so 3D shows through */
+#hero h1 span:not(.tg){
+  color:rgba(255,255,255,.92);
+  text-shadow:0 0 40px rgba(255,255,255,.1);
+}
+/* Hero section - let canvas overflow into about */
+#hero{isolation:isolate}
+
+/* === PROJECT CARDS - CLEAN FLIP === */
+.projgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.6rem;position:relative;z-index:2}
+.projcard{height:380px;perspective:1000px;cursor:pointer;position:relative}
+.projcard-inner{width:100%;height:100%;position:relative;transform-style:preserve-3d;transition:transform .7s cubic-bezier(.4,0,.2,1)}
+.projcard:hover .projcard-inner{transform:rotateY(180deg)}
+.projcard-front{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:12px;background:#111111;border:1px solid #252525;overflow:hidden;display:flex;flex-direction:column}
+.projcard-back{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:12px;background:#111111;overflow:hidden;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:1.5rem;text-align:center;transform:rotateY(180deg)}
+.projcard:nth-child(1) .projcard-front,.projcard:nth-child(1) .projcard-back{border-color:rgba(0,212,170,.3)}
+.projcard:nth-child(2) .projcard-front,.projcard:nth-child(2) .projcard-back{border-color:rgba(99,102,241,.3)}
+.projcard:nth-child(3) .projcard-front,.projcard:nth-child(3) .projcard-back{border-color:rgba(0,212,170,.3)}
+.projcard:nth-child(4) .projcard-front,.projcard:nth-child(4) .projcard-back{border-color:rgba(99,102,241,.3)}
+.projcard:nth-child(5) .projcard-front,.projcard:nth-child(5) .projcard-back{border-color:rgba(0,212,170,.3)}
+.projcard:nth-child(6) .projcard-front,.projcard:nth-child(6) .projcard-back{border-color:rgba(99,102,241,.3)}
+.projcard-front .projthumb{position:relative;overflow:hidden;aspect-ratio:16/9;flex-shrink:0}
+.projcard-front .projthumb img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.projcard:hover .projcard-front .projthumb img{transform:scale(1.06)}
+.projbadge{position:absolute;top:.6rem;left:.6rem;padding:.18rem .6rem;border-radius:4px;font-family:var(--fm);font-size:.65rem;letter-spacing:.05em}
+.bteal{background:rgba(0,212,170,.14);color:#00d4aa;border:1px solid rgba(0,212,170,.3)}
+.bred{background:rgba(239,68,68,.12);color:#ef4444;border:1px solid rgba(239,68,68,.3)}
+.bgrey{background:rgba(170,170,170,.1);color:#aaaaaa;border:1px solid rgba(170,170,170,.2)}
+.projoverlay{position:absolute;inset:0;background:rgba(0,0,0,.75);display:flex;align-items:center;justify-content:center;gap:.7rem;opacity:0;transition:opacity .25s}
+.projcard:hover .projoverlay{opacity:1}
+.projoverlay a{width:40px;height:40px;background:#111;border:1px solid #00d4aa;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#00d4aa;text-decoration:none;transition:all .2s}
+.projoverlay a:hover{background:#00d4aa;color:#000}
+.projbody{padding:.9rem 1rem;flex:1;display:flex;flex-direction:column}
+.projmeta{display:flex;justify-content:space-between;align-items:center;margin-bottom:.3rem}
+.projcat{font-family:var(--fm);font-size:.65rem;color:#00d4aa;text-transform:uppercase;letter-spacing:.08em}
+.projyr{font-size:.68rem;color:var(--slate);font-family:var(--fm)}
+.projbody h3{font-size:.95rem;margin-bottom:.3rem;color:var(--white);transition:color .2s}
+.projbody p{font-size:.78rem;color:var(--slate);line-height:1.5;flex:1;margin-bottom:.6rem}
+.tags{display:flex;flex-wrap:wrap;gap:.3rem}
+.tag{font-family:var(--fm);font-size:.65rem;background:#0d0d0d;border:1px solid #252525;color:#888;padding:.15rem .5rem;border-radius:4px;transition:all .2s}
+.tag:hover{border-color:#00d4aa;color:#00d4aa}
+.mini3d{width:100%;height:90px;border-radius:6px;display:block;background:#0a0a0a;flex-shrink:0}
+/* Back face */
+.backicon{font-size:2rem;margin-bottom:.6rem}
+.backtitle{font-family:var(--fd);font-size:1rem;font-weight:700;color:var(--white);margin-bottom:.5rem}
+.backdesc{font-size:.78rem;color:var(--slate);line-height:1.6;margin-bottom:.8rem}
+.backstat{font-family:var(--fm);font-size:.72rem;color:#00d4aa;padding:.25rem .75rem;background:rgba(0,212,170,.1);border:1px solid rgba(0,212,170,.25);border-radius:20px;margin-bottom:.9rem;display:inline-block}
+.backbtns{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center}
+.bb-live{padding:.45rem 1rem;border-radius:7px;font-size:.78rem;font-family:var(--fm);text-decoration:none;background:linear-gradient(135deg,#00d4aa,#6366f1);color:#fff;font-weight:600;display:flex;align-items:center;gap:.35rem}
+.bb-gh{padding:.45rem 1rem;border-radius:7px;font-size:.78rem;font-family:var(--fm);text-decoration:none;background:transparent;border:1px solid #333;color:#aaa;display:flex;align-items:center;gap:.35rem;transition:all .2s}
+.bb-gh:hover{border-color:#00d4aa;color:#00d4aa}
+.filterrow{display:flex;justify-content:center;gap:.5rem;flex-wrap:wrap;margin-bottom:2.8rem}
+.fbtn{font-family:var(--fm);font-size:.78rem;color:var(--slate);background:#111;border:1px solid #252525;border-radius:6px;padding:.4rem .9rem;cursor:pointer;transition:all .2s}
+.fbtn:hover,.fbtn.active{color:#00d4aa;border-color:#00d4aa;background:rgba(0,212,170,.08)}
+
+/* === FLOATING SHAPES ACROSS PAGE === */
+.float-layer{position:fixed;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.fshape{position:absolute;opacity:0;animation:floatUp linear infinite}
+@keyframes floatUp{
+  0%{transform:translateY(100vh) rotate(0deg) scale(0);opacity:0}
+  5%{opacity:1}
+  90%{opacity:.6}
+  100%{transform:translateY(-20vh) rotate(720deg) scale(1.2);opacity:0}
+}
+@keyframes floatDrift{
+  0%,100%{transform:translateX(0) rotate(0deg)}
+  25%{transform:translateX(30px) rotate(90deg)}
+  75%{transform:translateX(-30px) rotate(270deg)}
+}
+.fshape-circle{border-radius:50%}
+.fshape-ring{border-radius:50%;background:transparent!important;border-width:1.5px;border-style:solid}
+.fshape-tri{clip-path:polygon(50% 0%,100% 100%,0% 100%);background:currentColor}
+.fshape-sq{border-radius:3px}
+.fshape-hex{clip-path:polygon(25% 0%,75% 0%,100% 50%,75% 100%,25% 100%,0% 50%)}
+
+/* === PURE CSS FLOATING SHAPES - NO JS NEEDED === */
+.bg-shapes{position:fixed;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.bs{position:absolute;border-radius:50%;animation:bsFloat linear infinite}
+
+@keyframes bsFloat{
+  0%{transform:translateY(110vh) rotate(0deg);opacity:0}
+  5%{opacity:1}
+  95%{opacity:.5}
+  100%{transform:translateY(-15vh) rotate(540deg);opacity:0}
+}
+@keyframes bsDrift{
+  0%,100%{margin-left:0}50%{margin-left:40px}
+}
+.bs:nth-child(odd){animation-name:bsFloat,bsDrift}
+
+.bs1{width:12px;height:12px;left:8%;animation-duration:18s,9s;animation-delay:0s;background:rgba(0,212,170,.25);border-radius:50%}
+.bs2{width:8px;height:8px;left:18%;animation-duration:22s,11s;animation-delay:2s;background:transparent;border:1.5px solid rgba(99,102,241,.4);border-radius:50%}
+.bs3{width:16px;height:16px;left:28%;animation-duration:15s,8s;animation-delay:4s;background:rgba(0,212,170,.15);border-radius:3px;border-radius:0}
+.bs4{width:10px;height:10px;left:38%;animation-duration:20s,10s;animation-delay:1s;background:transparent;border:1.5px solid rgba(0,212,170,.35);border-radius:50%}
+.bs5{width:6px;height:6px;left:48%;animation-duration:25s,12s;animation-delay:6s;background:rgba(255,255,255,.2);border-radius:50%}
+.bs6{width:14px;height:14px;left:58%;animation-duration:17s,9s;animation-delay:3s;background:rgba(99,102,241,.2);border-radius:50%}
+.bs7{width:9px;height:9px;left:68%;animation-duration:21s,11s;animation-delay:8s;background:transparent;border:1.5px solid rgba(255,255,255,.2);border-radius:50%}
+.bs8{width:18px;height:18px;left:78%;animation-duration:13s,7s;animation-delay:5s;background:rgba(0,212,170,.1);border-radius:3px;transform-origin:center}
+.bs9{width:7px;height:7px;left:88%;animation-duration:24s,12s;animation-delay:9s;background:rgba(99,102,241,.3);border-radius:50%}
+.bs10{width:11px;height:11px;left:13%;animation-duration:19s,10s;animation-delay:11s;background:transparent;border:1.5px solid rgba(0,212,170,.3);border-radius:50%}
+.bs11{width:15px;height:15px;left:33%;animation-duration:16s,8s;animation-delay:13s;background:rgba(255,255,255,.08);border-radius:50%}
+.bs12{width:8px;height:8px;left:53%;animation-duration:23s,12s;animation-delay:7s;background:rgba(0,212,170,.2);border-radius:2px}
+.bs13{width:20px;height:20px;left:73%;animation-duration:14s,7s;animation-delay:15s;background:transparent;border:2px solid rgba(99,102,241,.25);border-radius:50%}
+.bs14{width:6px;height:6px;left:93%;animation-duration:26s,13s;animation-delay:2s;background:rgba(0,212,170,.35);border-radius:50%}
+.bs15{width:13px;height:13px;left:23%;animation-duration:20s,10s;animation-delay:16s;background:rgba(99,102,241,.15);border-radius:50%}
+.bs16{width:9px;height:9px;left:43%;animation-duration:18s,9s;animation-delay:4s;background:transparent;border:1px solid rgba(255,255,255,.2);border-radius:50%}
+.bs17{width:22px;height:22px;left:63%;animation-duration:12s,6s;animation-delay:10s;background:rgba(0,212,170,.08);border-radius:50%}
+.bs18{width:7px;height:7px;left:83%;animation-duration:28s,14s;animation-delay:0s;background:rgba(99,102,241,.25);border-radius:1px}
+.bs19{width:10px;height:10px;left:3%;animation-duration:22s,11s;animation-delay:18s;background:transparent;border:1.5px solid rgba(0,212,170,.4);border-radius:50%}
+.bs20{width:16px;height:16px;left:97%;animation-duration:15s,8s;animation-delay:12s;background:rgba(255,255,255,.06);border-radius:50%}
+
+/* Section-specific ambient glows */
+#about::before{content:'';position:absolute;top:10%;right:5%;width:300px;height:300px;background:radial-gradient(circle,rgba(0,212,170,.04),transparent 70%);pointer-events:none;animation:glowPulse 6s ease-in-out infinite}
+#skills::before{content:'';position:absolute;top:20%;left:5%;width:250px;height:250px;background:radial-gradient(circle,rgba(99,102,241,.05),transparent 70%);pointer-events:none;animation:glowPulse 8s ease-in-out infinite reverse}
+#projects::before{content:'';position:absolute;top:10%;right:10%;width:200px;height:200px;background:radial-gradient(circle,rgba(0,212,170,.04),transparent 70%);pointer-events:none;animation:glowPulse 7s ease-in-out infinite}
+#contact::before{content:'';position:absolute;bottom:10%;left:10%;width:280px;height:280px;background:radial-gradient(circle,rgba(99,102,241,.04),transparent 70%);pointer-events:none;animation:glowPulse 9s ease-in-out infinite reverse}
+@keyframes glowPulse{0%,100%{opacity:.5;transform:scale(1)}50%{opacity:1;transform:scale(1.2)}}
+
+/* Skillcard rings glow pulse */
+.ringfill{animation:ringGlow 3s ease-in-out infinite}
+@keyframes ringGlow{0%,100%{filter:drop-shadow(0 0 4px currentColor)}50%{filter:drop-shadow(0 0 10px currentColor)}}
+
+/* Wave divider flowing light */
+.wave-divider::after{animation:lineflow 2s linear infinite}
+
+/* About image frame pulse */
+.aboutframe::after{animation:ringPulse 4s ease-in-out infinite}
+@keyframes ringPulse{0%,100%{opacity:.2}50%{opacity:.5}}
+
+/* Stat numbers glow */
+.statn{animation:numGlow 3s ease-in-out infinite}
+@keyframes numGlow{0%,100%{text-shadow:none}50%{text-shadow:0 0 20px currentColor}}
+
+/* Skill card h3 icon spin on hover */
+.skillcard:hover h3 i{animation:iconSpin .5s ease forwards}
+@keyframes iconSpin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
+
+/* Typing cursor blink */
+.caret{animation:blink .8s steps(1) infinite}
+
+/* Hero badge pulse */
+.hbadge{animation:badgePulse 2s ease-in-out infinite}
+@keyframes badgePulse{0%,100%{box-shadow:0 0 0 0 rgba(0,212,170,0)}50%{box-shadow:0 0 0 6px rgba(0,212,170,.08)}}
+
+/* Scroll indicator */
+.scrollbar{animation:scrollanim 2s ease-in-out infinite}
+
+/* Back to top button pulse */
+#btt{animation:bttPulse 3s ease-in-out infinite}
+@keyframes bttPulse{0%,100%{box-shadow:0 4px 20px rgba(0,212,170,.3)}50%{box-shadow:0 4px 30px rgba(0,212,170,.6)}}
+
+/* Section heading shimmer */
+.stitle{background:linear-gradient(90deg,#fff 0%,#00d4aa 50%,#fff 100%);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:titleShimmer 5s linear infinite}
+@keyframes titleShimmer{0%{background-position:0% center}100%{background-position:200% center}}
 </style>
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body>
+<div class="bg-shapes">
+  <div class="bs bs1"></div><div class="bs bs2"></div><div class="bs bs3"></div>
+  <div class="bs bs4"></div><div class="bs bs5"></div><div class="bs bs6"></div>
+  <div class="bs bs7"></div><div class="bs bs8"></div><div class="bs bs9"></div>
+  <div class="bs bs10"></div><div class="bs bs11"></div><div class="bs bs12"></div>
+  <div class="bs bs13"></div><div class="bs bs14"></div><div class="bs bs15"></div>
+  <div class="bs bs16"></div><div class="bs bs17"></div><div class="bs bs18"></div>
+  <div class="bs bs19"></div><div class="bs bs20"></div>
+</div>
+<div class="float-layer" id="floatLayer"></div>
+<canvas id="globalBg" style="position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.2;"></canvas>
 <div id="cDot"></div><div id="cRing"></div>
 <header id="hdr">
   <div class="container hi">
@@ -279,9 +516,9 @@ footer{position:relative;z-index:2;border-top:1px solid var(--navy-border);paddi
     <button class="mbtn" id="mbtn"><i class="fas fa-bars"></i></button>
   </div>
 </header>
-<section id="hero" style="position:relative;min-height:100vh;overflow:hidden;padding:0;display:flex;align-items:center;">
-  <div id="hero-glow"></div><canvas id="heroCanvas" style="position:absolute;inset:0;width:100%;height:100%;z-index:0;"></canvas>
-  <div class="container" style="position:relative;z-index:2;">
+<section id="hero" style="position:relative;min-height:100vh;overflow:visible;padding:0;display:flex;align-items:center;">
+  <div id="hero-glow"></div><canvas id="heroCanvas" style="position:absolute;top:0;left:0;width:100%;height:calc(100% + 220px);z-index:0;"></canvas>
+  <div class="container" style="position:relative;z-index:3;">
     <div class="hw">
       <div class="hbadge"><span class="bdot"></span> Open to opportunities</div>
       <h1>Ankit <span class="tg">Jinkwan</span></h1>
@@ -342,24 +579,7 @@ dustGeo.setAttribute('position',new THREE.BufferAttribute(dPos,3));
 var dust=new THREE.Points(dustGeo,new THREE.PointsMaterial({color:WHITE,size:.012,transparent:true,opacity:.25}));
 scene.add(dust);
 var shells=[];
-[[1.0,TEAL,.055,1],[1.6,PURPLE,.04,-1],[2.2,PINK,.025,1]].forEach(function(d,i){
-  var g=new THREE.IcosahedronGeometry(d[0],i===0?1:0);
-  var m=new THREE.MeshBasicMaterial({color:d[1],wireframe:true,transparent:true,opacity:d[2]});
-  var mesh=new THREE.Mesh(g,m);
-  scene.add(mesh);shells.push({mesh:mesh,dir:d[3]});
-});
 var cubes=[];
-var cubeColors=[TEAL,PURPLE,PINK,WHITE,GOLD];
-for(var i=0;i<55;i++){
-  var g=new THREE.BoxGeometry(.07,.07,.07);
-  var col=cubeColors[i%cubeColors.length];
-  var m=new THREE.MeshBasicMaterial({color:col,transparent:true,opacity:.2+Math.random()*.35,wireframe:Math.random()>.4});
-  var mesh=new THREE.Mesh(g,m);
-  mesh.position.set((Math.random()-.5)*14,(Math.random()-.5)*10,(Math.random()-.5)*5-1);
-  mesh.rotation.set(Math.random()*Math.PI,Math.random()*Math.PI,0);
-  mesh.userData={ry:.006+Math.random()*.01,rx:.004+Math.random()*.008,baseY:mesh.position.y,phase:Math.random()*Math.PI*2};
-  scene.add(mesh);cubes.push(mesh);
-}
 var tetras=[];
 var tColors=[TEAL,PURPLE,PINK,GOLD,WHITE];
 for(var i=0;i<14;i++){
@@ -425,16 +645,7 @@ for(var i=0;i<10;i++){
   var line=new THREE.Line(g,m);
   scene.add(line);shooters.push({line:line,active:false,timer:Math.floor(Math.random()*80)});
 }
-var coreGeo=new THREE.SphereGeometry(.3,32,32);
-var coreMat=new THREE.MeshBasicMaterial({color:WHITE,wireframe:true,transparent:true,opacity:.5});
-var core=new THREE.Mesh(coreGeo,coreMat);
-scene.add(core);
-[[.55,TEAL],[.75,PURPLE],[.95,PINK]].forEach(function(d){
-  var g=new THREE.TorusGeometry(d[0],.006,4,60);
-  var m=new THREE.MeshBasicMaterial({color:d[1],transparent:true,opacity:.35});
-  var mesh=new THREE.Mesh(g,m);
-  scene.add(mesh);shells.push({mesh:mesh,dir:1,isCoreRing:true});
-});
+
 var gridHelper=new THREE.GridHelper(22,32,0x1a1a1a,0x111111);
 gridHelper.position.y=-4;
 gridHelper.material.transparent=true;gridHelper.material.opacity=.5;
@@ -452,11 +663,8 @@ function animate(){
   camera.lookAt(scene.position);
   galaxy.rotation.y=t*.032;
   dust.rotation.y=-t*.015;dust.rotation.x=t*.008;
-  shells.forEach(function(sh,i){
-    if(sh.isCoreRing){sh.mesh.rotation.x=t*(1.2+i*.3);sh.mesh.rotation.z=t*(.8+i*.2);sh.mesh.material.opacity=.2+Math.abs(Math.sin(t*2+i))*.25;}
-    else{sh.mesh.rotation.y+=.006*sh.dir*(i*.3+1);sh.mesh.rotation.x+=.004*sh.dir;sh.mesh.material.opacity=.03+Math.abs(Math.sin(t*.7+i))*.04;}
-  });
-  cubes.forEach(function(c,i){c.rotation.x+=c.userData.rx;c.rotation.y+=c.userData.ry;c.position.y=c.userData.baseY+Math.sin(t*1.4+c.userData.phase)*.12;c.material.opacity=.1+Math.abs(Math.sin(t*.9+c.userData.phase))*.3;});
+
+
   tetras.forEach(function(te,i){
     var d=te.userData;d.angle+=d.speed*.012;
     te.position.x=Math.cos(d.angle)*d.rad;te.position.y=Math.sin(d.angle)*d.rad*.45+Math.sin(t*1.8+d.phase)*.25;
@@ -474,7 +682,6 @@ function animate(){
     if(!s.active&&s.timer<=0){s.active=true;s.timer=40+Math.floor(Math.random()*50);s.line.position.set((Math.random()-.5)*14,(Math.random()-.5)*8,-1);s.line.rotation.z=(Math.random()-.5)*Math.PI*.4;s.line.material.opacity=1;s.vx=(Math.random()-.5)*.22;s.vy=-Math.random()*.14-.04;}
     if(s.active){s.line.position.x+=s.vx;s.line.position.y+=s.vy;s.line.material.opacity-=.016;if(s.line.material.opacity<=0){s.active=false;s.timer=50+Math.floor(Math.random()*100);}}
   });
-  var pulse=.88+Math.sin(t*3)*.18;core.scale.setScalar(pulse);coreMat.opacity=.35+Math.sin(t*3)*.25;
   gridHelper.material.opacity=.25+Math.sin(t*.4)*.15;
   renderer.render(scene,camera);
 }
@@ -485,7 +692,7 @@ window.addEventListener('resize',function(){
 });
 })();
 </script>
-<section id="about"><div class="container"><div class="aboutgrid">
+<section id="about" style="margin-top:-100px;padding-top:160px;position:relative;z-index:3;"><div class="container"><div class="aboutgrid">
   <div class="aboutimgarea">
     <div class="aboutframe">
       <img src="https://placehold.co/600x800/091525/13d0d0?text=Ankit+Jinkwan" alt="Ankit Jinkwan">
@@ -519,32 +726,40 @@ window.addEventListener('resize',function(){
   </div>
 </div></div></section>
 <div class="wave-divider"><svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="wg1" x1="0" x2="1"><stop offset="0%" stop-color="#00d4aa" stop-opacity=".25"/><stop offset="50%" stop-color="#00d4aa" stop-opacity=".25"/><stop offset="100%" stop-color="#6366f1" stop-opacity=".25"/></linearGradient></defs><path d="M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,60 L0,60 Z" fill="url(#wg1)"/><path d="M0,42 C360,12 720,55 1080,28 C1300,10 1400,44 1440,42 L1440,60 L0,60 Z" fill="rgba(0,212,170,.05)"/></svg></div>
-<section id="skills"><div class="container">
+<section id="skills" style="background:linear-gradient(to bottom,transparent,#0a0a0a 80px);"><div class="container">
   <div style="text-align:center"><span class="stag">Expertise</span><h2 class="stitle">My Skills</h2><p class="ssub">Technologies and tools I work with daily</p></div>
   <div class="skillsgrid">
     <div class="skillcard"><h3><i class="fas fa-brain"></i> Machine Learning</h3>
-      <div class="skillitem" data-s="90"><div class="skillinfo"><span>Scikit-learn</span><span>90%</span></div><div class="skillbar"><div class="skillfill"></div></div></div>
-      <div class="skillitem" data-s="85"><div class="skillinfo"><span>TensorFlow / Keras</span><span>85%</span></div><div class="skillbar"><div class="skillfill"></div></div></div>
-      <div class="skillitem" data-s="80"><div class="skillinfo"><span>PyTorch</span><span>80%</span></div><div class="skillbar"><div class="skillfill"></div></div></div>
-      <div class="skillitem" data-s="88"><div class="skillinfo"><span>XGBoost / LightGBM</span><span>88%</span></div><div class="skillbar"><div class="skillfill"></div></div></div>
+      <div class="ringrow">
+        <div class="ringwrap"><svg class="ringsvg" viewBox="0 0 80 80"><circle class="ringbg" cx="40" cy="40" r="30"/><circle class="ringfill" cx="40" cy="40" r="30" data-pct="90"/></svg><div class="ringlabel"><span class="ringpct">0%</span><span class="ringname">Scikit-learn</span></div></div>
+        <div class="ringwrap"><svg class="ringsvg" viewBox="0 0 80 80"><circle class="ringbg" cx="40" cy="40" r="30"/><circle class="ringfill" cx="40" cy="40" r="30" data-pct="85"/></svg><div class="ringlabel"><span class="ringpct">0%</span><span class="ringname">TensorFlow</span></div></div>
+        <div class="ringwrap"><svg class="ringsvg" viewBox="0 0 80 80"><circle class="ringbg" cx="40" cy="40" r="30"/><circle class="ringfill" cx="40" cy="40" r="30" data-pct="80"/></svg><div class="ringlabel"><span class="ringpct">0%</span><span class="ringname">PyTorch</span></div></div>
+        <div class="ringwrap"><svg class="ringsvg" viewBox="0 0 80 80"><circle class="ringbg" cx="40" cy="40" r="30"/><circle class="ringfill" cx="40" cy="40" r="30" data-pct="88"/></svg><div class="ringlabel"><span class="ringpct">0%</span><span class="ringname">XGBoost</span></div></div>
+      </div>
     </div>
     <div class="skillcard"><h3><i class="fas fa-chart-bar"></i> Data Analysis</h3>
-      <div class="skillitem" data-s="95"><div class="skillinfo"><span>Python (Pandas / NumPy)</span><span>95%</span></div><div class="skillbar"><div class="skillfill"></div></div></div>
-      <div class="skillitem" data-s="85"><div class="skillinfo"><span>SQL</span><span>85%</span></div><div class="skillbar"><div class="skillfill"></div></div></div>
-      <div class="skillitem" data-s="80"><div class="skillinfo"><span>R</span><span>80%</span></div><div class="skillbar"><div class="skillfill"></div></div></div>
-      <div class="skillitem" data-s="82"><div class="skillinfo"><span>Statistics & Probability</span><span>82%</span></div><div class="skillbar"><div class="skillfill"></div></div></div>
+      <div class="ringrow">
+        <div class="ringwrap"><svg class="ringsvg" viewBox="0 0 80 80"><circle class="ringbg" cx="40" cy="40" r="30"/><circle class="ringfill" cx="40" cy="40" r="30" data-pct="95"/></svg><div class="ringlabel"><span class="ringpct">0%</span><span class="ringname">Python</span></div></div>
+        <div class="ringwrap"><svg class="ringsvg" viewBox="0 0 80 80"><circle class="ringbg" cx="40" cy="40" r="30"/><circle class="ringfill" cx="40" cy="40" r="30" data-pct="85"/></svg><div class="ringlabel"><span class="ringpct">0%</span><span class="ringname">SQL</span></div></div>
+        <div class="ringwrap"><svg class="ringsvg" viewBox="0 0 80 80"><circle class="ringbg" cx="40" cy="40" r="30"/><circle class="ringfill" cx="40" cy="40" r="30" data-pct="80"/></svg><div class="ringlabel"><span class="ringpct">0%</span><span class="ringname">R</span></div></div>
+        <div class="ringwrap"><svg class="ringsvg" viewBox="0 0 80 80"><circle class="ringbg" cx="40" cy="40" r="30"/><circle class="ringfill" cx="40" cy="40" r="30" data-pct="82"/></svg><div class="ringlabel"><span class="ringpct">0%</span><span class="ringname">Statistics</span></div></div>
+      </div>
     </div>
     <div class="skillcard"><h3><i class="fas fa-chart-pie"></i> Visualisation</h3>
-      <div class="skillitem" data-s="90"><div class="skillinfo"><span>Matplotlib / Seaborn</span><span>90%</span></div><div class="skillbar"><div class="skillfill"></div></div></div>
-      <div class="skillitem" data-s="85"><div class="skillinfo"><span>Power BI / Tableau</span><span>85%</span></div><div class="skillbar"><div class="skillfill"></div></div></div>
-      <div class="skillitem" data-s="78"><div class="skillinfo"><span>Plotly / Dash</span><span>78%</span></div><div class="skillbar"><div class="skillfill"></div></div></div>
-      <div class="skillitem" data-s="80"><div class="skillinfo"><span>Streamlit</span><span>80%</span></div><div class="skillbar"><div class="skillfill"></div></div></div>
+      <div class="ringrow">
+        <div class="ringwrap"><svg class="ringsvg" viewBox="0 0 80 80"><circle class="ringbg" cx="40" cy="40" r="30"/><circle class="ringfill" cx="40" cy="40" r="30" data-pct="90"/></svg><div class="ringlabel"><span class="ringpct">0%</span><span class="ringname">Matplotlib</span></div></div>
+        <div class="ringwrap"><svg class="ringsvg" viewBox="0 0 80 80"><circle class="ringbg" cx="40" cy="40" r="30"/><circle class="ringfill" cx="40" cy="40" r="30" data-pct="85"/></svg><div class="ringlabel"><span class="ringpct">0%</span><span class="ringname">Power BI</span></div></div>
+        <div class="ringwrap"><svg class="ringsvg" viewBox="0 0 80 80"><circle class="ringbg" cx="40" cy="40" r="30"/><circle class="ringfill" cx="40" cy="40" r="30" data-pct="78"/></svg><div class="ringlabel"><span class="ringpct">0%</span><span class="ringname">Plotly</span></div></div>
+        <div class="ringwrap"><svg class="ringsvg" viewBox="0 0 80 80"><circle class="ringbg" cx="40" cy="40" r="30"/><circle class="ringfill" cx="40" cy="40" r="30" data-pct="80"/></svg><div class="ringlabel"><span class="ringpct">0%</span><span class="ringname">Streamlit</span></div></div>
+      </div>
     </div>
     <div class="skillcard"><h3><i class="fas fa-tools"></i> Tools & Cloud</h3>
-      <div class="skillitem" data-s="90"><div class="skillinfo"><span>Git / GitHub</span><span>90%</span></div><div class="skillbar"><div class="skillfill"></div></div></div>
-      <div class="skillitem" data-s="78"><div class="skillinfo"><span>AWS / GCP Basics</span><span>78%</span></div><div class="skillbar"><div class="skillfill"></div></div></div>
-      <div class="skillitem" data-s="82"><div class="skillinfo"><span>Jupyter / VS Code</span><span>82%</span></div><div class="skillbar"><div class="skillfill"></div></div></div>
-      <div class="skillitem" data-s="75"><div class="skillinfo"><span>Docker / Linux</span><span>75%</span></div><div class="skillbar"><div class="skillfill"></div></div></div>
+      <div class="ringrow">
+        <div class="ringwrap"><svg class="ringsvg" viewBox="0 0 80 80"><circle class="ringbg" cx="40" cy="40" r="30"/><circle class="ringfill" cx="40" cy="40" r="30" data-pct="90"/></svg><div class="ringlabel"><span class="ringpct">0%</span><span class="ringname">Git</span></div></div>
+        <div class="ringwrap"><svg class="ringsvg" viewBox="0 0 80 80"><circle class="ringbg" cx="40" cy="40" r="30"/><circle class="ringfill" cx="40" cy="40" r="30" data-pct="78"/></svg><div class="ringlabel"><span class="ringpct">0%</span><span class="ringname">AWS/GCP</span></div></div>
+        <div class="ringwrap"><svg class="ringsvg" viewBox="0 0 80 80"><circle class="ringbg" cx="40" cy="40" r="30"/><circle class="ringfill" cx="40" cy="40" r="30" data-pct="82"/></svg><div class="ringlabel"><span class="ringpct">0%</span><span class="ringname">Jupyter</span></div></div>
+        <div class="ringwrap"><svg class="ringsvg" viewBox="0 0 80 80"><circle class="ringbg" cx="40" cy="40" r="30"/><circle class="ringfill" cx="40" cy="40" r="30" data-pct="75"/></svg><div class="ringlabel"><span class="ringpct">0%</span><span class="ringname">Docker</span></div></div>
+      </div>
     </div>
   </div>
   <p class="techtitle">Tech Stack</p>
@@ -563,12 +778,12 @@ window.addEventListener('resize',function(){
     <button class="fbtn" data-f="nlp">NLP</button>
   </div>
   <div class="projgrid" id="projgrid">
-<div class="projcard" data-cat="ml" onclick="openModal(1"><div class="projcard-inner"><div class="projcard-front"><div class="projthumb"><img src="https://placehold.co/800x450/091525/13d0d0?text=Customer+Churn+Prediction" alt=""><span class="projbadge bteal">ML Model</span><div class="projoverlay"><a href="#" onclick="event.stopPropagation();openModal(1)" title="View"><i class="fas fa-eye"></i></a><a href="https://github.com/ankitjhinkwan/customer-churn-prediction" target="_blank" onclick="event.stopPropagation()" title="GitHub"><i class="fab fa-github"></i></a></div></div><canvas class="mini3d" id="mini3d-1" width="400" height="100"></canvas><div class="projbody"><div class="projmeta"><span class="projcat">ML Model</span><span class="projyr">2024</span></div><h3>Customer Churn Prediction</h3><p>Predicts telecom customer churn using Random Forest with SHAP explainability.</p><div class="tags"><span class="tag">Python</span><span class="tag">Scikit-learn</span><span class="tag">SHAP</span><span class="tag">Random Forest</span></div></div></div><div class="projcard-back"><div class="backicon">&#129302;</div><div class="backtitle">Customer Churn Prediction</div><div class="backdesc">Random Forest binary classifier with SHAP values for interpretability on telecom data.</div><span class="backstat">92% Accuracy</span><div class="backbtns"><a href="https://customer-churn-prediction-rnvjkdzvjbthcldk8ecxve.streamlit.app/" target="_blank" class="bb-live" onclick="event.stopPropagation()"><i class="fas fa-external-link-alt"></i> Live Demo</a><a href="https://github.com/ankitjhinkwan/customer-churn-prediction" target="_blank" class="bb-gh" onclick="event.stopPropagation()"><i class="fab fa-github"></i> GitHub</a></div></div></div></div>
-<div class="projcard" data-cat="viz" onclick="openModal(2"><div class="projcard-inner"><div class="projcard-front"><div class="projthumb"><img src="https://placehold.co/800x450/091525/a78bfa?text=Sales+Analytics+Dashboard" alt=""><span class="projbadge bgrey">Visualisation</span><div class="projoverlay"><a href="#" onclick="event.stopPropagation();openModal(2)" title="View"><i class="fas fa-eye"></i></a><a href="https://github.com/ankitjhinkwan/sales-analytics-dashboard" target="_blank" onclick="event.stopPropagation()" title="GitHub"><i class="fab fa-github"></i></a></div></div><canvas class="mini3d" id="mini3d-2" width="400" height="100"></canvas><div class="projbody"><div class="projmeta"><span class="projcat">Data Viz</span><span class="projyr">2024</span></div><h3>Sales Analytics Dashboard</h3><p>Interactive dashboard visualising 3 years of retail sales with KPIs and regional breakdowns.</p><div class="tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">SQL</span><span class="tag">Excel</span></div></div></div><div class="projcard-back"><div class="backicon">&#128202;</div><div class="backtitle">Sales Analytics Dashboard</div><div class="backdesc">Interactive Power BI dashboard with KPIs, regional breakdowns, and trend analysis.</div><span class="backstat">3yr Dataset</span><div class="backbtns"><a href="https://sales-analytics-dashboard-fxcku4gheld2qwws2qzet9.streamlit.app/" target="_blank" class="bb-live" onclick="event.stopPropagation()"><i class="fas fa-external-link-alt"></i> Live Demo</a><a href="https://github.com/ankitjhinkwan/sales-analytics-dashboard" target="_blank" class="bb-gh" onclick="event.stopPropagation()"><i class="fab fa-github"></i> GitHub</a></div></div></div></div>
-<div class="projcard" data-cat="ml" onclick="openModal(3"><div class="projcard-inner"><div class="projcard-front"><div class="projthumb"><img src="https://placehold.co/800x450/091525/f472b6?text=House+Price+Prediction" alt=""><span class="projbadge bteal">ML Model</span><div class="projoverlay"><a href="#" onclick="event.stopPropagation();openModal(3)" title="View"><i class="fas fa-eye"></i></a><a href="https://github.com/ankitjhinkwan/house-price-prediction" target="_blank" onclick="event.stopPropagation()" title="GitHub"><i class="fab fa-github"></i></a></div></div><canvas class="mini3d" id="mini3d-3" width="400" height="100"></canvas><div class="projbody"><div class="projmeta"><span class="projcat">ML Model</span><span class="projyr">2024</span></div><h3>House Price Prediction</h3><p>Predicts house prices using advanced feature engineering and XGBoost regression.</p><div class="tags"><span class="tag">Python</span><span class="tag">XGBoost</span><span class="tag">SHAP</span><span class="tag">Pandas</span></div></div></div><div class="projcard-back"><div class="backicon">&#127968;</div><div class="backtitle">House Price Prediction</div><div class="backdesc">XGBoost regressor with advanced feature engineering achieving Kaggle top 10% RMSE.</div><span class="backstat">Top 10% RMSE</span><div class="backbtns"><a href="https://house-price-prediction-dogvarm934yfanqwpf6rtd.streamlit.app/" target="_blank" class="bb-live" onclick="event.stopPropagation()"><i class="fas fa-external-link-alt"></i> Live Demo</a><a href="https://github.com/ankitjhinkwan/house-price-prediction" target="_blank" class="bb-gh" onclick="event.stopPropagation()"><i class="fab fa-github"></i> GitHub</a></div></div></div></div>
-<div class="projcard" data-cat="eda" onclick="openModal(4"><div class="projcard-inner"><div class="projcard-front"><div class="projthumb"><img src="https://placehold.co/800x450/091525/fbbf24?text=Netflix+Content+Analysis" alt=""><span class="projbadge bred">EDA</span><div class="projoverlay"><a href="#" onclick="event.stopPropagation();openModal(4)" title="View"><i class="fas fa-eye"></i></a><a href="https://github.com/ankitjhinkwan/netflix-content-analysis" target="_blank" onclick="event.stopPropagation()" title="GitHub"><i class="fab fa-github"></i></a></div></div><canvas class="mini3d" id="mini3d-4" width="400" height="100"></canvas><div class="projbody"><div class="projmeta"><span class="projcat">EDA</span><span class="projyr">2024</span></div><h3>Netflix Content Analysis</h3><p>Deep-dive EDA of Netflix's catalogue covering 8000+ titles, genre trends, release patterns.</p><div class="tags"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Plotly</span><span class="tag">Seaborn</span></div></div></div><div class="projcard-back"><div class="backicon">&#127909;</div><div class="backtitle">Netflix Content Analysis</div><div class="backdesc">Exploratory analysis of Netflix catalogue covering genres, release trends and content distribution.</div><span class="backstat">8000+ Titles</span><div class="backbtns"><a href="https://netflix-content-analysis-a9zowuxo75jdrdz3rdmcfc.streamlit.app/" target="_blank" class="bb-live" onclick="event.stopPropagation()"><i class="fas fa-external-link-alt"></i> Live Demo</a><a href="https://github.com/ankitjhinkwan/netflix-content-analysis" target="_blank" class="bb-gh" onclick="event.stopPropagation()"><i class="fab fa-github"></i> GitHub</a></div></div></div></div>
-<div class="projcard" data-cat="nlp" onclick="openModal(5"><div class="projcard-inner"><div class="projcard-front"><div class="projthumb"><img src="https://placehold.co/800x450/091525/13d0d0?text=Twitter+Sentiment+Analysis" alt=""><span class="projbadge bgrey">NLP</span><div class="projoverlay"><a href="#" onclick="event.stopPropagation();openModal(5)" title="View"><i class="fas fa-eye"></i></a><a href="https://github.com/ankitjhinkwan/twitter-sentiment-analysis" target="_blank" onclick="event.stopPropagation()" title="GitHub"><i class="fab fa-github"></i></a></div></div><canvas class="mini3d" id="mini3d-5" width="400" height="100"></canvas><div class="projbody"><div class="projmeta"><span class="projcat">NLP</span><span class="projyr">2024</span></div><h3>Twitter Sentiment Analysis</h3><p>Fine-tuned BERT model for real-time tweet sentiment classification.</p><div class="tags"><span class="tag">BERT</span><span class="tag">HuggingFace</span><span class="tag">Python</span><span class="tag">Streamlit</span></div></div></div><div class="projcard-back"><div class="backicon">&#128483;</div><div class="backtitle">Twitter Sentiment Analysis</div><div class="backdesc">Fine-tuned BERT transformer model for multi-class tweet sentiment classification in real-time.</div><span class="backstat">BERT Model</span><div class="backbtns"><a href="https://twitter-sentiment-analysis-wqca35sbczxdll4nlqf2bk.streamlit.app/" target="_blank" class="bb-live" onclick="event.stopPropagation()"><i class="fas fa-external-link-alt"></i> Live Demo</a><a href="https://github.com/ankitjhinkwan/twitter-sentiment-analysis" target="_blank" class="bb-gh" onclick="event.stopPropagation()"><i class="fab fa-github"></i> GitHub</a></div></div></div></div>
-<div class="projcard" data-cat="eda" onclick="openModal(6"><div class="projcard-inner"><div class="projcard-front"><div class="projthumb"><img src="https://placehold.co/800x450/091525/a78bfa?text=COVID-19+Data+Analysis" alt=""><span class="projbadge bred">EDA</span><div class="projoverlay"><a href="#" onclick="event.stopPropagation();openModal(6)" title="View"><i class="fas fa-eye"></i></a><a href="https://github.com/ankitjhinkwan/covid19-data-analysis" target="_blank" onclick="event.stopPropagation()" title="GitHub"><i class="fab fa-github"></i></a></div></div><canvas class="mini3d" id="mini3d-6" width="400" height="100"></canvas><div class="projbody"><div class="projmeta"><span class="projcat">EDA</span><span class="projyr">2024</span></div><h3>COVID-19 Data Analysis</h3><p>Global pandemic EDA tracking infection rates, mortality patterns and spread timelines.</p><div class="tags"><span class="tag">Python</span><span class="tag">Seaborn</span><span class="tag">NumPy</span><span class="tag">Matplotlib</span></div></div></div><div class="projcard-back"><div class="backicon">&#128566;</div><div class="backtitle">COVID-19 Data Analysis</div><div class="backdesc">Comprehensive global pandemic analysis tracking spread, mortality and recovery patterns.</div><span class="backstat">Global EDA</span><div class="backbtns"><a href="https://covid19-data-analysis-mjzyt4aekyyz28ueyezszq.streamlit.app/" target="_blank" class="bb-live" onclick="event.stopPropagation()"><i class="fas fa-external-link-alt"></i> Live Demo</a><a href="https://github.com/ankitjhinkwan/covid19-data-analysis" target="_blank" class="bb-gh" onclick="event.stopPropagation()"><i class="fab fa-github"></i> GitHub</a></div></div></div></div>
+<div class="projcard" data-cat="ml" onclick="openModal(1"><div class="projcard-inner"><div class="projcard-front"><div class="projthumb"><img src="https://placehold.co/800x450/091525/13d0d0?text=Customer+Churn+Prediction" alt=""><span class="projbadge bteal">ML Model</span><div class="projoverlay"><a href="#" onclick="event.stopPropagation();openModal(1)" title="View"><i class="fas fa-eye"></i></a><a href="https://github.com/ankitjhinkwan/customer-churn-prediction" target="_blank" onclick="event.stopPropagation()" title="GitHub"><i class="fab fa-github"></i></a></div></div><canvas class="mini3d" id="mini3d-1" width="400" height="100"></canvas><div class="projbody"><div class="projmeta"><span class="projcat">ML Model</span><span class="projyr">2024</span></div><h3>Customer Churn Prediction</h3><p>92% accuracy — identifies high-risk telecom customers using Random Forest + SHAP-driven retention strategies.</p><div class="tags"><span class="tag">Python</span><span class="tag">Scikit-learn</span><span class="tag">SHAP</span><span class="tag">Random Forest</span></div></div></div><div class="projcard-back"><div class="backicon">&#129302;</div><div class="backtitle">Customer Churn Prediction</div><div class="backdesc">Identifies high-risk customers from usage patterns. SHAP values convert predictions into targeted retention strategies — 92% accuracy.</div><span class="backstat">92% Accuracy</span><div class="backbtns"><a href="https://customer-churn-prediction-rnvjkdzvjbthcldk8ecxve.streamlit.app/" target="_blank" class="bb-live" onclick="event.stopPropagation()"><i class="fas fa-external-link-alt"></i> Live Demo</a><a href="https://github.com/ankitjhinkwan/customer-churn-prediction" target="_blank" class="bb-gh" onclick="event.stopPropagation()"><i class="fab fa-github"></i> GitHub</a></div></div></div></div>
+<div class="projcard" data-cat="viz" onclick="openModal(2"><div class="projcard-inner"><div class="projcard-front"><div class="projthumb"><img src="https://placehold.co/800x450/091525/a78bfa?text=Sales+Analytics+Dashboard" alt=""><span class="projbadge bgrey">Visualisation</span><div class="projoverlay"><a href="#" onclick="event.stopPropagation();openModal(2)" title="View"><i class="fas fa-eye"></i></a><a href="https://github.com/ankitjhinkwan/sales-analytics-dashboard" target="_blank" onclick="event.stopPropagation()" title="GitHub"><i class="fab fa-github"></i></a></div></div><canvas class="mini3d" id="mini3d-2" width="400" height="100"></canvas><div class="projbody"><div class="projmeta"><span class="projcat">Data Viz</span><span class="projyr">2024</span></div><h3>Sales Analytics Dashboard</h3><p>Centralizes 3yr retail KPIs with dynamic DAX filtering — guides resource allocation through YoY performance insights.</p><div class="tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">SQL</span><span class="tag">Excel</span></div></div></div><div class="projcard-back"><div class="backicon">&#128202;</div><div class="backtitle">Sales Analytics Dashboard</div><div class="backdesc">DAX-powered business intelligence tool with dynamic filtering across regions, products, and time periods.</div><span class="backstat">3yr Dataset</span><div class="backbtns"><a href="https://sales-analytics-dashboard-fxcku4gheld2qwws2qzet9.streamlit.app/" target="_blank" class="bb-live" onclick="event.stopPropagation()"><i class="fas fa-external-link-alt"></i> Live Demo</a><a href="https://github.com/ankitjhinkwan/sales-analytics-dashboard" target="_blank" class="bb-gh" onclick="event.stopPropagation()"><i class="fab fa-github"></i> GitHub</a></div></div></div></div>
+<div class="projcard" data-cat="ml" onclick="openModal(3"><div class="projcard-inner"><div class="projcard-front"><div class="projthumb"><img src="https://placehold.co/800x450/091525/f472b6?text=House+Price+Prediction" alt=""><span class="projbadge bteal">ML Model</span><div class="projoverlay"><a href="#" onclick="event.stopPropagation();openModal(3)" title="View"><i class="fas fa-eye"></i></a><a href="https://github.com/ankitjhinkwan/house-price-prediction" target="_blank" onclick="event.stopPropagation()" title="GitHub"><i class="fab fa-github"></i></a></div></div><canvas class="mini3d" id="mini3d-3" width="400" height="100"></canvas><div class="projbody"><div class="projmeta"><span class="projcat">ML Model</span><span class="projyr">2024</span></div><h3>House Price Prediction</h3><p>Top 10% Kaggle RMSE — XGBoost pipeline with advanced feature engineering and SHAP-driven market value explainability.</p><div class="tags"><span class="tag">Python</span><span class="tag">XGBoost</span><span class="tag">SHAP</span><span class="tag">Pandas</span></div></div></div><div class="projcard-back"><div class="backicon">&#127968;</div><div class="backtitle">House Price Prediction</div><div class="backdesc">Captures non-linear housing feature relationships. SHAP explainability identifies the primary drivers of property market value.</div><span class="backstat">Top 10% RMSE</span><div class="backbtns"><a href="https://house-price-prediction-dogvarm934yfanqwpf6rtd.streamlit.app/" target="_blank" class="bb-live" onclick="event.stopPropagation()"><i class="fas fa-external-link-alt"></i> Live Demo</a><a href="https://github.com/ankitjhinkwan/house-price-prediction" target="_blank" class="bb-gh" onclick="event.stopPropagation()"><i class="fab fa-github"></i> GitHub</a></div></div></div></div>
+<div class="projcard" data-cat="eda" onclick="openModal(4"><div class="projcard-inner"><div class="projcard-front"><div class="projthumb"><img src="https://placehold.co/800x450/091525/fbbf24?text=Netflix+Content+Analysis" alt=""><span class="projbadge bred">EDA</span><div class="projoverlay"><a href="#" onclick="event.stopPropagation();openModal(4)" title="View"><i class="fas fa-eye"></i></a><a href="https://github.com/ankitjhinkwan/netflix-content-analysis" target="_blank" onclick="event.stopPropagation()" title="GitHub"><i class="fab fa-github"></i></a></div></div><canvas class="mini3d" id="mini3d-4" width="400" height="100"></canvas><div class="projbody"><div class="projmeta"><span class="projcat">EDA</span><span class="projyr">2024</span></div><h3>Netflix Content Analysis</h3><p>Automated pipeline processing daily COVID-19 datasets — time-series visualizations tracking vaccination & mortality patterns globally.</p><div class="tags"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Plotly</span><span class="tag">Seaborn</span></div></div></div><div class="projcard-back"><div class="backicon">&#127909;</div><div class="backtitle">Netflix Content Analysis</div><div class="backdesc">Pandas/NumPy cleaning pipeline handles high-volume daily health data. Clear visualizations of regional spread and recovery patterns.</div><span class="backstat">8000+ Titles</span><div class="backbtns"><a href="https://netflix-content-analysis-a9zowuxo75jdrdz3rdmcfc.streamlit.app/" target="_blank" class="bb-live" onclick="event.stopPropagation()"><i class="fas fa-external-link-alt"></i> Live Demo</a><a href="https://github.com/ankitjhinkwan/netflix-content-analysis" target="_blank" class="bb-gh" onclick="event.stopPropagation()"><i class="fab fa-github"></i> GitHub</a></div></div></div></div>
+<div class="projcard" data-cat="nlp" onclick="openModal(5"><div class="projcard-inner"><div class="projcard-front"><div class="projthumb"><img src="https://placehold.co/800x450/091525/13d0d0?text=Twitter+Sentiment+Analysis" alt=""><span class="projbadge bgrey">NLP</span><div class="projoverlay"><a href="#" onclick="event.stopPropagation();openModal(5)" title="View"><i class="fas fa-eye"></i></a><a href="https://github.com/ankitjhinkwan/twitter-sentiment-analysis" target="_blank" onclick="event.stopPropagation()" title="GitHub"><i class="fab fa-github"></i></a></div></div><canvas class="mini3d" id="mini3d-5" width="400" height="100"></canvas><div class="projbody"><div class="projmeta"><span class="projcat">NLP</span><span class="projyr">2024</span></div><h3>Twitter Sentiment Analysis</h3><p>Fine-tuned BERT Transformer — live Streamlit dashboard turns raw Twitter streams into real-time actionable sentiment intelligence.</p><div class="tags"><span class="tag">BERT</span><span class="tag">HuggingFace</span><span class="tag">Python</span><span class="tag">Streamlit</span></div></div></div><div class="projcard-back"><div class="backicon">&#128483;</div><div class="backtitle">Twitter Sentiment Analysis</div><div class="backdesc">HuggingFace BERT fine-tuned for precision sentiment classification. Time-series dashboard tracks public opinion shifts as they happen.</div><span class="backstat">BERT Model</span><div class="backbtns"><a href="https://twitter-sentiment-analysis-wqca35sbczxdll4nlqf2bk.streamlit.app/" target="_blank" class="bb-live" onclick="event.stopPropagation()"><i class="fas fa-external-link-alt"></i> Live Demo</a><a href="https://github.com/ankitjhinkwan/twitter-sentiment-analysis" target="_blank" class="bb-gh" onclick="event.stopPropagation()"><i class="fab fa-github"></i> GitHub</a></div></div></div></div>
+<div class="projcard" data-cat="eda" onclick="openModal(6"><div class="projcard-inner"><div class="projcard-front"><div class="projthumb"><img src="https://placehold.co/800x450/091525/a78bfa?text=COVID-19+Data+Analysis" alt=""><span class="projbadge bred">EDA</span><div class="projoverlay"><a href="#" onclick="event.stopPropagation();openModal(6)" title="View"><i class="fas fa-eye"></i></a><a href="https://github.com/ankitjhinkwan/covid19-data-analysis" target="_blank" onclick="event.stopPropagation()" title="GitHub"><i class="fab fa-github"></i></a></div></div><canvas class="mini3d" id="mini3d-6" width="400" height="100"></canvas><div class="projbody"><div class="projmeta"><span class="projcat">EDA</span><span class="projyr">2024</span></div><h3>COVID-19 Data Analysis</h3><p>Deep-dive EDA across 8000+ Netflix titles — genre evolution, release cadence and regional distribution via interactive Plotly charts.</p><div class="tags"><span class="tag">Python</span><span class="tag">Seaborn</span><span class="tag">NumPy</span><span class="tag">Matplotlib</span></div></div></div><div class="projcard-back"><div class="backicon">&#128566;</div><div class="backtitle">COVID-19 Data Analysis</div><div class="backdesc">Uncovers streaming trends across genres, ratings and regions. Interactive Plotly charts reveal 8000+ titles worth of content strategy insights.</div><span class="backstat">Global EDA</span><div class="backbtns"><a href="https://covid19-data-analysis-mjzyt4aekyyz28ueyezszq.streamlit.app/" target="_blank" class="bb-live" onclick="event.stopPropagation()"><i class="fas fa-external-link-alt"></i> Live Demo</a><a href="https://github.com/ankitjhinkwan/covid19-data-analysis" target="_blank" class="bb-gh" onclick="event.stopPropagation()"><i class="fab fa-github"></i> GitHub</a></div></div></div></div>
   </div>
 </div></section>
 <div class="wave-divider"><svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="wg3" x1="0" x2="1"><stop offset="0%" stop-color="#00d4aa" stop-opacity=".25"/><stop offset="50%" stop-color="#6366f1" stop-opacity=".25"/><stop offset="100%" stop-color="#00d4aa" stop-opacity=".25"/></linearGradient></defs><path d="M0,35 C200,5 400,55 600,25 C800,0 1000,50 1200,30 C1320,15 1400,45 1440,35 L1440,60 L0,60 Z" fill="url(#wg3)"/><path d="M0,10 C360,45 720,5 1080,40 C1260,55 1380,20 1440,15 L1440,60 L0,60 Z" fill="rgba(99,102,241,.04)"/></svg></div>
@@ -580,7 +795,7 @@ window.addEventListener('resize',function(){
       <p>I'm available for data science consulting, ML project work, and full-time roles.</p>
       <div class="citems">
         <div class="citem"><div class="cicon"><i class="fas fa-map-marker-alt"></i></div><div class="ctext"><h4>Location</h4><p>Uttarakhand, India</p></div></div>
-        <div class="citem"><div class="cicon"><i class="fas fa-envelope"></i></div><div class="ctext"><h4>Email</h4><a href="mailto:ankitjhinkwan9@gmail.com"><span style="display:none" data-cfemail="86e7e8edeff2eceeefe8edf1e7e8bfc6e1ebe7efeaa8e5e9eb">[email&#160;protected]</span></a></div></div>
+        <div class="citem"><div class="cicon"><i class="fas fa-envelope"></i></div><div class="ctext"><h4>Email</h4><a href="/cdn-cgi/l/email-protection#24454a4f4d504e4c4d4a4f53454a1d644349454d480a474b49"><span style="display:none" data-cfemail="86e7e8edeff2eceeefe8edf1e7e8bfc6e1ebe7efeaa8e5e9eb">[email&#160;protected]</span></a></div></div>
         <div class="citem"><div class="cicon"><i class="fas fa-phone-alt"></i></div><div class="ctext"><h4>Phone</h4><a href="tel:+919528693191">+91 9528693191</a></div></div>
         <div class="citem"><div class="cicon"><i class="fas fa-clock"></i></div><div class="ctext"><h4>Availability</h4><p>Mon – Sat, 9 AM – 6 PM IST</p></div></div>
       </div>
@@ -591,7 +806,7 @@ window.addEventListener('resize',function(){
       <div class="socials">
         <a href="https://www.linkedin.com/in/ankit-jinkwan-a16882288/" target="_blank" class="socbtn"><i class="fab fa-linkedin-in"></i></a>
         <a href="https://github.com/ankitjhinkwan" target="_blank" class="socbtn"><i class="fab fa-github"></i></a>
-        <a href="mailto:ankitjhinkwan9@gmail.com">ankitjhinkwan9@gmail.com</a>
+        <a href="/cdn-cgi/l/email-protection#53323d383a27393b3a3d3824323d6a13343e323a3f7d303c3e"><span class="__cf_email__" data-cfemail="ed8c8386849987858483869a8c83d4ad8a808c8481c38e8280">[email&#160;protected]</span></a>
       </div>
     </div>
     <div class="formcard">
@@ -631,17 +846,17 @@ window.addEventListener('resize',function(){
     </div>
   </div>
 </div></div>
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 const PROJECTS={
-  1:{cat:"ML Model",title:"Customer Churn Prediction",desc:"A binary classification model predicting telecom customer churn with 92% accuracy. Uses Random Forest with SHAP values to explain which features drive churn.",tags:["Python","Random Forest","SHAP","Scikit-learn","Pandas"],features:["92% Classification Accuracy","SHAP Explainability","Feature Importance Analysis","Confusion Matrix & ROC-AUC","Business Insight Reports","End-to-End ML Pipeline"],img:"https://placehold.co/800x450/091525/13d0d0?text=Customer+Churn+Prediction",live:"https://customer-churn-prediction-rnvjkdzvjbthcldk8ecxve.streamlit.app/",github:"https://github.com/ankitjhinkwan/customer-churn-prediction"},
-  2:{cat:"Visualisation",title:"Sales Analytics Dashboard",desc:"An interactive Power BI dashboard visualising 3 years of retail sales data with KPI scorecards, revenue trends, and regional breakdowns.",tags:["Power BI","DAX","SQL","Excel","Data Modelling"],features:["KPI Scorecards","Regional Breakdown","Year-over-Year Trends","Product Performance","DAX Measures","Drill-Through Pages"],img:"https://placehold.co/800x450/091525/13d0d0?text=Sales+Analytics+Dashboard",live:"https://sales-analytics-dashboard-fxcku4gheld2qwws2qzet9.streamlit.app/",github:"https://github.com/ankitjhinkwan/sales-analytics-dashboard"},
-  3:{cat:"ML Model",title:"House Price Prediction",desc:"Regression model predicting house prices using advanced feature engineering and XGBoost on the Ames Housing dataset. Achieved RMSE in the Kaggle top 10%.",tags:["Python","XGBoost","Scikit-learn","Pandas","SHAP"],features:["Top 10% Kaggle RMSE","Advanced Feature Engineering","Hyperparameter Tuning","Cross-Validation","SHAP Explainability","Full EDA Pipeline"],img:"https://placehold.co/800x450/091525/13d0d0?text=House+Price+Prediction",live:"https://house-price-prediction-dogvarm934yfanqwpf6rtd.streamlit.app/",github:"https://github.com/ankitjhinkwan/house-price-prediction"},
-  4:{cat:"EDA",title:"Netflix Content Analysis",desc:"Deep-dive EDA of Netflix's entire catalogue uncovering genre trends, release patterns, content ratings and regional distribution across 8000+ titles.",tags:["Pandas","Plotly","Matplotlib","Python","Seaborn"],features:["Genre Trend Analysis","Release Pattern Study","Content Rating Breakdown","Regional Distribution","Interactive Plotly Charts","Time-Series Analysis"],img:"https://placehold.co/800x450/091525/ff4060?text=Netflix+Content+Analysis",live:"https://netflix-content-analysis-a9zowuxo75jdrdz3rdmcfc.streamlit.app/",github:"https://github.com/ankitjhinkwan/netflix-content-analysis"},
-  5:{cat:"NLP",title:"Twitter Sentiment Analysis",desc:"End-to-end NLP pipeline classifying tweet sentiments using a fine-tuned BERT model, deployed as an interactive Streamlit dashboard.",tags:["BERT","HuggingFace","Streamlit","Python","PyTorch"],features:["BERT Fine-Tuning","Real-Time Classification","Streamlit Dashboard","Sentiment Trend Charts","Word Cloud Visualisation","REST API Ready"],img:"https://placehold.co/800x450/091525/c8dae8?text=Twitter+Sentiment+Analysis",live:"https://twitter-sentiment-analysis-wqca35sbczxdll4nlqf2bk.streamlit.app/",github:"https://github.com/ankitjhinkwan/twitter-sentiment-analysis"},
-  6:{cat:"EDA",title:"COVID-19 Data Analysis",desc:"Comprehensive EDA of global COVID-19 trends covering vaccination rates, mortality patterns, spread timelines and country-level responses.",tags:["Pandas","Seaborn","NumPy","Matplotlib","Jupyter"],features:["Global Trend Analysis","Vaccination Rate Tracking","Mortality Pattern Study","Country Comparisons","Automated Data Pipeline","Time-Series Visualisations"],img:"https://placehold.co/800x450/091525/ff4060?text=COVID-19+Data+Analysis",live:"https://covid19-data-analysis-mjzyt4aekyyz28ueyezszq.streamlit.app/",github:"https://github.com/ankitjhinkwan/covid19-data-analysis"}
+  1:{cat:"ML Model",title:"Customer Churn Prediction",desc:"92% accuracy binary classifier identifying high-risk telecom customers. Random Forest + SHAP values turn predictions into data-driven retention strategies.",tags:["Python","Random Forest","SHAP","Scikit-learn","Pandas"],features:["92% Classification Accuracy","SHAP Explainability","Feature Importance Analysis","Confusion Matrix & ROC-AUC","Business Insight Reports","End-to-End ML Pipeline"],img:"https://placehold.co/800x450/091525/13d0d0?text=Customer+Churn+Prediction",live:"https://customer-churn-prediction-rnvjkdzvjbthcldk8ecxve.streamlit.app/",github:"https://github.com/ankitjhinkwan/customer-churn-prediction"},
+  2:{cat:"Visualisation",title:"Sales Analytics Dashboard",desc:"DAX-powered BI tool with dynamic filtering across regions and products. Centralizes 3yr KPIs and YoY performance to guide strategic resource allocation.",tags:["Power BI","DAX","SQL","Excel","Data Modelling"],features:["KPI Scorecards","Regional Breakdown","Year-over-Year Trends","Product Performance","DAX Measures","Drill-Through Pages"],img:"https://placehold.co/800x450/091525/13d0d0?text=Sales+Analytics+Dashboard",live:"https://sales-analytics-dashboard-fxcku4gheld2qwws2qzet9.streamlit.app/",github:"https://github.com/ankitjhinkwan/sales-analytics-dashboard"},
+  3:{cat:"ML Model",title:"House Price Prediction",desc:"XGBoost regression pipeline tackling non-linear property valuation. Top 10% Kaggle RMSE. SHAP explainability identifies the primary market value drivers.",tags:["Python","XGBoost","Scikit-learn","Pandas","SHAP"],features:["Top 10% Kaggle RMSE","Advanced Feature Engineering","Hyperparameter Tuning","Cross-Validation","SHAP Explainability","Full EDA Pipeline"],img:"https://placehold.co/800x450/091525/13d0d0?text=House+Price+Prediction",live:"https://house-price-prediction-dogvarm934yfanqwpf6rtd.streamlit.app/",github:"https://github.com/ankitjhinkwan/house-price-prediction"},
+  4:{cat:"EDA",title:"Netflix Content Analysis",desc:"Automated Pandas/NumPy pipeline processing daily COVID-19 datasets. Time-series visualizations reveal vaccination rates and mortality patterns across regions.",tags:["Pandas","Plotly","Matplotlib","Python","Seaborn"],features:["Genre Trend Analysis","Release Pattern Study","Content Rating Breakdown","Regional Distribution","Interactive Plotly Charts","Time-Series Analysis"],img:"https://placehold.co/800x450/091525/ff4060?text=Netflix+Content+Analysis",live:"https://netflix-content-analysis-a9zowuxo75jdrdz3rdmcfc.streamlit.app/",github:"https://github.com/ankitjhinkwan/netflix-content-analysis"},
+  5:{cat:"NLP",title:"Twitter Sentiment Analysis",desc:"Fine-tuned BERT Transformer via HuggingFace for high-precision sentiment classification. Live Streamlit dashboard turns raw Twitter streams into real-time actionable intelligence.",tags:["BERT","HuggingFace","Streamlit","Python","PyTorch"],features:["BERT Fine-Tuning","Real-Time Classification","Streamlit Dashboard","Sentiment Trend Charts","Word Cloud Visualisation","REST API Ready"],img:"https://placehold.co/800x450/091525/c8dae8?text=Twitter+Sentiment+Analysis",live:"https://twitter-sentiment-analysis-wqca35sbczxdll4nlqf2bk.streamlit.app/",github:"https://github.com/ankitjhinkwan/twitter-sentiment-analysis"},
+  6:{cat:"EDA",title:"COVID-19 Data Analysis",desc:"Deep-dive EDA across 8000+ Netflix titles. Uncovers genre evolution, release cadence and regional distribution through interactive Plotly charts.",tags:["Pandas","Seaborn","NumPy","Matplotlib","Jupyter"],features:["Global Trend Analysis","Vaccination Rate Tracking","Mortality Pattern Study","Country Comparisons","Automated Data Pipeline","Time-Series Visualisations"],img:"https://placehold.co/800x450/091525/ff4060?text=COVID-19+Data+Analysis",live:"https://covid19-data-analysis-mjzyt4aekyyz28ueyezszq.streamlit.app/",github:"https://github.com/ankitjhinkwan/covid19-data-analysis"}
 };
 const dot=document.getElementById("cDot"),ring=document.getElementById("cRing");
-if(dot&&ring){let mx=0,my=0,rx=0,ry=0;document.addEventListener("mousemove",e=>{mx=e.clientX;my=e.clientY;dot.style.left=mx+"px";dot.style.top=my+"px"});(function ar(){rx+=(mx-rx)*.14;ry+=(my-ry)*.14;ring.style.left=rx+"px";ring.style.top=ry+"px";requestAnimationFrame(ar)})();document.querySelectorAll("a,button,.projcard,.chip,.fbtn").forEach(el=>{el.addEventListener("mouseenter",()=>ring.classList.add("hov"));el.addEventListener("mouseleave",()=>ring.classList.remove("hov"))})}
+if(dot&&ring){let mx=0,my=0,rx=0,ry=0;document.addEventListener("mousemove",e=>{mx=e.clientX;my=e.clientY;dot.style.left=mx+"px";dot.style.top=my+"px"});(function ar(){rx+=(mx-rx)*.14;ry+=(my-ry)*.14;ring.style.left=rx+"px";ring.style.top=ry+"px";requestAnimationFrame(ar)})();document.querySelectorAll("a,button,[onclick]").forEach(el=>{el.addEventListener("mouseenter",()=>ring.classList.add("hov"));el.addEventListener("mouseleave",()=>ring.classList.remove("hov"))})}
 /* particles handled by Three.js hero canvas */
 const typed=document.getElementById("typed");
 const phrases=["Data Scientist","ML Engineer","Data Analyst","Insight Explorer","Problem Solver"];
@@ -655,31 +870,27 @@ function closeNav(){navul.classList.remove("open");noverlay.classList.remove("on
 mbtn.addEventListener("click",()=>{if(navul.classList.contains("open")){closeNav()}else{navul.classList.add("open");noverlay.classList.add("on");mbtn.innerHTML='<i class="fas fa-times"></i>';document.body.style.overflow="hidden"}});
 noverlay.addEventListener("click",closeNav);
 document.querySelectorAll(".navlink").forEach(l=>l.addEventListener("click",closeNav));
-const skobs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){
-    const fill=e.target.querySelector(".skillfill"),pct=parseInt(e.target.dataset.s);
-    const pctEl=e.target.querySelector(".skillinfo span:last-child");
-    if(fill&&pct){
-      setTimeout(()=>{
-        fill.style.width=pct+"%";
-        e.target.classList.add("lit");
-        // counter animation
-        if(pctEl){
-          let start=0,dur=1400,startTime=null;
-          function countUp(ts){
-            if(!startTime)startTime=ts;
-            const prog=Math.min((ts-startTime)/dur,1);
-            const ease=1-Math.pow(1-prog,3);
-            pctEl.textContent=Math.round(ease*pct)+"%";
-            if(prog<1)requestAnimationFrame(countUp);
-          }
-          requestAnimationFrame(countUp);
-        }
-      },120);
-    }
-    skobs.unobserve(e.target);
-  }})},{threshold:.4});
-document.querySelectorAll(".skillitem").forEach(i=>skobs.observe(i));
-document.querySelectorAll(".fbtn").forEach(btn=>{btn.addEventListener("click",()=>{document.querySelectorAll(".fbtn").forEach(b=>b.classList.remove("active"));btn.classList.add("active");const f=btn.dataset.f;document.querySelectorAll(".projcard").forEach(c=>{const show=f==="all"||c.dataset.cat===f;if(show){c.style.display="flex";setTimeout(()=>{c.style.opacity="1";c.style.transform="translateY(0)"},10)}else{c.style.opacity="0";c.style.transform="translateY(20px)";setTimeout(()=>{c.style.display="none"},300)}})})});
+// Ring animation - trigger on scroll
+function animateRing(el){
+  var fill=el.querySelector('.ringfill');
+  var pct=fill?parseInt(fill.dataset.pct):0;
+  var pctEl=el.querySelector('.ringpct');
+  if(!fill||!pct)return;
+  var circ=2*Math.PI*30;
+  fill.style.strokeDashoffset=circ-(pct/100*circ);
+  if(pctEl){
+    var dur=1400,startTime=null;
+    function countUp(ts){if(!startTime)startTime=ts;var prog=Math.min((ts-startTime)/dur,1);var ease=1-Math.pow(1-prog,3);pctEl.textContent=Math.round(ease*pct)+'%';if(prog<1)requestAnimationFrame(countUp);}
+    requestAnimationFrame(countUp);
+  }
+}
+const skobs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){animateRing(e.target);skobs.unobserve(e.target);}});},{threshold:0,rootMargin:'0px 0px -20px 0px'});
+document.querySelectorAll('.ringwrap').forEach(function(el){
+  var rect=el.getBoundingClientRect();
+  if(rect.top<window.innerHeight-20){animateRing(el);}
+  else{skobs.observe(el);}
+});
+document.querySelectorAll(".fbtn").forEach(btn=>{btn.addEventListener("click",()=>{document.querySelectorAll(".fbtn").forEach(b=>b.classList.remove("active"));btn.classList.add("active");const f=btn.dataset.f;document.querySelectorAll(".projcard").forEach(c=>{const show=f==="all"||c.dataset.cat===f;if(show){c.style.display="block";c.style.opacity="0";c.style.transform="translateY(20px)";setTimeout(()=>{c.style.opacity="1";c.style.transform="translateY(0)"},10)}else{c.style.opacity="0";c.style.transform="translateY(20px)";setTimeout(()=>{c.style.display="none"},300)}})})});
 const modal=document.getElementById("modal"),mclose=document.getElementById("modalclose");
 function closeModal(){modal.classList.remove("active");document.body.style.overflow=""}
 mclose.addEventListener("click",closeModal);modal.addEventListener("click",e=>{if(e.target===modal)closeModal()});document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal()});
@@ -1096,9 +1307,8 @@ if(heroEl && heroGlow){
             rz
           );
           orb.electron.material.opacity = .7+Math.sin(a*2)*.25;
-          orb.electron.scale.setScalar(.8+Math.sin(a*3)*.25);
+           orb.electron.scale.setScalar(.8+Math.sin(a*3)*.25);
         });
-
         rend.render(sc, cam);
       }
       var io = new IntersectionObserver(function(en){alive=en[0].isIntersecting;if(alive)loop();},{threshold:.1});
@@ -1106,6 +1316,193 @@ if(heroEl && heroGlow){
     }
   });
 })();
+</script>
+</body>
+</html
+
+// === FLOATING SHAPES ACROSS ENTIRE PAGE ===
+(function(){
+  var layer = document.getElementById('floatLayer');
+  if(!layer) return;
+
+  var shapes = ['circle','ring','sq','hex'];
+  var colors = [
+    'rgba(0,212,170,',    // teal
+    'rgba(99,102,241,',   // indigo
+    'rgba(255,255,255,',  // white
+    'rgba(0,212,170,',
+    'rgba(99,102,241,',
+  ];
+
+  var count = 35;
+  var els = [];
+
+  for(var i=0;i<count;i++){
+    var el = document.createElement('div');
+    var shape = shapes[Math.floor(Math.random()*shapes.length)];
+    var color = colors[Math.floor(Math.random()*colors.length)];
+    var size = Math.random()*28+8;
+    var duration = Math.random()*25+15;
+    var delay = Math.random()*20;
+    var left = Math.random()*100;
+    var opacity = Math.random()*.35+.08;
+
+    el.className = 'fshape fshape-'+shape;
+    el.style.cssText = [
+      'width:'+size+'px',
+      'height:'+size+'px',
+      'left:'+left+'%',
+      'bottom:-'+size+'px',
+      'animation-duration:'+duration+'s',
+      'animation-delay:'+delay+'s',
+      'background:'+color+opacity+')',
+      shape==='ring'?'border-color:'+color+opacity+')':'',
+      shape==='ring'?'background:transparent':'',
+    ].join(';');
+
+    layer.appendChild(el);
+    els.push({el:el, baseLeft:left, drift:Math.random()*60-30, driftSpeed:Math.random()*8+6, phase:Math.random()*Math.PI*2});
+  }
+
+  // Add drift X animation
+  var t=0;
+  function driftShapes(){
+    requestAnimationFrame(driftShapes);
+    t += 0.01;
+    els.forEach(function(s){
+      var x = Math.sin(t/s.driftSpeed+s.phase)*s.drift;
+      s.el.style.marginLeft = x+'px';
+    });
+  }
+  driftShapes();
+})();
+
+// === CANVAS 2D - CONNECTED PARTICLES across whole page ===
+(function(){
+  var cv = document.getElementById('globalBg');
+  if(!cv) return;
+  var W = cv.width = window.innerWidth;
+  var H = cv.height = window.innerHeight;
+  var ctx = cv.getContext('2d');
+
+  var pts = [];
+  // More particles, varied sizes and speeds
+  for(var i=0;i<100;i++){
+    var isTeal = Math.random() > 0.45;
+    pts.push({
+      x: Math.random()*W,
+      y: Math.random()*H,
+      vx: (Math.random()-.5)*.5,
+      vy: (Math.random()-.5)*.5,
+      r: Math.random()*1.8+.4,
+      teal: isTeal,
+      pulse: Math.random()*Math.PI*2,
+      pulseSpeed: Math.random()*.02+.01
+    });
+  }
+
+  var mouseX=-9999, mouseY=-9999;
+  document.addEventListener('mousemove',function(e){mouseX=e.clientX;mouseY=e.clientY;});
+
+  function draw(){
+    requestAnimationFrame(draw);
+    ctx.clearRect(0,0,W,H);
+
+    pts.forEach(function(p){
+      p.pulse += p.pulseSpeed;
+      // Mouse repel
+      var dx=p.x-mouseX, dy=p.y-mouseY;
+      var md=Math.sqrt(dx*dx+dy*dy);
+      if(md<120){p.vx+=dx/md*.04;p.vy+=dy/md*.04;}
+      // Speed limit
+      var spd=Math.sqrt(p.vx*p.vx+p.vy*p.vy);
+      if(spd>.8){p.vx=p.vx/spd*.8;p.vy=p.vy/spd*.8;}
+      p.x+=p.vx; p.y+=p.vy;
+      if(p.x<0)p.x=W; if(p.x>W)p.x=0;
+      if(p.y<0)p.y=H; if(p.y>H)p.y=0;
+
+      var alpha = (.25+Math.sin(p.pulse)*.1);
+      var col = p.teal?'rgba(0,212,170,':'rgba(99,102,241,';
+      // Draw particle
+      ctx.beginPath();
+      ctx.arc(p.x,p.y,p.r*(1+Math.sin(p.pulse)*.2),0,Math.PI*2);
+      ctx.fillStyle=col+alpha+')';
+      ctx.fill();
+    });
+
+    // Draw connections
+    for(var i=0;i<pts.length;i++){
+      for(var j=i+1;j<pts.length;j++){
+        var dx=pts[i].x-pts[j].x, dy=pts[i].y-pts[j].y;
+        var d=Math.sqrt(dx*dx+dy*dy);
+        if(d<130){
+          ctx.beginPath();
+          ctx.moveTo(pts[i].x,pts[i].y);
+          ctx.lineTo(pts[j].x,pts[j].y);
+          var a=(1-d/130)*.07;
+          ctx.strokeStyle='rgba(0,212,170,'+a+')';
+          ctx.lineWidth=.6;
+          ctx.stroke();
+        }
+      }
+    }
+  }
+  draw();
+
+  window.addEventListener('resize',function(){
+    cv.width=W=window.innerWidth;
+    cv.height=H=window.innerHeight;
+  });
+})();
+
+
+// ---- Reveal on scroll ----
+(function(){
+  var sel = '.reveal,.reveal-left,.reveal-right,.reveal-scale,.stitle';
+  var els = document.querySelectorAll(sel);
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.classList.add('vis');
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:0,rootMargin:'0px 0px -60px 0px'});
+  els.forEach(function(el){
+    // Check if already visible on load
+    var rect = el.getBoundingClientRect();
+    if(rect.top < window.innerHeight){
+      el.classList.add('vis');
+    } else {
+      io.observe(el);
+    }
+  });
+})();
+
+// ---- Skillcard mouse glow ----
+document.querySelectorAll('.skillcard').forEach(function(card){
+  card.addEventListener('mousemove',function(e){
+    var r=card.getBoundingClientRect();
+    var x=((e.clientX-r.left)/r.width*100).toFixed(1)+'%';
+    var y=((e.clientY-r.top)/r.height*100).toFixed(1)+'%';
+    card.style.setProperty('--mx',x);
+    card.style.setProperty('--my',y);
+  });
+});
+
+// ---- About image subtle parallax ----
+(function(){
+  var frame = document.querySelector('.aboutframe');
+  if(!frame) return;
+  document.addEventListener('mousemove',function(e){
+    var mx=(e.clientX/window.innerWidth-.5)*8;
+    var my=(e.clientY/window.innerHeight-.5)*8;
+    frame.style.transform='perspective(600px) rotateY('+mx+'deg) rotateX('+(-my)+'deg)';
+  });
+})();
+
+// ---- Stitle underline trigger - handled by reveal observer ----
+
 </script>
 </body>
 </html>
