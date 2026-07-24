@@ -207,6 +207,41 @@
   }
   .back-to-top.active{ opacity:1; visibility:visible; }
 
+  /* cursor glow */
+  .cursor-glow{
+    position:fixed; top:0; left:0; width:520px; height:520px; border-radius:50%;
+    background:radial-gradient(circle,rgba(19,208,208,.16),rgba(139,92,246,.08) 45%,transparent 70%);
+    transform:translate(-50%,-50%); pointer-events:none; z-index:2; mix-blend-mode:screen;
+    transition:opacity .3s ease; opacity:0;
+  }
+
+  /* scroll reveal */
+  .reveal{ opacity:0; transform:translateY(46px); transition:opacity .8s cubic-bezier(.16,.8,.34,1), transform .8s cubic-bezier(.16,.8,.34,1); }
+  .reveal.show{ opacity:1; transform:translateY(0); }
+  .reveal-left{ opacity:0; transform:translateX(-50px); transition:opacity .8s cubic-bezier(.16,.8,.34,1), transform .8s cubic-bezier(.16,.8,.34,1); }
+  .reveal-left.show{ opacity:1; transform:translateX(0); }
+  .reveal-right{ opacity:0; transform:translateX(50px); transition:opacity .8s cubic-bezier(.16,.8,.34,1), transform .8s cubic-bezier(.16,.8,.34,1); }
+  .reveal-right.show{ opacity:1; transform:translateX(0); }
+  .reveal-card{ opacity:0; transform:translateY(60px) rotateX(12deg) scale(.92); transition:opacity .7s cubic-bezier(.16,.8,.34,1), transform .7s cubic-bezier(.16,.8,.34,1); }
+  .reveal-card.show{ opacity:1; transform:translateY(0) rotateX(0) scale(1); }
+  .reveal-pop{ opacity:0; transform:scale(.85); transition:opacity .6s ease, transform .6s cubic-bezier(.34,1.4,.64,1); }
+  .reveal-pop.show{ opacity:1; transform:scale(1); }
+
+  /* hero load-in */
+  .hero-content > *{ opacity:0; transform:translateY(24px); animation:heroIn .8s cubic-bezier(.16,.8,.34,1) forwards; }
+  .hero-content .hero-greeting{ animation-delay:.05s; }
+  .hero-content h1{ animation-delay:.15s; }
+  .hero-content .hero-desc{ animation-delay:.28s; }
+  .hero-content .hero-btns{ animation-delay:.4s; }
+  .hero-content .hero-stats{ animation-delay:.52s; }
+  #heroCard{ opacity:0; transform:perspective(700px) translateY(30px) scale(.94); animation:heroCardIn .9s cubic-bezier(.16,.8,.34,1) forwards; animation-delay:.3s; }
+  @keyframes heroIn{ to{ opacity:1; transform:translateY(0); } }
+  @keyframes heroCardIn{ to{ opacity:1; transform:perspective(700px) translateY(0) scale(1); } }
+
+  @media (prefers-reduced-motion: reduce){
+    .reveal,.reveal-left,.reveal-right,.reveal-card,.reveal-pop,.hero-content > *,#heroCard{ opacity:1 !important; transform:none !important; animation:none !important; transition:none !important; }
+  }
+
   /* Responsive */
   @media (max-width:992px){
     .hero-grid,.about-container,.skills-container,.contact-container{ grid-template-columns:1fr; }
@@ -227,10 +262,11 @@
 <body>
 
 <div class="mesh">
-  <div class="orb orb1"></div>
-  <div class="orb orb2"></div>
-  <div class="orb orb3"></div>
+  <div class="orb orb1" id="orb1"></div>
+  <div class="orb orb2" id="orb2"></div>
+  <div class="orb orb3" id="orb3"></div>
 </div>
+<div class="cursor-glow" id="cursorGlow"></div>
 
 <!-- Header -->
 <header>
@@ -288,15 +324,15 @@
 <!-- About -->
 <section id="about">
   <div class="container">
-    <p class="hero-greeting" style="text-align:center">A LITTLE ABOUT ME</p>
-    <h2 class="section-title" style="text-align:center">About <span class="text-gradient">Me</span></h2>
-    <p class="section-subtitle" style="text-align:center">Who I am and how I work</p>
+    <p class="hero-greeting reveal" style="text-align:center">A LITTLE ABOUT ME</p>
+    <h2 class="section-title reveal" style="text-align:center">About <span class="text-gradient">Me</span></h2>
+    <p class="section-subtitle reveal" style="text-align:center">Who I am and how I work</p>
     <div class="about-container">
-      <div class="stat-block">
+      <div class="stat-block reveal-left">
         <div class="stat-tile glass"><span class="stat-num text-gradient">50+</span><span class="stat-label">Completed Projects</span></div>
         <div class="stat-tile glass"><span class="stat-num text-gradient">3+</span><span class="stat-label">Years Experience</span></div>
       </div>
-      <div class="about-content glass about-panel">
+      <div class="about-content glass about-panel reveal-right">
         <h3>Passionate developer crafting <span class="text-gradient">digital experiences</span></h3>
         <p>I'm a Full Stack Developer based in Uttarakhand, India, with a passion for building clean, scalable, and user-friendly web applications. I love turning complex problems into simple, beautiful, and intuitive designs.</p>
         <p>When I'm not coding, you'll find me exploring new technologies, contributing to open-source, or hiking in the Himalayas.</p>
@@ -318,37 +354,37 @@
 <!-- Skills -->
 <section id="skills">
   <div class="container">
-    <p class="hero-greeting" style="text-align:center">WHAT I WORK WITH</p>
-    <h2 class="section-title" style="text-align:center">My <span class="text-gradient">Skills</span></h2>
-    <p class="section-subtitle" style="text-align:center">Technologies and tools I use daily</p>
+    <p class="hero-greeting reveal" style="text-align:center">WHAT I WORK WITH</p>
+    <h2 class="section-title reveal" style="text-align:center">My <span class="text-gradient">Skills</span></h2>
+    <p class="section-subtitle reveal" style="text-align:center">Technologies and tools I use daily</p>
     <div class="skills-container">
       <div>
-        <div class="skill-category glass">
+        <div class="skill-category glass reveal-left">
           <h3><i class="fas fa-laptop-code"></i> Frontend</h3>
           <div class="skill-item" data-skill="95"><div class="skill-info"><span>HTML / CSS</span><span>95%</span></div><div class="skill-bar"><div class="skill-progress"></div></div></div>
           <div class="skill-item" data-skill="90"><div class="skill-info"><span>JavaScript</span><span>90%</span></div><div class="skill-bar"><div class="skill-progress"></div></div></div>
           <div class="skill-item" data-skill="85"><div class="skill-info"><span>React.js</span><span>85%</span></div><div class="skill-bar"><div class="skill-progress"></div></div></div>
         </div>
-        <div class="skill-category glass">
+        <div class="skill-category glass reveal-left">
           <h3><i class="fas fa-server"></i> Backend</h3>
           <div class="skill-item" data-skill="85"><div class="skill-info"><span>Node.js / Express</span><span>85%</span></div><div class="skill-bar"><div class="skill-progress"></div></div></div>
           <div class="skill-item" data-skill="80"><div class="skill-info"><span>Python</span><span>80%</span></div><div class="skill-bar"><div class="skill-progress"></div></div></div>
         </div>
       </div>
       <div>
-        <div class="skill-category glass">
+        <div class="skill-category glass reveal-right">
           <h3><i class="fas fa-database"></i> Database</h3>
           <div class="skill-item" data-skill="85"><div class="skill-info"><span>MongoDB</span><span>85%</span></div><div class="skill-bar"><div class="skill-progress"></div></div></div>
           <div class="skill-item" data-skill="80"><div class="skill-info"><span>MySQL</span><span>80%</span></div><div class="skill-bar"><div class="skill-progress"></div></div></div>
         </div>
-        <div class="skill-category glass">
+        <div class="skill-category glass reveal-right">
           <h3><i class="fas fa-tools"></i> Tools</h3>
           <div class="skill-item" data-skill="90"><div class="skill-info"><span>Git / GitHub</span><span>90%</span></div><div class="skill-bar"><div class="skill-progress"></div></div></div>
           <div class="skill-item" data-skill="70"><div class="skill-info"><span>DevOps / CI-CD</span><span>70%</span></div><div class="skill-bar"><div class="skill-progress"></div></div></div>
         </div>
       </div>
     </div>
-    <div class="tech-stack">
+    <div class="tech-stack reveal-pop">
       <h3>Tech Stack</h3>
       <div class="tech-icons">
         <div class="tech-icon glass" title="HTML5"><i class="fab fa-html5"></i></div>
@@ -367,17 +403,17 @@
 <!-- Projects -->
 <section id="projects">
   <div class="container">
-    <p class="hero-greeting" style="text-align:center">SELECTED WORK</p>
-    <h2 class="section-title" style="text-align:center">My <span class="text-gradient">Projects</span></h2>
-    <p class="section-subtitle" style="text-align:center">A selection of my recent work</p>
-    <div class="projects-filter">
+    <p class="hero-greeting reveal" style="text-align:center">SELECTED WORK</p>
+    <h2 class="section-title reveal" style="text-align:center">My <span class="text-gradient">Projects</span></h2>
+    <p class="section-subtitle reveal" style="text-align:center">A selection of my recent work</p>
+    <div class="projects-filter reveal">
       <button class="filter-btn active" data-filter="all">All</button>
       <button class="filter-btn" data-filter="web">Web Apps</button>
       <button class="filter-btn" data-filter="mobile">Mobile Apps</button>
       <button class="filter-btn" data-filter="design">UI/UX</button>
     </div>
     <div class="projects-grid" id="projectsGrid">
-      <div class="project-card glass" data-category="web">
+      <div class="project-card glass reveal-card" data-category="web">
         <div class="project-thumb">E-Commerce Dashboard</div>
         <span class="project-category">Web App</span>
         <div class="project-info">
@@ -386,7 +422,7 @@
           <div class="project-tags"><span class="project-tag">React</span><span class="project-tag">Node.js</span><span class="project-tag">MongoDB</span></div>
         </div>
       </div>
-      <div class="project-card glass" data-category="mobile">
+      <div class="project-card glass reveal-card" data-category="mobile">
         <div class="project-thumb">Health Tracker App</div>
         <span class="project-category">Mobile App</span>
         <div class="project-info">
@@ -395,7 +431,7 @@
           <div class="project-tags"><span class="project-tag">React Native</span><span class="project-tag">Firebase</span><span class="project-tag">Redux</span></div>
         </div>
       </div>
-      <div class="project-card glass" data-category="design">
+      <div class="project-card glass reveal-card" data-category="design">
         <div class="project-thumb">UI Design System</div>
         <span class="project-category">UI/UX</span>
         <div class="project-info">
@@ -404,7 +440,7 @@
           <div class="project-tags"><span class="project-tag">Figma</span><span class="project-tag">Storybook</span><span class="project-tag">CSS3</span></div>
         </div>
       </div>
-      <div class="project-card glass" data-category="web">
+      <div class="project-card glass reveal-card" data-category="web">
         <div class="project-thumb">Task Management</div>
         <span class="project-category">Web App</span>
         <div class="project-info">
@@ -413,7 +449,7 @@
           <div class="project-tags"><span class="project-tag">Vue.js</span><span class="project-tag">Express</span><span class="project-tag">PostgreSQL</span></div>
         </div>
       </div>
-      <div class="project-card glass" data-category="mobile">
+      <div class="project-card glass reveal-card" data-category="mobile">
         <div class="project-thumb">Social Media App</div>
         <span class="project-category">Mobile App</span>
         <div class="project-info">
@@ -422,7 +458,7 @@
           <div class="project-tags"><span class="project-tag">Flutter</span><span class="project-tag">Firebase</span><span class="project-tag">Dart</span></div>
         </div>
       </div>
-      <div class="project-card glass" data-category="design">
+      <div class="project-card glass reveal-card" data-category="design">
         <div class="project-thumb">Portfolio Redesign</div>
         <span class="project-category">UI/UX</span>
         <div class="project-info">
@@ -438,11 +474,11 @@
 <!-- Contact -->
 <section id="contact">
   <div class="container">
-    <p class="hero-greeting" style="text-align:center">GET IN TOUCH</p>
-    <h2 class="section-title" style="text-align:center">Let's <span class="text-gradient">Talk</span></h2>
-    <p class="section-subtitle" style="text-align:center">Have a project in mind? Let's talk!</p>
+    <p class="hero-greeting reveal" style="text-align:center">GET IN TOUCH</p>
+    <h2 class="section-title reveal" style="text-align:center">Let's <span class="text-gradient">Talk</span></h2>
+    <p class="section-subtitle reveal" style="text-align:center">Have a project in mind? Let's talk!</p>
     <div class="contact-container">
-      <div class="contact-left glass">
+      <div class="contact-left glass reveal-left">
         <h3>Let's work together</h3>
         <p>I'm currently available for freelance projects and full-time roles. Reach out anytime!</p>
         <div class="info-item"><div class="info-icon"><i class="fas fa-map-marker-alt"></i></div><div><h4>Location</h4><p>Uttarakhand, India</p></div></div>
@@ -455,7 +491,7 @@
           <a href="#" class="social-link" title="Twitter" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
         </div>
       </div>
-      <div class="contact-right glass">
+      <div class="contact-right glass reveal-right">
         <form class="contact-form" id="contactForm" novalidate>
           <div class="form-row">
             <div class="form-group"><label for="contactName">Your Name</label><input type="text" id="contactName" name="name" placeholder="Your name" required></div>
@@ -531,6 +567,46 @@
       });
     });
   });
+
+  // scroll reveal with stagger
+  const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-card, .reveal-pop');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const siblingsInGroup = entry.target.parentElement ? entry.target.parentElement.children : [];
+        let indexInGroup = 0;
+        if (entry.target.classList.contains('project-card')) {
+          indexInGroup = Array.from(document.querySelectorAll('.project-card')).indexOf(entry.target);
+        } else if (entry.target.classList.contains('skill-category')) {
+          indexInGroup = Array.from(document.querySelectorAll('.skill-category')).indexOf(entry.target);
+        }
+        entry.target.style.transitionDelay = (indexInGroup * 0.08) + 's';
+        entry.target.classList.add('show');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => revealObserver.observe(el));
+
+  // parallax orbs on scroll
+  const orb1 = document.getElementById('orb1');
+  const orb2 = document.getElementById('orb2');
+  const orb3 = document.getElementById('orb3');
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    orb1.style.transform = `translateY(${y * 0.15}px)`;
+    orb2.style.transform = `translateY(${-y * 0.12}px)`;
+    orb3.style.transform = `translateY(${y * 0.2}px)`;
+  }, { passive: true });
+
+  // cursor glow that follows the mouse across the whole page
+  const cursorGlow = document.getElementById('cursorGlow');
+  document.addEventListener('mousemove', (e) => {
+    cursorGlow.style.opacity = '1';
+    cursorGlow.style.left = e.clientX + 'px';
+    cursorGlow.style.top = e.clientY + 'px';
+  });
+  document.addEventListener('mouseleave', () => { cursorGlow.style.opacity = '0'; });
 
   // subtle 3D tilt on the hero card — the one signature motion moment
   const heroCard = document.getElementById('heroCard');
