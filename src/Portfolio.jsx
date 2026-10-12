@@ -15,11 +15,12 @@ const SKILLS = [
   { n: "Machine Learning", g: "AI / ML", icon: "cpu" },
 ];
 const PROJECTS = [
-  { t: "Sales Performance Dashboard", c: "dash", l: "Dashboard", d: "Interactive dashboard that tracks revenue, orders and average order value by region, category and month.", tags: ["Power BI", "MySQL", "Python"] },
-  { t: "SQL Business Analysis", c: "sql", l: "SQL", d: "SQL queries that answer business questions on sales data: top categories, regional revenue, best months and the strongest region and category pairs.", tags: ["MySQL", "SQL"] },
-  { t: "Data Cleaning & EDA", c: "python", l: "Python / ML", d: "A step-by-step cleaning workflow in Python: fix text, parse numbers, fill missing values and remove duplicates.", tags: ["Python", "Pandas", "NumPy"] },
-  { t: "Customer Churn Prediction", c: "python", l: "Python / ML", d: "Scores how likely a customer is to leave from tenure, charges, support tickets and contract, and explains the drivers.", tags: ["Python", "Scikit-learn", "Pandas"] },
-  { t: "Sales Forecasting", c: "python", l: "Python / ML", d: "Forecasts the next six months of sales from past trends and seasonality, with an adjustable growth assumption.", tags: ["Python", "Pandas", "Matplotlib"] },
+  { t: "Sales Performance Dashboard", c: "dash", l: "Dashboard", d: "Interactive dashboard that tracks revenue, orders and average order value by region, category and month.", tags: ["Power BI", "MySQL", "Python"], m: [["12+", "KPIs tracked"], ["35%", "faster refresh"]] },
+  { t: "SQL Business Analysis", c: "sql", l: "SQL", d: "SQL queries that answer business questions on sales data: top categories, regional revenue, best months and the strongest region and category pairs.", tags: ["MySQL", "SQL"], m: [["4", "business queries"], ["144", "sample records"]] },
+  { t: "Data Cleaning & EDA", c: "python", l: "Python / ML", d: "A step-by-step cleaning workflow in Python: fix text, parse numbers, fill missing values and remove duplicates.", tags: ["Python", "Pandas", "NumPy"], m: [["44→100%", "data quality"], ["8→5", "rows after cleaning"]] },
+  { t: "Customer Churn Prediction", c: "python", l: "Python / ML", d: "Random Forest model that predicts which customers are likely to leave, with SHAP to explain the key factors behind each prediction.", tags: ["Random Forest", "SHAP", "Scikit-learn"], m: [["92%", "accuracy"], ["0.89", "ROC-AUC"]] },
+  { t: "Twitter Sentiment Analysis", c: "python", l: "NLP", d: "Fine-tuned BERT to classify tweets as positive, negative or neutral, with a Streamlit dashboard for sentiment trends.", tags: ["BERT", "HuggingFace", "Streamlit"], m: [["50k", "tweets"], ["89%", "F1 score"]] },
+  { t: "Sales Forecasting", c: "python", l: "Python / ML", d: "Forecasts the next six months of sales from past trends and seasonality, with an adjustable growth assumption.", tags: ["Python", "Pandas", "Matplotlib"], m: [["6", "months forecast"], ["12", "months of history"]] },
 ];
 const FILTERS = [["all", "All"], ["dash", "Dashboards"], ["sql", "SQL"], ["python", "Python & ML"]];
 const IDS = ["hero", "about", "skills", "projects", "contact"];
@@ -88,7 +89,7 @@ function useActiveSection() {
 /* ---------- SMALL COMPONENTS ---------- */
 const SHOTS = {
   "Sales Performance Dashboard": "dash", "SQL Business Analysis": "sql", "Data Cleaning & EDA": "clean",
-  "Customer Churn Prediction": "churn", "Sales Forecasting": "fcast",
+  "Customer Churn Prediction": "churn", "Sales Forecasting": "fcast", "Twitter Sentiment Analysis": "sent",
 };
 function Shot({ k }) {
   const art = {
@@ -114,6 +115,11 @@ function Shot({ k }) {
       <circle className="sh-arc" cx="92" cy="80" r="38" transform="rotate(-90 92 80)" style={{ strokeDasharray: "150 240" }} />
       {[0, 1, 2, 3].map((i) => <g key={i}><rect className="sh-l" x="170" y={36 + i * 26} width="122" height="10" rx="5" /><rect className={i % 2 ? "sh-t" : "sh-a"} x="170" y={36 + i * 26} width={[96, 62, 106, 44][i]} height="10" rx="5" /></g>)}
     </>,
+    sent: <>
+      <rect className="sh-p" x="14" y="12" width="292" height="136" rx="10" />
+      <rect className="sh-l" x="26" y="24" width="140" height="10" rx="5" /><rect className="sh-l" x="26" y="42" width="110" height="10" rx="5" /><rect className="sh-l" x="26" y="60" width="150" height="10" rx="5" />
+      {[[26, 46], [46, 70], [66, 30]].map(([x, h], i) => <rect key={i} className={i === 1 ? "sh-a" : "sh-t"} x={200 + i * 30} y={130 - h} width="20" height={h} rx="4" />)}
+    </>,
     fcast: <>
       <rect className="sh-p" x="14" y="12" width="292" height="136" rx="10" />
       <path className="sh-l" d="M176 70 L296 20 L296 52 L176 72Z" />
@@ -132,6 +138,7 @@ function ProjectCard({ p, i, onOpen, onDemo }) {
       <p className="pcat">{p.l}</p>
       <h3>{p.t}</h3>
       <p>{p.d}</p>
+      {p.m && <div className="pm">{p.m.map(([v, l]) => <div key={l}><b>{v}</b><span>{l}</span></div>)}</div>}
       <div className="tags">{p.tags.map((t) => <span key={t}>{t}</span>)}</div>
       <div className="proj-actions">
         <span className="proj-more">View case study <Ico n="arrow" /></span>
@@ -411,10 +418,11 @@ function Dashboard() {
 
 // ---------- case study popup
 const CASE = {
-  "Sales Performance Dashboard": { problem: "Sales numbers sit in many tables, so it is slow to see how each region and category is doing.", built: "An interactive dashboard with filters, KPIs and charts for revenue, orders and average order value." },
+  "Sales Performance Dashboard": { problem: "Sales numbers sit in many tables, so it is slow to see how each region and category is doing.", built: "An interactive dashboard with filters, KPIs and charts for revenue, orders and average order value.", result: "Tracks 12+ KPIs across multi-year retail sales data. DAX measures for dynamic reports cut dashboard refresh time by 35%." },
   "SQL Business Analysis": { problem: "Business questions like “which category earns the most?” need answers straight from the data.", built: "A set of SQL queries using GROUP BY, ORDER BY, HAVING and LIMIT to answer them from the sales table." },
   "Data Cleaning & EDA": { problem: "Raw data has messy text, text-formatted numbers, missing values and duplicates that break analysis.", built: "A repeatable Python and Pandas cleaning workflow, with each step shown and its effect on data quality." },
-  "Customer Churn Prediction": { problem: "It is cheaper to keep a customer than to win a new one, but it is hard to know who is about to leave.", built: "A churn scoring approach that turns tenure, charges, support tickets and contract into a risk level, with the drivers explained." },
+  "Customer Churn Prediction": { problem: "It is cheaper to keep a customer than to win a new one, but it is hard to know who is about to leave.", built: "A churn scoring approach that turns tenure, charges, support tickets and contract into a risk level, with the drivers explained.", result: "92% accuracy and 0.89 ROC-AUC. SHAP showed which factors drive churn." },
+  "Twitter Sentiment Analysis": { problem: "Thousands of tweets are too many to read, so it is hard to tell how people feel about a topic.", built: "A BERT model fine-tuned with HuggingFace to classify tweet sentiment, plus a Streamlit dashboard that shows sentiment trends.", result: "Reached 89% F1 on 50k tweets." },
   "Sales Forecasting": { problem: "Planning stock and targets needs a view of what sales are likely to be next.", built: "A forecast of the next six months from historical trends and seasonality, with an adjustable growth assumption." },
 };
 // To add more detail, give an entry: result: "...", demo: "https://...", code: "https://github.com/..."
@@ -438,6 +446,7 @@ function CaseStudy({ p, onClose, onDemo }) {
           <p className="pcat">{p.l}</p>
           <h3>{p.t}</h3>
           <p>{p.d}</p>
+          {p.m && <div className="pm">{p.m.map(([v, l]) => <div key={l}><b>{v}</b><span>{l}</span></div>)}</div>}
           {c.problem && <><h4>Problem</h4><p>{c.problem}</p></>}
           {c.built && <><h4>What I built</h4><p>{c.built}</p></>}
           {c.result && <><h4>Result</h4><p>{c.result}</p></>}
@@ -661,7 +670,44 @@ function ForecastDemo() {
   );
 }
 
-const DEMOS = { "Sales Performance Dashboard": Dashboard, "SQL Business Analysis": SqlDemo, "Data Cleaning & EDA": CleanDemo, "Customer Churn Prediction": ChurnDemo, "Sales Forecasting": ForecastDemo };
+
+// 6) Twitter sentiment — type a tweet, see a word-by-word score
+const SN_POS = ["love","great","good","amazing","awesome","happy","excellent","best","nice","fantastic","enjoy","wonderful","perfect","brilliant","thanks"];
+const SN_NEG = ["hate","bad","terrible","awful","worst","sad","angry","poor","boring","slow","broken","disappointed","horrible","useless","annoying"];
+const SN_EX = ["I love this new phone, the camera is amazing!", "Worst service ever, so slow and disappointing.", "The package arrived on Tuesday.", "Not good, I am not happy with it."];
+function SentimentDemo() {
+  const [txt, setTxt] = useState(SN_EX[0]);
+  const toks = txt.split(/(\s+)/);
+  let score = 0, prev = "";
+  const out = toks.map((t, i) => {
+    const w = t.toLowerCase().replace(/[^a-z]/g, "");
+    let v = SN_POS.includes(w) ? 1 : SN_NEG.includes(w) ? -1 : 0;
+    if (v && ["not", "never", "no"].includes(prev)) v = -v;
+    if (w) prev = w;
+    score += v;
+    return v ? <span key={i} className={"sn-w " + (v > 0 ? "pos" : "neg")}>{t}</span> : t;
+  });
+  const label = score > 0 ? "Positive" : score < 0 ? "Negative" : "Neutral";
+  const pct = Math.max(5, Math.min(95, 50 + score * 22));
+  return (
+    <div className="ch">
+      <div className="ch-ctrl">
+        <div className="fgroup"><span>Type a tweet</span><textarea className="sn-in" value={txt} maxLength={240} onChange={(e) => setTxt(e.target.value)} /></div>
+        <div className="fgroup"><span>Try an example</span><div className="fchips">{SN_EX.map((x, i) => <button key={i} onClick={() => setTxt(x)}>Example {i + 1}</button>)}</div></div>
+      </div>
+      <div className="ch-out">
+        <p className="tier">{label}</p>
+        <div className="sn-meter"><i style={{ left: pct + "%" }} /></div>
+        <div className="sn-ends"><span>Negative</span><span>Positive</span></div>
+        <h4>Words the score is based on</h4>
+        <p className="sn-text">{out}</p>
+        <p className="dash-note">Illustrative demo with a small word list, not the BERT model. The real project used a fine-tuned BERT model (89% F1 on 50k tweets).</p>
+      </div>
+    </div>
+  );
+}
+
+const DEMOS = { "Sales Performance Dashboard": Dashboard, "SQL Business Analysis": SqlDemo, "Data Cleaning & EDA": CleanDemo, "Customer Churn Prediction": ChurnDemo, "Sales Forecasting": ForecastDemo, "Twitter Sentiment Analysis": SentimentDemo };
 function DemoModal({ p, onClose }) {
   const closeRef = useRef(null);
   const D = DEMOS[p.t] || Dashboard;
@@ -881,7 +927,7 @@ export default function Portfolio() {
                 ))}
               </ul>
               <div className="btns">
-                <a href="https://github.com/ankitjhinkwan/portfolio/raw/main/Ankit_Jinkwan_Resume.pdf.pdf" target="_blank" rel="noopener" className="btn primary"><Ico n="download" /> Download CV</a>
+                <a href="https://github.com/ankitjhinkwan/portfolio/raw/main/Ankit_Jinkwan_Resume.pdf" target="_blank" rel="noopener" className="btn primary"><Ico n="download" /> Download CV</a>
                 <a href="#contact" className="btn ghost">Let's Talk</a>
               </div>
             </div>
@@ -927,7 +973,7 @@ export default function Portfolio() {
               <p>I'm currently available for freelance projects and full-time roles. Reach out anytime!</p>
               {[
                 ["pin", "Location", "Uttarakhand, India"],
-                ["mail", "Email", <a href="mailto:hello@ankitjinkwan.dev">hello@ankitjinkwan.dev</a>],
+                ["mail", "Email", <a href="mailto:ankitjhinkwan9@gmail.com">ankitjhinkwan9@gmail.com</a>],
                 ["phone", "Phone", <a href="tel:+919528693191">+91 9528693191</a>],
                 ["clock", "Availability", "Mon – Sat, 9 AM – 6 PM IST"],
               ].map(([ic, l, v]) => (
@@ -937,9 +983,8 @@ export default function Portfolio() {
                 </div>
               ))}
               <div className="social">
-                <a href="#" title="LinkedIn" aria-label="LinkedIn"><Ico n="linkedin" /></a>
-                <a href="#" title="GitHub" aria-label="GitHub"><Ico n="github" /></a>
-                <a href="#" title="Twitter" aria-label="Twitter"><Ico n="twitter" /></a>
+                <a href="https://www.linkedin.com/in/ankit-jinkwan-0b4040425" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><Ico n="linkedin" /></a>
+                <a href="https://github.com/ankitjhinkwan" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub"><Ico n="github" /></a>
               </div>
             </div>
             <ContactForm />
@@ -1324,6 +1369,19 @@ footer small{color:var(--dim)}
 .hb-row.dim{opacity:.45}
 .hb-v{text-align:right;color:var(--dim);font-weight:500}
 .dash-note{font-size:.78rem;color:var(--dim)}
+.pm{display:flex;gap:.6rem;margin:.2rem 0 .9rem}
+.pm div{flex:1;padding:.55rem .7rem;border:1px solid var(--line);border-radius:10px;background:var(--panel2)}
+.pm b{display:block;font:800 1.15rem var(--display);color:var(--text)}
+.pm span{font-size:.72rem;color:var(--dim)}
+.sn-in{width:100%;min-height:110px;padding:.8rem;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--text);font:.95rem var(--body);resize:vertical}
+.sn-in:focus{outline:none;border-color:var(--a)}
+.sn-meter{position:relative;height:8px;border-radius:99px;background:linear-gradient(90deg,#55555d,#2a2a30 50%,#fff);margin:.6rem 0 .3rem}
+.sn-meter i{position:absolute;top:-4px;width:16px;height:16px;border-radius:50%;background:#fff;border:3px solid #000;translate:-50% 0;transition:left .4s}
+.sn-ends{display:flex;justify-content:space-between;font-size:.72rem;color:var(--dim);margin-bottom:1rem}
+.sn-text{line-height:1.8}
+.sn-w{padding:.05rem .35rem;border-radius:6px;font-weight:700}
+.sn-w.pos{background:#fff;color:#000}
+.sn-w.neg{background:#3a3a42;color:#fff;text-decoration:underline}
 @media(max-width:900px){.dash-main{grid-template-columns:1fr}}
 
 /* case study popup */
