@@ -881,7 +881,7 @@ export default function Portfolio() {
                 ))}
               </ul>
               <div className="btns">
-                <a href="#" className="btn primary"><Ico n="download" /> Download CV</a>
+                <a href="https://github.com/ankitjhinkwan/portfolio/raw/main/Ankit_Jinkwan_Resume.pdf.pdf" target="_blank" rel="noopener" className="btn primary"><Ico n="download" /> Download CV</a>
                 <a href="#contact" className="btn ghost">Let's Talk</a>
               </div>
             </div>
